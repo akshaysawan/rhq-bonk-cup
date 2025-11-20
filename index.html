@@ -15,6 +15,9 @@
         <div class="header">
             <h1>RHQ BONK CUP <span class="accent">ARCHIVE</span></h1>
             <p>Weekly Trackmania Campaigns & Winners</p>
+            <button onclick="pickRandomCup()" class="random-btn">
+                <i class="fas fa-dice"></i> Random Cup
+            </button>
         </div>
 
         <div id="stats-container" class="stats"></div>
@@ -44,6 +47,13 @@
 
         <div id="stats-tab" class="tab-content" style="display:none;">
             
+            <div class="filter-bar">
+                <label for="year-filter"><i class="fas fa-calendar-alt"></i> Filter by Year:</label>
+                <select id="year-filter">
+                    <option value="all">All Time</option>
+                    </select>
+            </div>
+
             <div class="charts-grid">
                 <div class="chart-card full-width">
                     <h3>🏆 Most Wins</h3>
@@ -57,6 +67,13 @@
                     <div class="chart-wrapper">
                         <canvas id="mappersChart"></canvas>
                     </div>
+                </div>
+
+                <div class="trivia-card full-width">
+                    <h3 style="margin:0; border:none; color:var(--accent-color); font-size:1.5rem;">
+                        <i class="fas fa-bolt"></i> RHQ Hall of Fame
+                    </h3>
+                    <div id="trivia-content"></div>
                 </div>
             </div>
 
