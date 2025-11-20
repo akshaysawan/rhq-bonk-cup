@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="https://trackmania.io/img/medals/author.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -18,21 +19,39 @@
 
         <div id="stats-container" class="stats"></div>
 
-        <div class="search-container">
-            <i class="fas fa-search search-icon"></i>
-            <input type="text" id="search-input" placeholder="Search for Map Name, Author, Winner, or Cup #...">
+        <div class="tab-navigation">
+            <button class="tab-btn active" onclick="openTab('campaigns-tab')">
+                <i class="fas fa-list"></i> Campaigns
+            </button>
+            <button class="tab-btn" onclick="openTab('stats-tab')">
+                <i class="fas fa-chart-bar"></i> Win Statistics
+            </button>
         </div>
 
-        <div id="cup-list" class="accordion-section">
-            <div class="loading">
-                <div class="spinner"></div>
-                <p>Loading Data...</p>
+        <div id="campaigns-tab" class="tab-content active">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search for Map Name, Author, Winner, or Cup #...">
+            </div>
+
+            <div id="cup-list" class="accordion-section">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading Data...</p>
+                </div>
             </div>
         </div>
+
+        <div id="stats-tab" class="tab-content" style="display:none;">
+            <div class="chart-container">
+                <canvas id="winsChart"></canvas>
+            </div>
+        </div>
+
     </div>
 
     <footer class="site-footer">
-        <p>© RHQ Bonk Cup Archive - by Reaper94s · Data from <a href="https://trackmania.io" target="_blank">Trackmania.io</a></p>
+        <p>© RHQ Bonk Cup Archive · Data from <a href="https://trackmania.io" target="_blank">Trackmania.io</a></p>
     </footer>
 
     <script src="script.js"></script>
