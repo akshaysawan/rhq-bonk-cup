@@ -25,10 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>`;
         });
 
-    // 2. Render Stats (Total Cups + Unique Winners)
+    // 2. Render Stats
     function renderStats(data) {
         const totalCups = data.length;
-        // Filter out null/empty winners for the count
         const uniqueWinners = new Set(
             data.map(c => c.winner).filter(w => w && w !== "Unknown" && w.trim() !== "")
         );
@@ -58,17 +57,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const tab = document.createElement("div");
             tab.classList.add("accordion-tab");
 
-            // --- DATE LOGIC ---
-            // Priority 1: Use the date from Google Sheet (display_date)
-            // Priority 2: Use the date from Trackmania API (publish_date)
+            // Date Logic
             let dateStr = "Unknown Date";
-            
             if (cup.display_date) {
                 dateStr = cup.display_date; 
             } else if (cup.publish_date) {
-                // Convert Unix timestamp to readable string
                 dateStr = new Date(cup.publish_date * 1000).toLocaleDateString();
             }
+
+            // --- USE THE FORMATTER HERE FOR CAMPAIGN TITLE ---
+            // (If campaigns also use colors, we fix them here too)
+            const formattedCampaignName = formatTmName(cup.campaign_name);
 
             // 1. Header HTML
             let html = `
@@ -76,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="cup-info">
                         <span class="edition-badge">#${cup.edition}</span>
                         <div>
-                            <div class="cup-title">${cup.campaign_name}</div>
+                            <div class="cup-title">${formattedCampaignName}</div>
                             <div class="cup-date">${dateStr}</div>
                         </div>
                     </div>
@@ -101,12 +100,19 @@ document.addEventListener("DOMContentLoaded", () => {
             // 2. Maps Loop
             if (cup.maps && cup.maps.length > 0) {
                 cup.maps.forEach((map, index) => {
-                    // Convert ms to seconds (e.g. 45000 -> 45.000)
                     const timeSec = (map.time_author / 1000).toFixed(3);
+                    
+                    // --- USE THE FORMATTER HERE FOR MAP NAMES ---
+                    const formattedMapName = formatTmName(map.name);
+
                     html += `
                         <tr>
                             <td>${index + 1}</td>
-                            <td style="font-weight:500;"><a href="https://trackmania.io/#/leaderboard/${map.uid}" target="_blank" style="color:#fff; text-decoration:underline;">${map.name}</a></td>
+                            <td style="font-weight:500;">
+                                <a href="https://trackmania.io/#/leaderboard/${map.uid}" target="_blank" style="color:#fff; text-decoration:underline;">
+                                    ${formattedMapName}
+                                </a>
+                            </td>
                             <td>${map.author}</td>
                             <td>${timeSec}s</td>
                         </tr>
@@ -129,7 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
             tab.innerHTML = html;
             container.appendChild(tab);
 
-            // Add Click Event to Header to toggle accordion
             const header = tab.querySelector(".accordion-header");
             header.addEventListener("click", () => {
                 tab.classList.toggle("active");
@@ -147,15 +152,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const filtered = allCups.filter(cup => {
-            // Check Campaign details
             const inName = cup.campaign_name.toLowerCase().includes(query);
             const inWinner = (cup.winner || "").toLowerCase().includes(query);
             const inEdition = String(cup.edition).includes(query);
-            
-            // Check Date (allow searching by year like "2021")
             const inDate = (cup.display_date || "").includes(query);
 
-            // Check Map details (Loop through maps to find a match)
             let inMaps = false;
             if (cup.maps) {
                 inMaps = cup.maps.some(map => 
@@ -170,3 +171,43 @@ document.addEventListener("DOMContentLoaded", () => {
         renderList(filtered);
     });
 });
+
+// --- HELPER FUNCTION: Format Trackmania Colors ---
+function formatTmName(raw) {
+    if (!raw) return "";
+
+    // Split by '$' to isolate codes
+    // Example: "$00Fwinter $888goal" -> ["", "00Fwinter ", "888goal"]
+    const parts = raw.split('$');
+    
+    // The first part is always plain text (before the first $)
+    let html = parts[0]; 
+    
+    for (let i = 1; i < parts.length; i++) {
+        let part = parts[i];
+        
+        // Check if the segment starts with a 3-digit hex code (Color)
+        // Regex: ^[0-9a-fA-F]{3} checks for 0-9 or A-F exactly 3 times at start
+        if (/^[0-9a-fA-F]{3}/.test(part)) {
+            let colorCode = part.substring(0, 3); // e.g. "00F"
+            let textContent = part.substring(3);  // e.g. "winter "
+            html += `<span style="color:#${colorCode}">${textContent}</span>`;
+        }
+        // Check for Reset ($z) or Default ($g)
+        else if (/^[zZgG]/.test(part)) {
+             html += `<span style="color:inherit">${part.substring(1)}</span>`;
+        }
+        // Check for Style codes like $i (italic), $w (wide) - We just strip these to keep it clean
+        else if (/^[iIwWnNsSoO]/.test(part)) {
+            html += part.substring(1); // Just skip the code char
+        }
+        // Handle escaped dollar sign ($$) -> In split, this usually results in empty parts or tricky flow.
+        // For simplicity in this specific format, we treat unknown codes as literals
+        else {
+            // If it's not a known code, put the $ back (it might be part of the name)
+            html += "$" + part;
+        }
+    }
+    
+    return html;
+}
