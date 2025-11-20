@@ -341,3 +341,37 @@ tr:hover td { background: rgba(255,255,255,0.03); }
 .highlight-flash {
     animation: flashHighlight 1.5s ease-out;
 }
+/* --- BACK TO TOP BUTTON --- */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--accent-color);
+    color: #000;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 210, 106, 0.4);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    
+    /* Hidden by default */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+#back-to-top.show {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    background-color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 210, 106, 0.6);
+}

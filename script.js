@@ -332,3 +332,21 @@ window.copyToClipboard = function(text, btn) { navigator.clipboard.writeText(tex
 window.shareCup = function(edition, btn) { const url = `${window.location.origin}${window.location.pathname}#cup-${edition}`; navigator.clipboard.writeText(url).then(() => { const o = btn.innerHTML; btn.innerHTML = `<i class="fas fa-check"></i> Link Copied!`; btn.style.borderColor = "#fff"; setTimeout(() => { btn.innerHTML = o; btn.style.borderColor = "rgba(0,150,255,0.5)"; }, 2000); }); };
 window.pickRandomCup = function() { openTab('campaigns-tab'); if(allCups.length===0)return; const c=allCups[Math.floor(Math.random()*allCups.length)]; const el=document.getElementById(`cup-${c.edition}`); if(el){ el.scrollIntoView({behavior:'smooth',block:'center'}); el.querySelector('.accordion-header').click(); el.classList.add('highlight-flash'); }};
 window.checkDeepLink = function() { const h=window.location.hash; if(h&&h.startsWith("#cup-")) { const id=h.replace("#cup-",""); openTab('campaigns-tab'); const el=document.getElementById(`cup-${id}`); if(el){ el.scrollIntoView({behavior:'smooth',block:'center'}); el.querySelector('.accordion-header').click(); el.classList.add('highlight-flash'); }}};
+// --- BACK TO TOP LOGIC ---
+const backToTopBtn = document.getElementById("back-to-top");
+
+window.addEventListener("scroll", () => {
+    // Show button if scrolled down more than 300px
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.classList.add("show");
+    } else {
+        backToTopBtn.classList.remove("show");
+    }
+});
+
+backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
