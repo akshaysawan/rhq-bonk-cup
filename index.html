@@ -24,7 +24,7 @@
                 <i class="fas fa-list"></i> Campaigns
             </button>
             <button class="tab-btn" onclick="openTab('stats-tab')">
-                <i class="fas fa-chart-bar"></i> Win Statistics
+                <i class="fas fa-chart-bar"></i> Statistics
             </button>
         </div>
 
@@ -43,11 +43,24 @@
         </div>
 
         <div id="stats-tab" class="tab-content" style="display:none;">
-            <div class="chart-container">
-                <canvas id="winsChart"></canvas>
-            </div>
-        </div>
+            
+            <div class="charts-grid">
+                <div class="chart-card full-width">
+                    <h3>🏆 Most Wins</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="winsChart"></canvas>
+                    </div>
+                </div>
 
+                <div class="chart-card full-width">
+                    <h3>🏗️ Top Mappers</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="mappersChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <footer class="site-footer">

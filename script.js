@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("cup-list");
     const searchInput = document.getElementById("search-input");
     const statsContainer = document.getElementById("stats-container");
-    
-    let allCups = []; 
+
+    let allCups = [];
 
     fetch('bonk_cup_data.json')
         .then(res => {
@@ -14,7 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
             allCups = data;
             renderStats(allCups);
             renderList(allCups);
-            renderChart(allCups); // <--- NEW: Render the Graph
+            
+            // Render Only 2 Charts Now
+            renderWinsChart(allCups);
+            renderMappersChart(allCups);
         })
         .catch(err => {
             console.error(err);
@@ -25,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>`;
         });
 
+    // --- KPI CARDS ---
     function renderStats(data) {
         const totalCups = data.length;
         const uniqueWinners = new Set(
@@ -43,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     }
 
+    // --- ACCORDION LIST ---
     function renderList(cups) {
         container.innerHTML = "";
 
@@ -99,10 +104,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     html += `
                         <tr>
                             <td>${index + 1}</td>
-                            <td style="font-weight:500;">
-                                <a href="https://trackmania.io/#/leaderboard/${map.uid}" target="_blank" style="color:#fff; text-decoration:underline;">
-                                    ${formattedMapName}
-                                </a>
+                            <td>
+                                <div class="map-cell">
+                                    <a href="https://trackmania.io/#/leaderboard/${map.uid}" target="_blank" style="color:#fff; text-decoration:underline; font-weight:500;">
+                                        ${formattedMapName}
+                                    </a>
+                                    <button class="copy-icon-btn" onclick="copyToClipboard('${map.uid}', this)" title="Copy UID">
+                                        <i class="fas fa-copy"></i> UID
+                                    </button>
+                                </div>
                             </td>
                             <td>${map.author}</td>
                             <td>${timeSec}s</td>
@@ -113,12 +123,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 html += `<tr><td colspan="4" style="text-align:center; padding:15px;">No maps loaded for this cup.</td></tr>`;
             }
 
+            // Only One Button Now (View on TM.io)
             html += `
                         </tbody>
                     </table>
-                    <a href="${cup.tm_io_url}" target="_blank" class="tm-btn">
-                        View on Trackmania.io <i class="fas fa-external-link-alt" style="margin-left:5px;"></i>
-                    </a>
+                    <div style="padding: 15px;">
+                        <a href="${cup.tm_io_url}" target="_blank" class="tm-btn">
+                            View on Trackmania.io <i class="fas fa-external-link-alt" style="margin-left:5px;"></i>
+                        </a>
+                    </div>
                 </div>
             `;
 
@@ -157,23 +170,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// --- TAB SWITCHING LOGIC ---
+// --- GLOBAL TAB FUNCTION ---
 window.openTab = function(tabId) {
-    // 1. Hide all tab content
     const tabs = document.querySelectorAll('.tab-content');
     tabs.forEach(tab => tab.style.display = 'none');
-    // 2. Show selected tab
     document.getElementById(tabId).style.display = 'block';
     
-    // 3. Update Buttons Active State
     const buttons = document.querySelectorAll('.tab-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
     event.currentTarget.classList.add('active');
 };
 
-// --- CHART JS RENDERING ---
-function renderChart(data) {
-    // 1. Calculate Wins
+// --- NEW COPY FUNCTION (PER MAP) ---
+window.copyToClipboard = function(text, btn) {
+    navigator.clipboard.writeText(text).then(() => {
+        // Visual Feedback on the button
+        const originalContent = btn.innerHTML;
+        btn.innerHTML = `<i class="fas fa-check" style="color:#00d26a;"></i>`;
+        btn.style.borderColor = "#00d26a";
+        
+        setTimeout(() => {
+            btn.innerHTML = originalContent;
+            btn.style.borderColor = "#444";
+        }, 1500);
+    }).catch(err => console.error(err));
+};
+
+// --- CHART 1: MOST WINS ---
+function renderWinsChart(data) {
     const wins = {};
     data.forEach(cup => {
         let w = cup.winner;
@@ -181,58 +205,74 @@ function renderChart(data) {
             wins[w] = (wins[w] || 0) + 1;
         }
     });
-
-    // 2. Sort by most wins
-    // entries is [[Name, Count], [Name, Count]]
-    const sorted = Object.entries(wins).sort((a, b) => b[1] - a[1]);
-
-    const names = sorted.map(item => item[0]);
-    const counts = sorted.map(item => item[1]);
-
-    // 3. Create Chart
-    const ctx = document.getElementById('winsChart').getContext('2d');
-    new Chart(ctx, {
+    
+    const sorted = Object.entries(wins).sort((a, b) => b[1] - a[1]).slice(0, 25);
+    
+    new Chart(document.getElementById('winsChart').getContext('2d'), {
         type: 'bar',
         data: {
-            labels: names,
+            labels: sorted.map(i => i[0]),
             datasets: [{
-                label: 'Bonk Cup Wins',
-                data: counts,
-                backgroundColor: 'rgba(0, 210, 106, 0.5)', // Trackmania Green (transparent)
-                borderColor: '#00d26a', // Solid Green
-                borderWidth: 1,
-                hoverBackgroundColor: '#00d26a'
+                label: 'Wins',
+                data: sorted.map(i => i[1]),
+                backgroundColor: 'rgba(0, 210, 106, 0.6)',
+                borderColor: '#00d26a',
+                borderWidth: 1
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             scales: {
-                y: {
-                    beginAtZero: true,
-                    grid: { color: 'rgba(255,255,255,0.1)' },
-                    ticks: { color: '#fff' }
-                },
-                x: {
-                    grid: { display: false },
-                    ticks: { color: '#ccc', autoSkip: false, maxRotation: 90, minRotation: 45 }
-                }
+                y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#fff' } },
+                x: { grid: { display: false }, ticks: { color: '#ccc' } }
             },
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    backgroundColor: '#1a1a2e',
-                    titleColor: '#00d26a',
-                    bodyColor: '#fff',
-                    borderColor: '#00d26a',
-                    borderWidth: 1
-                }
-            }
+            plugins: { legend: { display: false } }
         }
     });
 }
 
-// --- FORMATTER ---
+// --- CHART 2: TOP MAPPERS ---
+function renderMappersChart(data) {
+    const mappers = {};
+    data.forEach(cup => {
+        if(cup.maps) {
+            cup.maps.forEach(map => {
+                const author = map.author;
+                if(author && !author.includes("-")) {
+                    mappers[author] = (mappers[author] || 0) + 1;
+                }
+            });
+        }
+    });
+
+    const sorted = Object.entries(mappers).sort((a, b) => b[1] - a[1]).slice(0, 15);
+
+    new Chart(document.getElementById('mappersChart').getContext('2d'), {
+        type: 'bar',
+        indexAxis: 'y', // Horizontal
+        data: {
+            labels: sorted.map(i => i[0]),
+            datasets: [{
+                label: 'Maps Built',
+                data: sorted.map(i => i[1]),
+                backgroundColor: 'rgba(255, 215, 0, 0.6)',
+                borderColor: '#ffd700',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#fff' } },
+                y: { grid: { display: false }, ticks: { color: '#ccc' } }
+            },
+            plugins: { legend: { display: false } }
+        }
+    });
+}
+
 function formatTmName(raw) {
     if (!raw) return "";
     const parts = raw.split('$');

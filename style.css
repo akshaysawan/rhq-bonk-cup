@@ -52,6 +52,96 @@ body {
 .stat-label { font-size: 0.9rem; opacity: 0.8; text-transform: uppercase; }
 
 /* --- NEW TAB STYLES --- */
+:root {
+    --bg-color: #0a0a0a;
+    --card-bg: #1a1a2e;
+    --text-color: #ffffff;
+    --accent-color: #00d26a;
+    --hover-color: rgba(0, 210, 106, 0.1);
+    --border-color: rgba(0, 210, 106, 0.3);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a, #12121a);
+    color: var(--text-color);
+    min-height: 100vh;
+    padding-bottom: 60px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 30px;
+}
+.header h1 { font-size: 2.5rem; margin: 0; font-weight: 900; }
+.accent { color: var(--accent-color); }
+.header p { color: #aaa; margin-top: 10px; }
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.stat-card {
+    background: rgba(26, 26, 46, 0.6);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.stat-number { font-size: 2rem; font-weight: bold; color: var(--accent-color); }
+.stat-label { font-size: 0.9rem; opacity: 0.8; text-transform: uppercase; }
+
+/* --- NEW CHART GRID STYLES --- */
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 20px;
+}
+
+.chart-card {
+    background: rgba(26, 26, 46, 0.6);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-card h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 400px; /* Standard height */
+    width: 100%;
+}
+
+.full-width {
+    grid-column: 1 / -1; /* Make "Most Wins" span across top */
+}
+
+@media (max-width: 768px) {
+    .charts-grid { grid-template-columns: 1fr; }
+}
+
+/* --- EXISTING COMPONENTS --- */
+
 .tab-navigation {
     display: flex;
     justify-content: center;
@@ -74,11 +164,7 @@ body {
     gap: 8px;
 }
 
-.tab-btn:hover {
-    border-color: var(--accent-color);
-    color: #fff;
-}
-
+.tab-btn:hover { border-color: var(--accent-color); color: #fff; }
 .tab-btn.active {
     background: var(--accent-color);
     color: #000;
@@ -86,20 +172,7 @@ body {
     box-shadow: 0 0 15px rgba(0, 210, 106, 0.4);
 }
 
-.chart-container {
-    background: rgba(26, 26, 46, 0.6);
-    border: 1px solid var(--border-color);
-    padding: 20px;
-    border-radius: 15px;
-    height: 600px; /* Fixed height for the chart */
-    position: relative;
-}
-
-/* Search Bar */
-.search-container {
-    position: relative;
-    margin-bottom: 30px;
-}
+.search-container { position: relative; margin-bottom: 30px; }
 #search-input {
     width: 100%;
     padding: 15px 20px 15px 50px;
@@ -120,7 +193,168 @@ body {
     color: var(--accent-color);
 }
 
-/* Accordion Styles */
+.accordion-tab {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background: rgba(26, 26, 46, 0.5);
+    overflow: hidden;
+}
+
+.accordion-header {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    transition: background 0.2s;
+}
+.accordion-header:hover { background: var(--hover-color); }
+
+.cup-info { display: flex; gap: 15px; align-items: center; }
+.edition-badge { background: var(--accent-color); color: #000; padding: 4px 10px; border-radius: 4px; font-weight: 800; }
+.cup-title { font-weight: bold; font-size: 1.1rem; }
+.cup-date { color: #888; font-size: 0.9rem; display: none; } 
+@media(min-width: 768px) { .cup-date { display: block; } }
+
+.winner-badge { color: #ffd700; font-weight: bold; display: flex; align-items: center; gap: 8px; }
+/* --- KEEP EXISTING CSS UNCHANGED UNTIL "ACCORDION CONTENT" --- */
+
+/* ... (Previous CSS for body, container, header, tabs, charts-grid etc.) ... */
+
+:root {
+    --bg-color: #0a0a0a;
+    --card-bg: #1a1a2e;
+    --text-color: #ffffff;
+    --accent-color: #00d26a;
+    --hover-color: rgba(0, 210, 106, 0.1);
+    --border-color: rgba(0, 210, 106, 0.3);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a, #12121a);
+    color: var(--text-color);
+    min-height: 100vh;
+    padding-bottom: 60px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 30px;
+}
+.header h1 { font-size: 2.5rem; margin: 0; font-weight: 900; }
+.accent { color: var(--accent-color); }
+.header p { color: #aaa; margin-top: 10px; }
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.stat-card {
+    background: rgba(26, 26, 46, 0.6);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.stat-number { font-size: 2rem; font-weight: bold; color: var(--accent-color); }
+.stat-label { font-size: 0.9rem; opacity: 0.8; text-transform: uppercase; }
+
+/* --- CHART GRID STYLES --- */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for stacked look */
+    gap: 20px;
+}
+
+.chart-card {
+    background: rgba(26, 26, 46, 0.6);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-card h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 400px; 
+    width: 100%;
+}
+
+/* --- TAB STYLES --- */
+.tab-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: #aaa;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tab-btn:hover { border-color: var(--accent-color); color: #fff; }
+.tab-btn.active {
+    background: var(--accent-color);
+    color: #000;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(0, 210, 106, 0.4);
+}
+
+.search-container { position: relative; margin-bottom: 30px; }
+#search-input {
+    width: 100%;
+    padding: 15px 20px 15px 50px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: rgba(26, 26, 46, 0.8);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+#search-input:focus { outline: none; border-color: var(--accent-color); background: #1a1a2e; }
+.search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-color);
+}
+
+/* --- ACCORDION & MAP LIST --- */
 .accordion-tab {
     border: 1px solid var(--border-color);
     border-radius: 10px;
@@ -148,7 +382,6 @@ body {
 
 .winner-badge { color: #ffd700; font-weight: bold; display: flex; align-items: center; gap: 8px; }
 
-/* Accordion Content (Hidden Table) */
 .accordion-content {
     display: none;
     padding: 0;
@@ -158,8 +391,32 @@ body {
 
 table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
 th { background: rgba(0, 210, 106, 0.1); color: var(--accent-color); padding: 12px 15px; text-align: left; }
-td { padding: 12px 15px; border-bottom: 1px solid rgba(255,255,255,0.05); color: #ddd; }
+td { padding: 10px 15px; border-bottom: 1px solid rgba(255,255,255,0.05); color: #ddd; vertical-align: middle; }
 tr:hover td { background: rgba(255,255,255,0.03); }
+
+/* --- MAP CELL & COPY BUTTON --- */
+.map-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.copy-icon-btn {
+    background: transparent;
+    border: 1px solid #444;
+    color: #aaa;
+    border-radius: 5px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+}
+.copy-icon-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background: rgba(0, 210, 106, 0.1);
+}
 
 .tm-btn {
     display: block;
@@ -174,7 +431,6 @@ tr:hover td { background: rgba(255,255,255,0.03); }
 }
 .tm-btn:hover { background: #00ff80; }
 
-/* Footer */
 .site-footer {
     text-align: center;
     padding: 20px;
@@ -185,7 +441,6 @@ tr:hover td { background: rgba(255,255,255,0.03); }
 }
 .site-footer a { color: var(--accent-color); text-decoration: none; }
 
-/* Spinner */
 .loading { text-align: center; padding: 50px; color: var(--accent-color); }
 .spinner {
     border: 4px solid rgba(0, 210, 106, 0.1);
