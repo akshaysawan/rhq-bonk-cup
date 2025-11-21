@@ -11,17 +11,42 @@
 </head>
 <body>
 
-    <div class="container">
-        <div class="header">
-            <h1>RHQ BONK CUP <span class="accent">ARCHIVE</span></h1>
-            <p>Weekly Trackmania Campaigns & Winners</p>
-            <button onclick="pickRandomCup()" class="random-btn">
-                <i class="fas fa-dice"></i> Random Cup
-            </button>
+    <header id="main-header" class="site-header">
+        <div class="container">
+            <div class="header-content">
+                
+                <div class="title-group">
+                    <h1 class="header-title">RHQ BONK CUP <span class="accent">ARCHIVE</span></h1>
+                    <p class="header-subtitle">Weekly Trackmania Campaigns & Winners</p>
+                </div>
+
+                <div class="header-actions">
+                    <button onclick="pickRandomCup()" class="random-btn">
+                        <i class="fas fa-dice"></i> Random Cup
+                    </button>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <div id="stat-total-cups" class="stat-value">0</div>
+                        <div class="stat-label">Total Cups</div>
+                    </div>
+                    <div class="stat-item">
+                        <div id="stat-unique-winners" class="stat-value">0</div>
+                        <div class="stat-label">Unique Winners</div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+    </header>
 
-        <div id="stats-container" class="stats"></div>
+    <div id="header-spacer"></div>
 
+    <div class="container main-wrapper">
+        
         <div class="tab-navigation">
             <button class="tab-btn active" onclick="openTab('campaigns-tab')">
                 <i class="fas fa-list"></i> Campaigns
@@ -51,7 +76,7 @@
                 <label for="year-filter"><i class="fas fa-calendar-alt"></i> Filter by Year:</label>
                 <select id="year-filter">
                     <option value="all">All Time</option>
-                    </select>
+                </select>
             </div>
 
             <div class="charts-grid">
@@ -81,7 +106,7 @@
     </div>
 
     <footer class="site-footer">
-        <p>© RHQ Bonk Cup Archive · Data from <a href="https://trackmania.io" target="_blank">Trackmania.io</a></p>
+        <p>© RHQ Bonk Cup Archive - by Reaper94s · Data from <a href="https://trackmania.io" target="_blank">Trackmania.io</a></p>
     </footer>
     <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
     <script src="script.js"></script>

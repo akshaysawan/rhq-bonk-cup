@@ -1,5 +1,4 @@
 let allCups = [];
-// Global Chart Instances (Needed to destroy old charts before updating)
 let winsChartInstance = null;
 let mappersChartInstance = null;
 
@@ -7,6 +6,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("cup-list");
     const searchInput = document.getElementById("search-input");
     const yearFilter = document.getElementById("year-filter");
+
+    // --- SCROLL LISTENER FOR STICKY HEADER ---
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    // ------------------------------------------
 
     fetch('bonk_cup_data.json')
         .then(res => res.json())
@@ -16,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Initial Renders
             renderStats(allCups);
             renderList(allCups);
-            populateYearFilter(allCups); // <--- NEW
+            populateYearFilter(allCups);
             
             // Render Default (All Time)
             updateStatsView(allCups);
@@ -40,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderList(filtered);
     });
 
-    // NEW: Year Filter Listener
+    // Year Filter Listener
     yearFilter.addEventListener("change", (e) => {
         const selectedYear = e.target.value;
         let filteredData = allCups;
@@ -52,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
         
-        // Update Charts & Trivia with filtered data
         updateStatsView(filteredData);
     });
 });
@@ -60,8 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // --- HELPER: Get Year from Cup ---
 function getYearFromCup(cup) {
     if (cup.display_date) {
-        // Format is typically "9.5.2021" or "2021-05-09"
-        // If split by dot:
         const parts = cup.display_date.split('.');
         if (parts.length === 3) return parts[2]; 
     }
@@ -71,7 +78,7 @@ function getYearFromCup(cup) {
     return "Unknown";
 }
 
-// --- NEW: Populate Year Dropdown ---
+// --- Populate Year Dropdown ---
 function populateYearFilter(data) {
     const years = new Set();
     data.forEach(cup => {
@@ -79,9 +86,7 @@ function populateYearFilter(data) {
         if (y && y !== "Unknown") years.add(y);
     });
     
-    // Sort descending (newest first)
     const sortedYears = Array.from(years).sort((a, b) => b - a);
-    
     const select = document.getElementById("year-filter");
     sortedYears.forEach(year => {
         const option = document.createElement("option");
@@ -91,20 +96,24 @@ function populateYearFilter(data) {
     });
 }
 
-// --- NEW: Master Update Function for Stats Tab ---
+// --- Master Update Function for Stats Tab ---
 function updateStatsView(data) {
     renderWinsChart(data);
     renderMappersChart(data);
-    renderTrivia(data); // Trivia now respects the year filter!
+    renderTrivia(data); 
 }
 
+// --- UPDATED: renderStats now targets the Header Elements ---
 function renderStats(data) {
     const totalCups = data.length;
     const uniqueWinners = new Set(data.map(c => c.winner).filter(w => w && w !== "Unknown"));
-    document.getElementById("stats-container").innerHTML = `
-        <div class="stat-card"><div class="stat-number">${totalCups}</div><div class="stat-label">Total Cups</div></div>
-        <div class="stat-card"><div class="stat-number">${uniqueWinners.size}</div><div class="stat-label">Unique Winners</div></div>
-    `;
+    
+    // Update text directly in the sticky header
+    const totalEl = document.getElementById("stat-total-cups");
+    const winnersEl = document.getElementById("stat-unique-winners");
+    
+    if (totalEl) totalEl.textContent = totalCups;
+    if (winnersEl) winnersEl.textContent = uniqueWinners.size;
 }
 
 function renderTrivia(data) {
@@ -128,7 +137,6 @@ function renderTrivia(data) {
     let bestStreak = { count: 0, player: "N/A" };
     let lastWinner = "";
     
-    // Must sort chronologically for streak calc
     const chron = [...data].sort((a, b) => a.edition - b.edition);
     
     chron.forEach(cup => {
@@ -189,7 +197,6 @@ function renderWinsChart(data) {
     });
     const sorted = Object.entries(wins).sort((a, b) => b[1] - a[1]).slice(0, 25);
     
-    // DESTROY OLD CHART IF EXISTS
     if (winsChartInstance) winsChartInstance.destroy();
 
     const ctx = document.getElementById('winsChart').getContext('2d');
@@ -227,7 +234,6 @@ function renderMappersChart(data) {
     });
     const sorted = Object.entries(mappers).sort((a, b) => b[1] - a[1]).slice(0, 15);
 
-    // DESTROY OLD CHART IF EXISTS
     if (mappersChartInstance) mappersChartInstance.destroy();
 
     const ctx = document.getElementById('mappersChart').getContext('2d');
@@ -273,7 +279,6 @@ function renderList(cups) {
         if(cup.maps) cup.maps.forEach(m => totalMs += m.time_author);
         const minutes = Math.floor(totalMs / 60000);
         const seconds = ((totalMs % 60000) / 1000).toFixed(0);
-        const timeString = `${minutes}m ${seconds < 10 ? '0' : ''}${seconds}s`;
 
         let html = `
             <div class="accordion-header">
@@ -332,21 +337,16 @@ window.copyToClipboard = function(text, btn) { navigator.clipboard.writeText(tex
 window.shareCup = function(edition, btn) { const url = `${window.location.origin}${window.location.pathname}#cup-${edition}`; navigator.clipboard.writeText(url).then(() => { const o = btn.innerHTML; btn.innerHTML = `<i class="fas fa-check"></i> Link Copied!`; btn.style.borderColor = "#fff"; setTimeout(() => { btn.innerHTML = o; btn.style.borderColor = "rgba(0,150,255,0.5)"; }, 2000); }); };
 window.pickRandomCup = function() { openTab('campaigns-tab'); if(allCups.length===0)return; const c=allCups[Math.floor(Math.random()*allCups.length)]; const el=document.getElementById(`cup-${c.edition}`); if(el){ el.scrollIntoView({behavior:'smooth',block:'center'}); el.querySelector('.accordion-header').click(); el.classList.add('highlight-flash'); }};
 window.checkDeepLink = function() { const h=window.location.hash; if(h&&h.startsWith("#cup-")) { const id=h.replace("#cup-",""); openTab('campaigns-tab'); const el=document.getElementById(`cup-${id}`); if(el){ el.scrollIntoView({behavior:'smooth',block:'center'}); el.querySelector('.accordion-header').click(); el.classList.add('highlight-flash'); }}};
+
 // --- BACK TO TOP LOGIC ---
 const backToTopBtn = document.getElementById("back-to-top");
-
 window.addEventListener("scroll", () => {
-    // Show button if scrolled down more than 300px
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
         backToTopBtn.classList.add("show");
     } else {
         backToTopBtn.classList.remove("show");
     }
 });
-
 backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 });
