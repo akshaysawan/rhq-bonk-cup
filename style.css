@@ -95,7 +95,7 @@ body {
 .stat-item {
     background: rgba(26, 26, 46, 0.6);
     border: 1px solid var(--border-color);
-    padding: 30px 20px;
+    padding: 15px 10px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -172,7 +172,7 @@ body {
     padding-left: 10px;
 }
 
-#header-spacer { height: 450px; }
+#header-spacer { height: 420px; }
 
 @media (max-width: 768px) {
     .header-stats { grid-template-columns: 1fr; gap: 15px; }
@@ -328,7 +328,7 @@ tr:hover td { background: rgba(255,255,255,0.03); }
 /* --- NEW STICKY FOOTER --- */
 .site-footer {
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     font-size: 0.85rem;
     color: #888;
     border-top: 1px solid rgba(255,255,255,0.1);
