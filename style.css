@@ -30,7 +30,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 3rem 0;
+    padding: 1rem 0;
     background-color: transparent;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -172,7 +172,7 @@ body {
     padding-left: 10px;
 }
 
-#header-spacer { height: 420px; }
+#header-spacer { height: 400px; }
 
 @media (max-width: 768px) {
     .header-stats { grid-template-columns: 1fr; gap: 15px; }
