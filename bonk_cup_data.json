@@ -1,5 +1,93 @@
 [
     {
+        "edition": 219,
+        "campaign_name": "RHQ BONK CUP 219",
+        "publish_date": null,
+        "display_date": "11.12.2025",
+        "winner": "eLconn21",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/118634",
+        "maps": [
+            {
+                "name": "$f77Emo$77ftion $fd7Roul$7f8ette",
+                "author": "VertexWitch",
+                "time_author": 29613,
+                "uid": "lYVExpypIVUG4EQnClgJL9Gr3bk"
+            },
+            {
+                "name": "alpine pov",
+                "author": "epsilene",
+                "time_author": 35705,
+                "uid": "wdePL3SkmTgu3iRlTkOQs4cVRml"
+            },
+            {
+                "name": "$ddfDownhi$6a6l$a66l$88aDash",
+                "author": "isigold",
+                "time_author": 29900,
+                "uid": "mlJD4zCyBQXPbmAZs7tHo5LNK6f"
+            },
+            {
+                "name": "$FFFwhite$F00red",
+                "author": "richarde_e",
+                "time_author": 19412,
+                "uid": "MEFvos6tv1yiM3oYNSdzlqTvV1h"
+            },
+            {
+                "name": "$s$i$oBumper Adventures",
+                "author": "artroy666",
+                "time_author": 38736,
+                "uid": "pz7uo2t9LWLn6g_Gx90dcAsN6V3"
+            },
+            {
+                "name": "$f33Joel $090Tsunami",
+                "author": "miikapekka",
+                "time_author": 20071,
+                "uid": "hhpzKIqsygoKLEWDHivVG3cPfDg"
+            },
+            {
+                "name": "I got destroyed by my girlfriends chess bot",
+                "author": "baconpatroller",
+                "time_author": 21891,
+                "uid": "wwfjVBVmNSOwch9pS0ikxFP01of"
+            },
+            {
+                "name": "$35E$S$I$OGood Old AO8 \uf164",
+                "author": "artroy666",
+                "time_author": 29330,
+                "uid": "CacEGieVeIdi4GKE6OMgg_tNPRi"
+            },
+            {
+                "name": "Smol$FE0Bonky$z 001",
+                "author": "Renopph",
+                "time_author": 21978,
+                "uid": "NWnwUOPoiBxXB9weSyes9ZYi4_i"
+            },
+            {
+                "name": "Circuitmania Track",
+                "author": "GuiCoin",
+                "time_author": 24200,
+                "uid": "m2yiHtFG18V38_HklTSdtgWYfR7"
+            },
+            {
+                "name": "$03FBux$36FLite",
+                "author": "FrankTheHamster",
+                "time_author": 32073,
+                "uid": "mJKF6CqYVa9RKEd39mnN1vKbmqk"
+            },
+            {
+                "name": "Bonkarok - $0C7Bake at 180\u00b0",
+                "author": "amarok.czu",
+                "time_author": 29916,
+                "uid": "hn5FKx12b0d07zIazue7HOyujpg"
+            },
+            {
+                "name": "$3ffstill $3f0PF $f30AF $3ffagain",
+                "author": "baconpatroller",
+                "time_author": 29301,
+                "uid": "8VyBDoaAu_nun1r1ni1TkuzYEta"
+            }
+        ]
+    },
+    {
         "edition": 218,
         "campaign_name": "RHQ BONK CUP 218",
         "publish_date": null,
