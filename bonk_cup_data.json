@@ -1,5 +1,105 @@
 [
     {
+        "edition": 220,
+        "campaign_name": "RHQ BONK CUP 220",
+        "publish_date": null,
+        "display_date": "18.12.2025",
+        "winner": "Lingo",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/119219",
+        "maps": [
+            {
+                "name": "$3f0Feliz $f00Navidad $fff2025",
+                "author": "baconpatroller",
+                "time_author": 39821,
+                "uid": "QIbbaWGBVozlVcCtev04x1qzpj4"
+            },
+            {
+                "name": "find the right path or end up like that snowman",
+                "author": "votisx",
+                "time_author": 21694,
+                "uid": "Rg1QCR4p0igTX_Dqa7DYTimLQpe"
+            },
+            {
+                "name": "Happy collectors",
+                "author": "GuiCoin",
+                "time_author": 30730,
+                "uid": "3zDDl_4HndXwKDNZvu6HwVQzi_k"
+            },
+            {
+                "name": "$o$s$F00Don't $030Scare the $01BPresents",
+                "author": "Svitman",
+                "time_author": 36432,
+                "uid": "1JbvSj493FcsJDPvvBYFEtYyI9a"
+            },
+            {
+                "name": "$S$I$w$AEE\uf06b Bonky Holidays \uf06b",
+                "author": "artroy666",
+                "time_author": 24886,
+                "uid": "TEcV9qlT1u5NkIcGrEjP0vs5Bjk"
+            },
+            {
+                "name": "you have been naughty",
+                "author": "fredwolftm",
+                "time_author": 169221,
+                "uid": "3qsck8PKClcflmke99wvOZ3vxij"
+            },
+            {
+                "name": "$3C3Hyv\u00e4\u00e4 $F00V\u00e1noce $FFFfeaturing $0CFArcticada",
+                "author": "RHQShengar",
+                "time_author": 34282,
+                "uid": "D_jJT7lroH7mda6MUJYTIJy5uVc"
+            },
+            {
+                "name": "'Twas the night before $0f3Yeet$f00mas",
+                "author": "baconpatroller",
+                "time_author": 15472,
+                "uid": "c2QYbfGStLI3xHjvv3ScEejC9Kc"
+            },
+            {
+                "name": "Neo Bonk - Snekemas",
+                "author": "5e3ed33a-277f-447f-82f5-ffe09c116f0e",
+                "time_author": 36008,
+                "uid": "0OmT6I7e1ppOevYCFco8ix8W_w"
+            },
+            {
+                "name": "$04B$s$w$iLet me snow!",
+                "author": "artroy666",
+                "time_author": 28841,
+                "uid": "QvWuz28DAA2k6CktJtOzIU_Uvw3"
+            },
+            {
+                "name": "Weeeee in Winter",
+                "author": "FriendlySnowbal",
+                "time_author": 29629,
+                "uid": "qxXUMRHCZBY9ziIEgxNcgWEVAA3"
+            },
+            {
+                "name": "bonk\u2022\u2091\u2093\u2091 - $f00snow$fffflake$f00speedway",
+                "author": "remota.exe",
+                "time_author": 43608,
+                "uid": "tphLrqHsla4DNnLUw4VBVIlUAb9"
+            },
+            {
+                "name": "$FECSliding $FB6around,$CFE the $6F6Christmas $FC9tree",
+                "author": "richarde_e",
+                "time_author": 29687,
+                "uid": "cyRHzJjVtc1kbEIZzPPG4l8ImEf"
+            },
+            {
+                "name": "better mapper 11",
+                "author": "SIRfection",
+                "time_author": 17740,
+                "uid": "lhK7iFPwLfSf27MZfUIWZ5tRug9"
+            },
+            {
+                "name": "Integen~SpeXtrum",
+                "author": "ShaidenHusky",
+                "time_author": 35277,
+                "uid": "KI6QtHBak68xDCHFIVJT33b8tT1"
+            }
+        ]
+    },
+    {
         "edition": 219,
         "campaign_name": "RHQ BONK CUP 219",
         "publish_date": null,
