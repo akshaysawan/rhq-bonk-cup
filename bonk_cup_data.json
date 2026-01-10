@@ -1,5 +1,157 @@
 [
     {
+        "edition": 222,
+        "campaign_name": "RHQ BONK CUP 222",
+        "publish_date": null,
+        "display_date": "8.1.2026",
+        "winner": "Granady",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/121386",
+        "maps": [
+            {
+                "name": "Trackmania Triathlon",
+                "author": "Ach1oto",
+                "time_author": 40251,
+                "uid": "Qd11nakqKB1DmHamgVUSdR6arF"
+            },
+            {
+                "name": "$6AF$S$I$ODistribution Center",
+                "author": "artroy666",
+                "time_author": 89312,
+                "uid": "GGc7O4jO3gkitLJoF3pCmvLMl3a"
+            },
+            {
+                "name": "$s$o$93fBonkAw $fff- Bonk Games",
+                "author": "AuwrahTM",
+                "time_author": 72079,
+                "uid": "toboV7nWznZqD4yw735vwCWLtd5"
+            },
+            {
+                "name": "$3f0lucky for you that's what I like",
+                "author": "baconpatroller",
+                "time_author": 72195,
+                "uid": "5kLaPvo9Vs4DJK1WPpxmM1yrDe2"
+            },
+            {
+                "name": "$ffcCoal City",
+                "author": "miikapekka",
+                "time_author": 71248,
+                "uid": "YfaPphWxrTjruWOWcnOV6RFiAbi"
+            },
+            {
+                "name": "$s$2f2Two$2b2Tu$282Too",
+                "author": "isigold",
+                "time_author": 78343,
+                "uid": "4nmNmDPt_MzDJXUl3xYrz32Ffod"
+            },
+            {
+                "name": "$o$FF0Booster $000Check",
+                "author": "Svitman",
+                "time_author": 73061,
+                "uid": "q4MCTMmqZwzBBvSeVmplgDWQOu2"
+            },
+            {
+                "name": "$S$ITower of bonks (and pain)",
+                "author": "artroy666",
+                "time_author": 86796,
+                "uid": "z3kehFkwppTgE8G68Kb4PMEUy7i"
+            },
+            {
+                "name": "waifu test fs",
+                "author": "epsilene",
+                "time_author": 42241,
+                "uid": "gWhS_W69_XOu9b3uqffCX5W2iHd"
+            }
+        ]
+    },
+    {
+        "edition": 221,
+        "campaign_name": "RHQ BONK CUP 221",
+        "publish_date": null,
+        "display_date": "1.1.2026",
+        "winner": "Yannex",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/120459",
+        "maps": [
+            {
+                "name": "Piping Down a Storm Drain",
+                "author": "RobynLtW",
+                "time_author": 24202,
+                "uid": "y89kzAerE352aEED_JxNco1GuK5"
+            },
+            {
+                "name": "N'ice grotto",
+                "author": "GuiCoin",
+                "time_author": 27419,
+                "uid": "kLXTS6gWO0rGRi0ZquTVrI8vMci"
+            },
+            {
+                "name": "The Race Up Bonk Mountain",
+                "author": "GolfTek",
+                "time_author": 31559,
+                "uid": "2QaRWIaXi7IoxgNH9uniz30mdig"
+            },
+            {
+                "name": "Ice$39FB$4AFre$5BFak$6CFer",
+                "author": "geo.wj",
+                "time_author": 32545,
+                "uid": "ob_AsusnGQM2SS4KuJK3h_DXeom"
+            },
+            {
+                "name": "$O$F93Hot wheels $FF9Isl$3FFand",
+                "author": "LLOOTKINGFRED",
+                "time_author": 37113,
+                "uid": "ruAEDjXlU3ck5HTLKBuxirkWm37"
+            },
+            {
+                "name": "$s2026 is the Year$o!",
+                "author": "Svitman",
+                "time_author": 41739,
+                "uid": "6LFVcb0b51DXsKzXZA2byN3jfsa"
+            },
+            {
+                "name": "a map to annoy people cuz why not",
+                "author": "MiczosTM",
+                "time_author": 26285,
+                "uid": "Os47wJwsMfM3O43o2RPUt0pYmnb"
+            },
+            {
+                "name": "POV= Counter Strike Market-Cap",
+                "author": "EvenOliveTM.exe",
+                "time_author": 55862,
+                "uid": "8RFoNRVhj6ozYbIr3W7iHzjRCcc"
+            },
+            {
+                "name": "$o$0d0Bonk$FFFCup - Zelen\u00e1",
+                "author": "vViper_",
+                "time_author": 34081,
+                "uid": "q77pzO9IkIDlHc1mEUn3t_nBVe6"
+            },
+            {
+                "name": "$FF0Walking the water still drown $FFF ft Fredwolf",
+                "author": "FrankTheHamster",
+                "time_author": 39141,
+                "uid": "DiSVbKDDd9jtwS9E2UNztkLzBk3"
+            },
+            {
+                "name": "surfing to diving",
+                "author": "EltooTM",
+                "time_author": 32813,
+                "uid": "WZJ0ii4XPN_DhFmkkzALk0MDzLk"
+            },
+            {
+                "name": "$93FSw$A2Eit$B2Ec$B1Dh $C0Cup",
+                "author": "FrankTheHamster",
+                "time_author": 37997,
+                "uid": "XuzNu3OJqlbaajWP224kTRDzYOd"
+            },
+            {
+                "name": "Icey slopega",
+                "author": "TheOdinTheory",
+                "time_author": 32173,
+                "uid": "AN0Tnzick1Wr7xrTRuKVPYKJqXg"
+            }
+        ]
+    },
+    {
         "edition": 220,
         "campaign_name": "RHQ BONK CUP 220",
         "publish_date": null,
