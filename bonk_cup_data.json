@@ -1,5 +1,105 @@
 [
     {
+        "edition": 223,
+        "campaign_name": "RHQ BONK CUP 223",
+        "publish_date": null,
+        "display_date": "15.1.2026",
+        "winner": "Granady",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/122119",
+        "maps": [
+            {
+                "name": "Black Box",
+                "author": "Ach1oto",
+                "time_author": 40931,
+                "uid": "C_ibzmNMbFVc5zgAsv4OSzzfyT8"
+            },
+            {
+                "name": "Blixthalka",
+                "author": "thekaaate",
+                "time_author": 36392,
+                "uid": "yxmn15MfBeoYe3DIJqfwZBZXvba"
+            },
+            {
+                "name": "$o$F03Tr$F06op$F0Aic$F0Dal $F3EDo$F8Bgl$FD8eg",
+                "author": "Tenax..",
+                "time_author": 45640,
+                "uid": "WqGLqxWzs7glyScKHv6VNL8yWm0"
+            },
+            {
+                "name": "$888808080",
+                "author": "miikapekka",
+                "time_author": 29667,
+                "uid": "0ceQiJWnrgJj43MQLdzWZWVuuPf"
+            },
+            {
+                "name": "Mario pipesinger",
+                "author": "GuiCoin",
+                "time_author": 29492,
+                "uid": "8odGsAtkKE6E900yWhO8zBRLDgj"
+            },
+            {
+                "name": "$b5bSuperflat",
+                "author": "miikapekka",
+                "time_author": 19097,
+                "uid": "JoGpv1gq8f3vl5ilANZ2MI_8wWf"
+            },
+            {
+                "name": "Bonk - Icing",
+                "author": "NielsDewitte",
+                "time_author": 13668,
+                "uid": "U1zTDZO9QYlyL1e5PeRhdso_HM2"
+            },
+            {
+                "name": "$S$iA08 a day keeps the doctor away",
+                "author": "artroy666",
+                "time_author": 24746,
+                "uid": "L6XDggTnTDbOgngAueoc3y1wz5m"
+            },
+            {
+                "name": "$S$ITrust me, backwards is faster",
+                "author": "artroy666",
+                "time_author": 31790,
+                "uid": "xLDUVL2ykqA5kmSGuvJPV0A8ryd"
+            },
+            {
+                "name": "$o$n$F90X $7FEmarks $FAFthe $DF7spot",
+                "author": "MattsSats",
+                "time_author": 39604,
+                "uid": "BFXp72osP5zlpW1SdOv1IyQxrN6"
+            },
+            {
+                "name": "BUGGERS",
+                "author": "Majijej",
+                "time_author": 42385,
+                "uid": "p83ndTTUmqhBUAmK6MBrsrkaXV8"
+            },
+            {
+                "name": "finska snek",
+                "author": "TheOdinTheory",
+                "time_author": 26750,
+                "uid": "14B84iBc9tdgrtFG7PcrQXUCqS9"
+            },
+            {
+                "name": "$6ffmany tiny blocks $6f60 random slowdowns",
+                "author": "miikapekka",
+                "time_author": 24549,
+                "uid": "XDRTPlkOSaX8VyoVvPKz_723Elk"
+            },
+            {
+                "name": "I Always Hated Cactuses",
+                "author": "Hulgodoo",
+                "time_author": 21323,
+                "uid": "4eEZ0w366Qhk28WU4EW5fjEz_Z5"
+            },
+            {
+                "name": "The Vic - I am the one who Bonks",
+                "author": "PengiTM",
+                "time_author": 28768,
+                "uid": "2dO_faxGfNkOhlOc5xVumGBMaSf"
+            }
+        ]
+    },
+    {
         "edition": 222,
         "campaign_name": "RHQ BONK CUP 222",
         "publish_date": null,
