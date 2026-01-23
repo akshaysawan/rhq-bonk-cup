@@ -1,5 +1,99 @@
 [
     {
+        "edition": 224,
+        "campaign_name": "RHQ BONK CUP 224",
+        "publish_date": null,
+        "display_date": "22.1.2026",
+        "winner": "Lars",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/122858",
+        "maps": [
+            {
+                "name": "MonkeyPox",
+                "author": "FrankTheHamster",
+                "time_author": 33152,
+                "uid": "ho69utCsMozyboCOtINyG9SCHT"
+            },
+            {
+                "name": "Bonk Wid Da Bonk Da Bang Da Bang",
+                "author": "hattrick1312",
+                "time_author": 35205,
+                "uid": "rwwQQiP0SMvcwZ98BCbUC2MESM2"
+            },
+            {
+                "name": "Airport Parkour",
+                "author": "Kamikalash",
+                "time_author": 27944,
+                "uid": "IZzmJaDH4Nfycw9SRxmzyHeG6wa"
+            },
+            {
+                "name": "=Gold4FWIPZentaG=",
+                "author": "GuiCoin",
+                "time_author": 31718,
+                "uid": "1eUmQlvF1rzBx8Kg39vrvCIkFj1"
+            },
+            {
+                "name": "Formula B1EM Dutch Grand Bonk",
+                "author": "B1EM_",
+                "time_author": 34581,
+                "uid": "rd2p6Ny632LvAzO6VKPxr4uoh_0"
+            },
+            {
+                "name": "Arcade LOL pro lite",
+                "author": "TIMEOFWOE",
+                "time_author": 25120,
+                "uid": "VJnW4S5xMPwm5AgUKSCM6kxj0M4"
+            },
+            {
+                "name": "Quack 7",
+                "author": "baconpatroller",
+                "time_author": 38255,
+                "uid": "EA54bc1vwSSdNVUWZUQRFZ09z1g"
+            },
+            {
+                "name": "map for Jxliano <3",
+                "author": "humfreeee",
+                "time_author": 18928,
+                "uid": "n6gABVrV7mDC5hCbuTGR5Rp2sve"
+            },
+            {
+                "name": "$0CFG$1DCe$1D9a$2E6r$2E3o$3F0p$3F0h$6F0o$9F0b$CF0i$FF0a",
+                "author": "Svitman",
+                "time_author": 44149,
+                "uid": "AY2xOCSo9sYGJMPOY5VyQDIl1C6"
+            },
+            {
+                "name": "$o$A2B$S$IReactor shenanigans",
+                "author": "artroy666",
+                "time_author": 23121,
+                "uid": "d2MBxmQn6gyJ0ZTL4XKJdqJ8NS3"
+            },
+            {
+                "name": "I love to eat $f35c$ff0r$8f2a$24by$f70o$a43n$111s",
+                "author": "Epination",
+                "time_author": 45564,
+                "uid": "cWMp6ipRVHyFRBzvcUcWyDGUnY4"
+            },
+            {
+                "name": "$6AF$s$iChill water map",
+                "author": "artroy666",
+                "time_author": 34710,
+                "uid": "HFPdtAG0cv99CtJysULvXko8dEh"
+            },
+            {
+                "name": "Bonking Into Space v8",
+                "author": "Lumet.",
+                "time_author": 31207,
+                "uid": "C3ZwEcvgzdUGxtSdJHMHfq0GE67"
+            },
+            {
+                "name": "Bonk - Paradox Valley",
+                "author": "NielsDewitte",
+                "time_author": 28529,
+                "uid": "EpSIJGM3RI7scgHojyxuiRknP_5"
+            }
+        ]
+    },
+    {
         "edition": 223,
         "campaign_name": "RHQ BONK CUP 223",
         "publish_date": null,
