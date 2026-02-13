@@ -1,5 +1,251 @@
 [
     {
+        "edition": 227,
+        "campaign_name": "RHQ BONK CUP 227",
+        "publish_date": null,
+        "display_date": "12.2.2026",
+        "winner": "Yannex",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/126105",
+        "maps": [
+            {
+                "name": "Duck Salsa",
+                "author": "Kamikalash",
+                "time_author": 22421,
+                "uid": "G6pwfuNYE5e0qPSHOIPSKt5GmG0"
+            },
+            {
+                "name": "$4E4$S$ISneklandia",
+                "author": "artroy666",
+                "time_author": 35575,
+                "uid": "6miq0jLj39bU79ABXKFueCK6IXg"
+            },
+            {
+                "name": "$ff0[RPG] $f00Q $ff0-Bonk Cup Preview",
+                "author": "baconpatroller",
+                "time_author": 42997,
+                "uid": "QTlUzcr5p35FjNXBJcnanPLqYsa"
+            },
+            {
+                "name": "Hairy tale",
+                "author": "GuiCoin",
+                "time_author": 29334,
+                "uid": "w6PQnE3pbDYMjSxVLPtu7jcer2m"
+            },
+            {
+                "name": "$S$IAnother day, another AO8",
+                "author": "artroy666",
+                "time_author": 22707,
+                "uid": "b3_K_lP2Vj4taOJ1mpIQ9sNpCdf"
+            },
+            {
+                "name": "$f58Desert Tubes",
+                "author": "Midbooze",
+                "time_author": 27837,
+                "uid": "7nd1AWxdhkZ_ZIEO4J4Dr_YpCy7"
+            },
+            {
+                "name": "$900Fr$A00ac$B00tu$C00re",
+                "author": "LAUZ_",
+                "time_author": 33394,
+                "uid": "RJ99dPRAgfqQF0oZ5umhRV5hmp0"
+            },
+            {
+                "name": "Angled Downhill2 A08",
+                "author": "Quibbles.",
+                "time_author": 30636,
+                "uid": "1CXEw0irMx8NY2it_t67yLClPf4"
+            },
+            {
+                "name": "MagBuggy(MagnetAccelNoGripRally)",
+                "author": "Blarget2",
+                "time_author": 16438,
+                "uid": "A0TMRpg0mPg2zbIBVP6_pcSo1Mc"
+            },
+            {
+                "name": "$96fEggplant",
+                "author": "miikapekka",
+                "time_author": 36570,
+                "uid": "YaPUbG1X1DXZ5y2Y6yW0HasPs58"
+            },
+            {
+                "name": "Trashy Night - Shengar ist ein Molch!",
+                "author": "MKCHICKWIT",
+                "time_author": 41441,
+                "uid": "BGWjUCOJfheoN6oJdqD_HsZRvLl"
+            },
+            {
+                "name": "Just a B- b- basic track",
+                "author": "LLOOTKINGFRED",
+                "time_author": 33894,
+                "uid": "xrCadTzQq5P4fe1XHn_iUJZC7_7"
+            }
+        ]
+    },
+    {
+        "edition": 226,
+        "campaign_name": "RHQ BONK CUP 226",
+        "publish_date": null,
+        "display_date": "5.2.2026",
+        "winner": "Yannex",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/125178",
+        "maps": [
+            {
+                "name": "Paper Prototype",
+                "author": "Ach1oto",
+                "time_author": 43328,
+                "uid": "zUvzSchI2rUN4_eorS95EDE_Yvb"
+            },
+            {
+                "name": "$F00$S$I$wBooster party 2",
+                "author": "artroy666",
+                "time_author": 21811,
+                "uid": "8tFccahtLMYJeZ0gTLyEMFFMBgm"
+            },
+            {
+                "name": "Joelzilla",
+                "author": "Kamikalash",
+                "time_author": 37017,
+                "uid": "eLI0WUHJpvryBDHQQlyrvykvBn3"
+            },
+            {
+                "name": "Forgoten golden road'n'woodend",
+                "author": "GuiCoin",
+                "time_author": 36396,
+                "uid": "YcFYRjUMiFeO48QSB6_LGwmznZh"
+            },
+            {
+                "name": "Ich kann das alles nicht mehr",
+                "author": "Epination",
+                "time_author": 39768,
+                "uid": "vU3irBbJj0X3n9CTejdOtpp0J17"
+            },
+            {
+                "name": "Childhood Road ft' Lenno",
+                "author": "classjan",
+                "time_author": 24677,
+                "uid": "DEU5X_iN8rjE1tZ0sHtSzgn3cpc"
+            },
+            {
+                "name": "$s$0BFS$1BFn$6CF0w0$6CFs$6CFl$5CFi$3CFd$2BFe$0BFr",
+                "author": "Svitman",
+                "time_author": 40790,
+                "uid": "lgAJYw4wxlqFrrWtKuUeSH9wdB7"
+            },
+            {
+                "name": "$c9fDona$9f6tello",
+                "author": "miikapekka",
+                "time_author": 23144,
+                "uid": "TjEPdsSs0L7mzZdjYtCmAaA0Sxg"
+            },
+            {
+                "name": "Pink? Wink? Sink? Think? Slinky?",
+                "author": "LLOOTKINGFRED",
+                "time_author": 29932,
+                "uid": "tueZdHXFpicLKFuzfjLkUuY07mc"
+            },
+            {
+                "name": "$fc6Woodcicle",
+                "author": "miikapekka",
+                "time_author": 31058,
+                "uid": "pMUgpK7qvsYrlng16Rkcptavzy6"
+            },
+            {
+                "name": "Waterberg",
+                "author": "Kamikalash",
+                "time_author": 41255,
+                "uid": "__5sZaL_VEFHxzU682oYJWBpW0n"
+            },
+            {
+                "name": "$w$S$I$EC9Canyon jump",
+                "author": "artroy666",
+                "time_author": 34671,
+                "uid": "0eOZZM36EW9VusPgHNJceu9PVBl"
+            }
+        ]
+    },
+    {
+        "edition": 225,
+        "campaign_name": "RHQ BONK CUP 225",
+        "publish_date": null,
+        "display_date": "29.1.2026",
+        "winner": "SoftyD",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/124190",
+        "maps": [
+            {
+                "name": " Railway Express Rodeo (RER)",
+                "author": "Kamikalash",
+                "time_author": 34138,
+                "uid": "FNstAw6pkJBsKARwE49HFrD1HC2"
+            },
+            {
+                "name": "$o$s$0F0Trackmania D-Day",
+                "author": "VellVee",
+                "time_author": 33609,
+                "uid": "xCSQS79Opgrkujzl1J3j5FCsqY7"
+            },
+            {
+                "name": "Terra Nova Wallclimber (let the flames guide you)",
+                "author": "Lumet.",
+                "time_author": 28069,
+                "uid": "P3gXpYwx0SOHtePbp7E1lUV2r1e"
+            },
+            {
+                "name": "$S$I$OAstolavista",
+                "author": "artroy666",
+                "time_author": 32528,
+                "uid": "wH7h5aUnc9GYVruo1vBUi6rvpy9"
+            },
+            {
+                "name": "Shower thought #15 - Jumping through the Valley",
+                "author": "Megaadri",
+                "time_author": 41358,
+                "uid": "aqd9IeWEW0r2hsumr3ulRNn2v0h"
+            },
+            {
+                "name": "Microbiotic issues",
+                "author": "GuiCoin",
+                "time_author": 39942,
+                "uid": "aPKVkPjR3_U88Yz6O0g9lQI15wl"
+            },
+            {
+                "name": "Slot Car Racer (full stadium)",
+                "author": "TIMEOFWOE",
+                "time_author": 36999,
+                "uid": "xLaCGA1cAxrf4m43lTAcpB1iVub"
+            },
+            {
+                "name": "Quack 8",
+                "author": "baconpatroller",
+                "time_author": 38592,
+                "uid": "g23nsX8ZRhWXfvO1pK9_wDTFscd"
+            },
+            {
+                "name": "$oZ'PG#1 $g- $AAAC$999a$797s$686t$484l$373a$171n$060d",
+                "author": "ZangLaMangue",
+                "time_author": 38832,
+                "uid": "kLJ3eVrNA_s7HF2vjtAqLjdO_x4"
+            },
+            {
+                "name": "$9ffEscape $0ffthe $9ffPF $0ffColony",
+                "author": "miikapekka",
+                "time_author": 28200,
+                "uid": "ZtrzuMH2mT04vB9slfW0RM2HO_g"
+            },
+            {
+                "name": "Lets Take A Walk On The Beach",
+                "author": "Doooondy",
+                "time_author": 34533,
+                "uid": "rzrGa6oXP9WEQDDm1WuhCdlwyC3"
+            },
+            {
+                "name": "Plastic River Island",
+                "author": "RobynLtW",
+                "time_author": 26090,
+                "uid": "ypIwgoX2geM6o5v4h4B88tiMYGb"
+            }
+        ]
+    },
+    {
         "edition": 224,
         "campaign_name": "RHQ BONK CUP 224",
         "publish_date": null,
