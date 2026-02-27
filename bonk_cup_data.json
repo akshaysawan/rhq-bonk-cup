@@ -1,5 +1,181 @@
 [
     {
+        "edition": 229,
+        "campaign_name": "RHQ BONK CUP 229",
+        "publish_date": null,
+        "display_date": "26.2.2026",
+        "winner": "Lars",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/127659",
+        "maps": [
+            {
+                "name": "TRKL Pepew",
+                "author": "Kamikalash",
+                "time_author": 31272,
+                "uid": "9otFSbrNUF7UfrJxn9aDfhP2_C0"
+            },
+            {
+                "name": "$0CFSnekticada Farm ft arcticada",
+                "author": "RHQShengar",
+                "time_author": 43804,
+                "uid": "OrZl7BnnbfTyBLXlVg_yA3jA6j1"
+            },
+            {
+                "name": "$03CB$05Dl$07Du$08Ee$0AE $0CFC$0CFurrent",
+                "author": "LAUZ_",
+                "time_author": 28364,
+                "uid": "mYbZniyvEFF7gMKaVbo5bflczmh"
+            },
+            {
+                "name": "$0faAutodromo $wPRIMAVERA",
+                "author": "Kamikalash",
+                "time_author": 44892,
+                "uid": "Fs0xz3YvioTKup1b2wHKBMKlO32"
+            },
+            {
+                "name": "$w$I$EC9Flying through the canyons",
+                "author": "artroy666",
+                "time_author": 27859,
+                "uid": "dzrcbIM4QQ9LLhdepsiNbenuhGd"
+            },
+            {
+                "name": "$oZ'PG#2$g-$30FE$75FS$BAF'$FFFC$FFFa$DABr$B57g$903o",
+                "author": "ZangLaMangue",
+                "time_author": 30768,
+                "uid": "Ts5otVMHqwY1g80yMpD2v4iyMM8"
+            },
+            {
+                "name": "Prestige Worldwide",
+                "author": "Trev_TM",
+                "time_author": 30591,
+                "uid": "fTh_oF1JBtM_2GOIN4lP6YRXl7j"
+            },
+            {
+                "name": "$5B5$S$iMini AO8 \uf118",
+                "author": "artroy666",
+                "time_author": 37926,
+                "uid": "HsPYSRCUgECAHBBhsPZZmyFb426"
+            },
+            {
+                "name": "laimu",
+                "author": "epsilene",
+                "time_author": 31308,
+                "uid": "1fxwZaXc29hOVahJXJM4qcdMndb"
+            },
+            {
+                "name": "To skill or to gamble",
+                "author": "ChickenOutOfBox",
+                "time_author": 14951,
+                "uid": "r0zo2CBot_33TPauG8oaA0L0O1"
+            },
+            {
+                "name": "Dangerous Roads - Costa Rica",
+                "author": "FriendlySnowbal",
+                "time_author": 42991,
+                "uid": "flC6fFkOHkWEszulMuKDcBh8yId"
+            },
+            {
+                "name": "Hugge Snek",
+                "author": "TheOdinTheory",
+                "time_author": 42534,
+                "uid": "3ztZSUyll1aijZKYXJoqtHd2Jcj"
+            }
+        ]
+    },
+    {
+        "edition": 228,
+        "campaign_name": "RHQ BONK CUP 228",
+        "publish_date": null,
+        "display_date": "19.2.2026",
+        "winner": "Yannex",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/126900",
+        "maps": [
+            {
+                "name": "Slices of SpaceTime",
+                "author": "Ach1oto",
+                "time_author": 32286,
+                "uid": "cd0_t0OhmGVqzOOe2bcSdtPqvRi"
+            },
+            {
+                "name": "$o$FF0Bouncy $0F0Castle",
+                "author": "LennoTM",
+                "time_author": 21794,
+                "uid": "Ji2m5XBy1B_oAf3qq565iWPB_1"
+            },
+            {
+                "name": "$6D8$S$IThat's more like it",
+                "author": "artroy666",
+                "time_author": 32224,
+                "uid": "m_EHjSeUaApYQ5fLSMf3JWIH4l5"
+            },
+            {
+                "name": "Jasper National Park - CE",
+                "author": "Aries__90",
+                "time_author": 42165,
+                "uid": "g5FjzJSYybcFlklFl_98K0_Wbxj"
+            },
+            {
+                "name": "Qui fait le malin\u2026",
+                "author": "Kamikalash",
+                "time_author": 27843,
+                "uid": "bbChmVIem1vhCJ22rXdaxRN9BGc"
+            },
+            {
+                "name": "Blue Bay Brazilian Bird Bonking",
+                "author": "Lumet.",
+                "time_author": 34305,
+                "uid": "9zUiJWfFSt7e8s7a0AGF6XI49Ag"
+            },
+            {
+                "name": "$o$ea2The cartel is on your tail",
+                "author": "healplease",
+                "time_author": 38127,
+                "uid": "pOmKOFUC7XKh8onxbV5MFc4ZAHa"
+            },
+            {
+                "name": "Fancy Pants",
+                "author": "baconpatroller",
+                "time_author": 35807,
+                "uid": "HX04fe19rwQdRMPc2ikovyWMU95"
+            },
+            {
+                "name": "TM driving licence test simulator",
+                "author": "Kobe_VDB",
+                "time_author": 33008,
+                "uid": "YeGJGZk2Fs1Diz9Y1OOutCGiDK2"
+            },
+            {
+                "name": "$s$iFlipmania",
+                "author": "artroy666",
+                "time_author": 45618,
+                "uid": "YnqVaD4gZkS8r3REVJI9G98jN8k"
+            },
+            {
+                "name": "$o$AdeZoooop",
+                "author": "LAUZ_",
+                "time_author": 34351,
+                "uid": "x_svPsPwgCNS_qmuV2QNGjmT6Zf"
+            },
+            {
+                "name": "$0F0Bo$0F5nk$0FAy$0FD Re$3FDsn$8F8e$AF5ke$FF0d - $z$s#001",
+                "author": "Svitman",
+                "time_author": 45000,
+                "uid": "yruHhcEkGvvxeY6pWiZt19fKf8j"
+            },
+            {
+                "name": "Flummoxed",
+                "author": "toastme3",
+                "time_author": 38673,
+                "uid": "AANDQ5f1s3PAKURBLzL2rYKNvt4"
+            },
+            {
+                "name": "bonk of the week #5",
+                "author": "EltooTM",
+                "time_author": 18082,
+                "uid": "cyCHoNZXyM3BrLyw5xcuUAeTDC6"
+            }
+        ]
+    },
+    {
         "edition": 227,
         "campaign_name": "RHQ BONK CUP 227",
         "publish_date": null,
