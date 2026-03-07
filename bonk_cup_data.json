@@ -1,5 +1,99 @@
 [
     {
+        "edition": 230,
+        "campaign_name": "RHQ BONK CUP 230",
+        "publish_date": null,
+        "display_date": "5.3.2026",
+        "winner": "Yannex",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/128648",
+        "maps": [
+            {
+                "name": "Wintereinbruch",
+                "author": "Aries__90",
+                "time_author": 43376,
+                "uid": "9gkIfQwZnJ0QETz44SvkWtFS0B4"
+            },
+            {
+                "name": "Diagonal Skill Simulator",
+                "author": "FriendlySnowbal",
+                "time_author": 19305,
+                "uid": "bpYc144MeG8Y08RdaLkzOyoK6Ob"
+            },
+            {
+                "name": "Bonk Mountain",
+                "author": "GuiCoin",
+                "time_author": 31348,
+                "uid": "vAVLEYBv_vCPk9qt2PJFhXtY0_6"
+            },
+            {
+                "name": "This map is not what it seems",
+                "author": "ornzn",
+                "time_author": 31390,
+                "uid": "Hb549ZVHBMHo9cfzP9pe_GrDMM7"
+            },
+            {
+                "name": "Snowo go brrrr",
+                "author": "Trev_TM",
+                "time_author": 45573,
+                "uid": "sRgauAN2trSo75uDNcZS9CsvNi"
+            },
+            {
+                "name": "$0f0 Skill Map$g $ifor sure",
+                "author": "arcticada",
+                "time_author": 28327,
+                "uid": "8ji6TjrwhzpYoJ8vsMyZDqyyOjd"
+            },
+            {
+                "name": "$0f0 Skill Map$g $ifor real this time",
+                "author": "arcticada",
+                "time_author": 28314,
+                "uid": "wCYhdsH4hGr0WwJThrfqiOnGiYl"
+            },
+            {
+                "name": "$39fRandom $f30Shawarma $39fGenerator",
+                "author": "baconpatroller",
+                "time_author": 21590,
+                "uid": "jKIL6QBcEgiDwSV6692mpoWSnOm"
+            },
+            {
+                "name": "Autodromo Primavera - wood nocam",
+                "author": "Kamikalash",
+                "time_author": 25741,
+                "uid": "uV6fhjM5ePukRgfcp1hxIh7gdu6"
+            },
+            {
+                "name": "$BA6$S$IFragile Quicksands",
+                "author": "artroy666",
+                "time_author": 34994,
+                "uid": "BK4NqzuA4KGQ2uljEkMeeW2wVE0"
+            },
+            {
+                "name": "$s$w$C0FPurple$FF0Spark",
+                "author": "Svitman",
+                "time_author": 41236,
+                "uid": "4z6xLLH7m_evMed4YKHsotuGrH7"
+            },
+            {
+                "name": "BeeBonk",
+                "author": "BaoGab",
+                "time_author": 35388,
+                "uid": "9LDAXgz08cJd4srjMOpfM1tC6i4"
+            },
+            {
+                "name": "$00fbonk cup deluxe - $f2b dirty socks",
+                "author": "BirdieTM",
+                "time_author": 16918,
+                "uid": "UphGC__Xf7VP2wa2a_KhhQHzZI7"
+            },
+            {
+                "name": "dirt-ice",
+                "author": "EltooTM",
+                "time_author": 27624,
+                "uid": "Ksv0LcGVecUzLtVgu8lD25qIdck"
+            }
+        ]
+    },
+    {
         "edition": 229,
         "campaign_name": "RHQ BONK CUP 229",
         "publish_date": null,
