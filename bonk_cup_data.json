@@ -1,5 +1,87 @@
 [
     {
+        "edition": 231,
+        "campaign_name": "RHQ BONK CUP 231",
+        "publish_date": null,
+        "display_date": "12.3.2026",
+        "winner": "Granady",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/129458",
+        "maps": [
+            {
+                "name": "NULL Lab - Transfer",
+                "author": "Ach1oto",
+                "time_author": 36081,
+                "uid": "dstnb_htdWs4ruBJBNGFL11Icx2"
+            },
+            {
+                "name": "$o$s$AFCBob Cousy",
+                "author": "Kenny22crazy",
+                "time_author": 34824,
+                "uid": "gp8urYF2obZilOrN3ZeDT0HR1s8"
+            },
+            {
+                "name": "Oink 3",
+                "author": "baconpatroller",
+                "time_author": 23561,
+                "uid": "oR7kd_A6jcf5kT8SSrpn7KChty9"
+            },
+            {
+                "name": "$o$p$6FFG$7FFl$8FFi$9FFs$BFFs$CFFb$DFFe$EFFr$FFFg",
+                "author": "ZangLaMangue",
+                "time_author": 36386,
+                "uid": "7plplqELMVJYlcRSo8eZEuFemFa"
+            },
+            {
+                "name": "$oWarBonkers$z Besieged city",
+                "author": "GuiCoin",
+                "time_author": 34400,
+                "uid": "Cme2_2ejoSEZHa6hyqphNm2zf6d"
+            },
+            {
+                "name": "$o$900Parrot Map 2",
+                "author": "Lumet.",
+                "time_author": 32275,
+                "uid": "mgnagSXu9lwA1f2rDcBlW5iRqw6"
+            },
+            {
+                "name": "$o$FF0R$FFFO$00FY$F00A$000L $0F0Paths",
+                "author": "Svitman",
+                "time_author": 51978,
+                "uid": "H6vcOFc5zXK6c8hfYNtc_lDDXe2"
+            },
+            {
+                "name": "$29D$S$IThere's never too much of AO8",
+                "author": "artroy666",
+                "time_author": 26964,
+                "uid": "tdl1yxJ8_U8_eDk2E8i52c8jIm9"
+            },
+            {
+                "name": "The $f39turbulent lovelife $fffof Selena Gomez",
+                "author": "baconpatroller",
+                "time_author": 23994,
+                "uid": "EFc10LRjbDBZdqXsAydXmQHVWfg"
+            },
+            {
+                "name": "$150Bu$160m$161pin$171g u$181p $182t$192hat hi$1b2l$1b3l",
+                "author": "FriendlySnowbal",
+                "time_author": 40996,
+                "uid": "WSr8T3rP_Q2Uczhg993Oy4Lugdh"
+            },
+            {
+                "name": "$oWarBonkers $zBramble ride",
+                "author": "GuiCoin",
+                "time_author": 39966,
+                "uid": "owREut283eVuPQ3r751g1jFYCDe"
+            },
+            {
+                "name": "$S$ISomewhere Beyond The Moon",
+                "author": "artroy666",
+                "time_author": 33530,
+                "uid": "eXBJaLi77IQlmn97nGSUDliJbM5"
+            }
+        ]
+    },
+    {
         "edition": 230,
         "campaign_name": "RHQ BONK CUP 230",
         "publish_date": null,
