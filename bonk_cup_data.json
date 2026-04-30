@@ -1,5 +1,263 @@
 [
     {
+        "edition": 237,
+        "campaign_name": "RHQ BONK CUP 237",
+        "publish_date": null,
+        "display_date": "23.4.2026",
+        "winner": "Granady",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/135054",
+        "maps": [
+            {
+                "name": "$F92Chro$D5Fma Rogu$36FeTrack",
+                "author": "Ach1oto",
+                "time_author": 30894,
+                "uid": "xkAr3FECiRELlRIsziiGL8D9OTl"
+            },
+            {
+                "name": "Gunter 2",
+                "author": "baconpatroller",
+                "time_author": 32782,
+                "uid": "GpfgvCxFAY2P6XPjvgmL7ap5322"
+            },
+            {
+                "name": "Who put a turn in my A08 map",
+                "author": "FriendlySnowbal",
+                "time_author": 44490,
+                "uid": "Qzm5VKzpj2kL0Pl3ISXkTMoCfFf"
+            },
+            {
+                "name": "$ACF$S$iRally Peaks",
+                "author": "artroy666",
+                "time_author": 32576,
+                "uid": "Hml7rAZMNj7lKeracmQKc69yi3e"
+            },
+            {
+                "name": "$w$s$888Desertrooms",
+                "author": "Svitman",
+                "time_author": 44028,
+                "uid": "CTdFJLQ7sP5LUtLwbAqNZ5ZdUGc"
+            },
+            {
+                "name": "$4B5$S$IFree bird",
+                "author": "artroy666",
+                "time_author": 41251,
+                "uid": "Qz1AFzoAHg18CZTxhmypraU3bmc"
+            },
+            {
+                "name": "$o$s$i$888Slow$z $o$s$t$CCCCastle",
+                "author": "LAUZ_",
+                "time_author": 25910,
+                "uid": "TaSpT7Umo7VafhpNJqXOgdpJpr5"
+            },
+            {
+                "name": "Neo Bonk - 'Mid",
+                "author": "Neofelis.fi",
+                "time_author": 28662,
+                "uid": "ErUQfyIFkD6TBsJPvZ6vqFHZ6ae"
+            },
+            {
+                "name": "$fA0oR$ff0slidE",
+                "author": "TheRealigi",
+                "time_author": 39179,
+                "uid": "ftuq4YM77BPD6YTZOPuobRouE05"
+            },
+            {
+                "name": "$07cFist$4acBump-er",
+                "author": "FriendlySnowbal",
+                "time_author": 40892,
+                "uid": "Za3LLRelwXEkcxI214Uzt1XkQCk"
+            },
+            {
+                "name": "I Dreamt I Was Driving on the Busses",
+                "author": "Lumet.",
+                "time_author": 25387,
+                "uid": "vSJzxksbVTKfoCQxR1qDLsEcBUb"
+            },
+            {
+                "name": "$z$i$s$w$fd0B$fc0o$fb0n$fa0k$f90h$f80i$f70l$f60l $2f0Jam",
+                "author": "miraclewhips",
+                "time_author": 30710,
+                "uid": "SF9TNFOnPFPvQ1NSRqUuVOrIzvf"
+            },
+            {
+                "name": "Neo Bonk - Hypnocrow",
+                "author": "Neofelis.fi",
+                "time_author": 33588,
+                "uid": "yMNzuhL1rZ6UctoIhkFJ1oYAGpc"
+            }
+        ]
+    },
+    {
+        "edition": 236,
+        "campaign_name": "RHQ BONK CUP 236",
+        "publish_date": null,
+        "display_date": "16.4.2026",
+        "winner": "Golio",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/134041",
+        "maps": [
+            {
+                "name": "$o$0FFFail $F19Cars$z - Dizzy Heights",
+                "author": "RafTorTV",
+                "time_author": 28574,
+                "uid": "LidhbwU6ONqT7CpUXeJFAelUtC9"
+            },
+            {
+                "name": "Mario Machines 2",
+                "author": "GuiCoin",
+                "time_author": 32002,
+                "uid": "pMEAJqNYR6S_bZgW0Cr1BWDM863"
+            },
+            {
+                "name": "$S$I$w$6C4Weekly dose of A08",
+                "author": "artroy666",
+                "time_author": 27785,
+                "uid": "DLknV5KlFs1xtF2Vm5TT8PabpMa"
+            },
+            {
+                "name": "Trust, the spectators are fine!",
+                "author": "Speedy-TM",
+                "time_author": 34237,
+                "uid": "bH8zoW8RtHYNfyD0q6Ul06Gx6s6"
+            },
+            {
+                "name": "Wooplah",
+                "author": "BaoGab",
+                "time_author": 24524,
+                "uid": "678ApIA5krQLM3rbu9mgrD7BWq1"
+            },
+            {
+                "name": "La foire du trou",
+                "author": "Kamikalash",
+                "time_author": 31190,
+                "uid": "whKmv1AWxwBFmrKW7qc2OB8FZT1"
+            },
+            {
+                "name": "$S$iI like my snow car Fast",
+                "author": "artroy666",
+                "time_author": 24747,
+                "uid": "gNLWQe_ASJJqfkPXh3jV6X_7Mra"
+            },
+            {
+                "name": "$o$0FF3$0F06$FA00$F00\u00b0",
+                "author": "Bliksemsteen",
+                "time_author": 30987,
+                "uid": "J3Plqv1MEzrwKCc5JRnSV8dplZ5"
+            },
+            {
+                "name": "Unusual Blocks Playground",
+                "author": "FriendlySnowbal",
+                "time_author": 43236,
+                "uid": "trKirt5r8EBZTKIFsrCoCbJn0Ia"
+            },
+            {
+                "name": "$o$F70R$F50o$F70l$F50l$F70i$F50n$F70g$z $o$F50L$F70o$F50g",
+                "author": "LAUZ_",
+                "time_author": 27889,
+                "uid": "n8sxNPn_woYuuKlguR6eFTfxFh8"
+            },
+            {
+                "name": "BOnk 67",
+                "author": "TiToch22",
+                "time_author": 28587,
+                "uid": "y9CF_Wtz0c77Q5AvSDwMSLgg73i"
+            },
+            {
+                "name": "$s$o$C9FStairs $3CCto $9C0Victory",
+                "author": "Svitman",
+                "time_author": 52962,
+                "uid": "EIeeB9HeUtDy2OHtvIOUd41ixBd"
+            }
+        ]
+    },
+    {
+        "edition": 235,
+        "campaign_name": "RHQ BONK CUP 235",
+        "publish_date": null,
+        "display_date": "9.4.2026",
+        "winner": "AR",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/133106",
+        "maps": [
+            {
+                "name": "$fda$sLess $fdcCar $feeGo",
+                "author": "VertexWitch",
+                "time_author": 17357,
+                "uid": "5xMMPrqFgEaQjfU5xyGtCArCYse"
+            },
+            {
+                "name": "$o$FC0O$FFFn $F90T$FFFhe $F60B$FFFeach",
+                "author": "BaoGab",
+                "time_author": 25098,
+                "uid": "KbLRGolBn11bpEDYljqqgkoeSP3"
+            },
+            {
+                "name": "Rocket Pants Hill",
+                "author": "Quibbles.",
+                "time_author": 24651,
+                "uid": "8kB1aASWmgN8R0oIKFST9EvySre"
+            },
+            {
+                "name": "$F33Red $FC7Delta",
+                "author": "amarok.czu",
+                "time_author": 26511,
+                "uid": "JSsW0eoFzRPi7Wg8TFzU1uZueWl"
+            },
+            {
+                "name": "we got redbull faster at home",
+                "author": "FriendlySnowbal",
+                "time_author": 43238,
+                "uid": "xOIRNHqBWhymbBXfQFBlGqTb8Wk"
+            },
+            {
+                "name": "$S$ICrazy days",
+                "author": "artroy666",
+                "time_author": 38195,
+                "uid": "QHGsbcvmYd7t9xz_t1Z0aYivGX8"
+            },
+            {
+                "name": "switchslop",
+                "author": "epsi..",
+                "time_author": 28126,
+                "uid": "b116J_bDSJRcgNax_8xfX0_LME3"
+            },
+            {
+                "name": "$s$dd0Why $0d0track $gon $00dmy $d63AO8 $dddmadge",
+                "author": "Svitman",
+                "time_author": 44409,
+                "uid": "xWeTG6aasQOC9pYrCSZ8UibXKS1"
+            },
+            {
+                "name": "Rallyo shroom",
+                "author": "GuiCoin",
+                "time_author": 41544,
+                "uid": "nVozPNudZIObsqz_IXyJkygzJPj"
+            },
+            {
+                "name": "$9FF$s Bern Wouldn't LICKA But Had To SNIFFA",
+                "author": "Lumet.",
+                "time_author": 32465,
+                "uid": "xd80fNE4ifWmLiIEKyXDNup3cJi"
+            },
+            {
+                "name": "$06cWallRider",
+                "author": "Froosti_XXL",
+                "time_author": 36713,
+                "uid": "a6XTmTVa54qVH1HjP8F3yIOToFj"
+            },
+            {
+                "name": "$w$D03$S$iRed bonkness",
+                "author": "artroy666",
+                "time_author": 34035,
+                "uid": "aebb3xTx9oWPiupwxxlizpWuAI8"
+            },
+            {
+                "name": "$o $1E0 Super$FA0Spiral$F00Loop",
+                "author": "Bliksemsteen",
+                "time_author": 29426,
+                "uid": "bhUJ1LhEeggR_dMo7Yqs2oIUVJc"
+            }
+        ]
+    },
+    {
         "edition": 234,
         "campaign_name": "RHQ BONK CUP 234",
         "publish_date": null,
