@@ -1,5 +1,93 @@
 [
     {
+        "edition": 248,
+        "campaign_name": "RHQ BONK CUP 248",
+        "publish_date": null,
+        "display_date": "9.7.2026",
+        "winner": NaN,
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/146568",
+        "maps": [
+            {
+                "name": "Arctic Expression ft arcticada",
+                "author": "RHQShengar",
+                "time_author": 44871,
+                "uid": "kDAKIh6hsdS5VtcAoozWmrPZbtj"
+            },
+            {
+                "name": "The longest shortcut adventure 2",
+                "author": "GuiCoin",
+                "time_author": 42132,
+                "uid": "A2w_9XGq299912oDMB41VEKJXGk"
+            },
+            {
+                "name": "$w$o$F00Spe$F44edy $F88Hur$FCCdles$FFF",
+                "author": "donepanda",
+                "time_author": 19957,
+                "uid": "07UHwVQuTCjzlssjPBjqdJ4YUq2"
+            },
+            {
+                "name": "$o$1C1TrackmaniaDash$z - $019Stereo Madness $999(Part 4)",
+                "author": "Ach1oto",
+                "time_author": 39446,
+                "uid": "qHMZQgZIrl5xvJUpnlsvZpa9t06"
+            },
+            {
+                "name": "Snow car reactor zoop map #1",
+                "author": "Lumet.",
+                "time_author": 28843,
+                "uid": "9iUy2lL7snO8kPyfnQvq7UlhfT3"
+            },
+            {
+                "name": "$o$s2D waves",
+                "author": "BaoGab",
+                "time_author": 23156,
+                "uid": "kJ1hxZtCPRQsiN4d0sjGzR2g7Zb"
+            },
+            {
+                "name": "$913$o$sHole=Goal",
+                "author": "artroy666",
+                "time_author": 36499,
+                "uid": "tbd0LMZwgkabbSUywcKI3PX_WX"
+            },
+            {
+                "name": "Totally normal A08",
+                "author": "Sanse.2397",
+                "time_author": 22138,
+                "uid": "90Hqjc3Zd2KkQHBn0xSvTRoGjMb"
+            },
+            {
+                "name": "$O  $3FFWater $F93Rally",
+                "author": "LLOOTKINGFRED",
+                "time_author": 45264,
+                "uid": "SMERipgJTQgeTU08IFdQ2DKtLw7"
+            },
+            {
+                "name": "Wet Puppy Mechanics",
+                "author": "Lumet.",
+                "time_author": 30114,
+                "uid": "DEK9VPPJuRDcpYL6zr3KA6TqcPh"
+            },
+            {
+                "name": "$4ffWATER$s$ff0boost$z$BF0SLIDE",
+                "author": "Svitman",
+                "time_author": 44735,
+                "uid": "PYhbj83ZEBFSNtWqH0TqrTddS8d"
+            },
+            {
+                "name": "$S$IFragile minds",
+                "author": "artroy666",
+                "time_author": 28388,
+                "uid": "675fv7LpDjCXeNVqiaJ5nWET5yb"
+            },
+            {
+                "name": "$s$5cdSi$4abnk$389in$267g$145Dash",
+                "author": "isigold",
+                "time_author": 43972,
+                "uid": "Y6AXADtNAZAheWUvIvaIoPmhozm"
+            }
+        ]
+    },
+    {
         "edition": 247,
         "campaign_name": "RHQ BONK CUP 247",
         "publish_date": null,
