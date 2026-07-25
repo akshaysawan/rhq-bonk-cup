@@ -1,10 +1,104 @@
 [
     {
+        "edition": 249,
+        "campaign_name": "RHQ BONK CUP 249",
+        "publish_date": null,
+        "display_date": "23.7.2026",
+        "winner": "artroy666",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/150268",
+        "maps": [
+            {
+                "name": "$8D4$S$iBonk Aqua",
+                "author": "artroy666",
+                "time_author": 32264,
+                "uid": "1jxg8eR7CUYTI8hwMAhHLprxzU1"
+            },
+            {
+                "name": "Great Rally Slides",
+                "author": "Kamikalash",
+                "time_author": 38783,
+                "uid": "G1XwBoTePZMYgsZxBXrq5rXPT80"
+            },
+            {
+                "name": " $S$I$820Black Foundry $fff ft artroy",
+                "author": "VynxPrime",
+                "time_author": 22214,
+                "uid": "JzRrlav35p5lQgF3rLev2t5cN8h"
+            },
+            {
+                "name": "$S$IMoving on",
+                "author": "artroy666",
+                "time_author": 37926,
+                "uid": "w7sduqSofqdmlaw61HRiHYlAL6i"
+            },
+            {
+                "name": "Mini $0ffPlastic $08fZone",
+                "author": "Dada6_coasters",
+                "time_author": 23526,
+                "uid": "DbGeo3aX8H7qS5oSfwwku2IS6Sa"
+            },
+            {
+                "name": "$z$w$o$m$29FLong $DB8Wood",
+                "author": "donepanda",
+                "time_author": 39952,
+                "uid": "pAxJxNVI_vIhJbt0CQzt4I3yJ35"
+            },
+            {
+                "name": "4 $00fCheckpoints $ffffor the $f0fWIN",
+                "author": "Dada6_coasters",
+                "time_author": 20915,
+                "uid": "s0ofk6RffPhlI4VXmHaWFbOC7F1"
+            },
+            {
+                "name": "$byour fault feel bad",
+                "author": "RHQShengar",
+                "time_author": 32538,
+                "uid": "D3OZY5yryMXicbIcd7LhySio6hg"
+            },
+            {
+                "name": "$s$0FFjumpy flippy paradise",
+                "author": "PsyberTM",
+                "time_author": 32027,
+                "uid": "7MFT977LbGvXJ6qWf5IXzPqKYs5"
+            },
+            {
+                "name": "$000$sPLEB$F80TECH",
+                "author": "Svitman",
+                "time_author": 38185,
+                "uid": "FyHNPI72KEyz_PuJPrvtfJ0yY96"
+            },
+            {
+                "name": "$w$s$b$c11F$fffried$a2b $c11R$fffice $sft' $c11aethski",
+                "author": "Aquariummm",
+                "time_author": 28997,
+                "uid": "MTJk0eXHuff4VGz7mStMP32itOk"
+            },
+            {
+                "name": "redhead",
+                "author": "epsi..",
+                "time_author": 33689,
+                "uid": "YxW4oSq2Svw2uyHFFMpnsOoJ0k7"
+            },
+            {
+                "name": "This guy",
+                "author": "Looter-",
+                "time_author": 34368,
+                "uid": "NqtKkFWV6zKTRAUWlXTJ23j_Vt1"
+            },
+            {
+                "name": "Neo Bonk - D6",
+                "author": "Neofelis.fi",
+                "time_author": 26304,
+                "uid": "MHXdNnFcHJ2a4yPzV6dNRow3mUh"
+            }
+        ]
+    },
+    {
         "edition": 248,
         "campaign_name": "RHQ BONK CUP 248",
         "publish_date": null,
         "display_date": "9.7.2026",
-        "winner": NaN,
+        "winner": "Lars",
         "tm_io_url": "https://trackmania.io/#/campaigns/26830/146568",
         "maps": [
             {
