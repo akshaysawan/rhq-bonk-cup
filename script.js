@@ -1,10 +1,15 @@
 let allCups = [];
+let allFlatMaps = [];
 let winsChartInstance = null;
 let mappersChartInstance = null;
+let currentCupSort = "edition-desc";
+let currentMapSort = "edition-desc";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const container = document.getElementById("cup-list");
     const searchInput = document.getElementById("search-input");
+    const cupSortSelect = document.getElementById("cup-sort-select");
+    const mapSearchInput = document.getElementById("map-search-input");
+    const mapSortSelect = document.getElementById("map-sort-select");
     const yearFilter = document.getElementById("year-filter");
 
     // --- SCROLL LISTENER FOR STICKY HEADER ---
@@ -16,42 +21,42 @@ document.addEventListener("DOMContentLoaded", () => {
             header.classList.remove('scrolled');
         }
     });
-    // ------------------------------------------
 
     fetch('bonk_cup_data.json')
         .then(res => res.json())
         .then(data => {
             allCups = data;
+            allFlatMaps = extractAllMaps(data);
             
             // Initial Renders
             renderStats(allCups);
-            renderList(allCups);
+            applyCampaignFilterAndSort();
+            renderMapsTab();
             populateYearFilter(allCups);
             
-            // Render Default (All Time)
+            // Render Stats View (All Time)
             updateStatsView(allCups);
 
             setTimeout(checkDeepLink, 500);
         })
         .catch(err => console.error(err));
 
-    // Search Listener
-    searchInput.addEventListener("input", (e) => {
-        const query = e.target.value.toLowerCase().trim();
-        if (!query) { renderList(allCups); return; }
-        const filtered = allCups.filter(cup => {
-            const inName = cup.campaign_name.toLowerCase().includes(query);
-            const inWinner = (cup.winner || "").toLowerCase().includes(query);
-            const inEdition = String(cup.edition).includes(query);
-            let inMaps = false;
-            if (cup.maps) inMaps = cup.maps.some(map => map.name.toLowerCase().includes(query) || map.author.toLowerCase().includes(query));
-            return inName || inWinner || inEdition || inMaps;
-        });
-        renderList(filtered);
+    // Campaign Search & Sort Listeners
+    if (searchInput) searchInput.addEventListener("input", applyCampaignFilterAndSort);
+    if (cupSortSelect) cupSortSelect.addEventListener("change", (e) => {
+        currentCupSort = e.target.value;
+        applyCampaignFilterAndSort();
+    });
+
+    // Maps Tab Search & Sort Listeners
+    if (mapSearchInput) mapSearchInput.addEventListener("input", renderMapsTab);
+    if (mapSortSelect) mapSortSelect.addEventListener("change", (e) => {
+        currentMapSort = e.target.value;
+        renderMapsTab();
     });
 
     // Year Filter Listener
-    yearFilter.addEventListener("change", (e) => {
+    if (yearFilter) yearFilter.addEventListener("change", (e) => {
         const selectedYear = e.target.value;
         let filteredData = allCups;
 
@@ -64,7 +69,32 @@ document.addEventListener("DOMContentLoaded", () => {
         
         updateStatsView(filteredData);
     });
+
+    // Modal Keyboard Close (ESC)
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closePlayerModal();
+    });
 });
+
+// --- HELPER: Extract All Flat Maps ---
+function extractAllMaps(cups) {
+    const maps = [];
+    cups.forEach(cup => {
+        if (cup.maps && Array.isArray(cup.maps)) {
+            cup.maps.forEach(map => {
+                maps.push({
+                    ...map,
+                    edition: cup.edition,
+                    campaign_name: cup.campaign_name,
+                    winner: cup.winner,
+                    display_date: cup.display_date,
+                    publish_date: cup.publish_date
+                });
+            });
+        }
+    });
+    return maps;
+}
 
 // --- HELPER: Get Year from Cup ---
 function getYearFromCup(cup) {
@@ -88,12 +118,53 @@ function populateYearFilter(data) {
     
     const sortedYears = Array.from(years).sort((a, b) => b - a);
     const select = document.getElementById("year-filter");
+    if (!select) return;
+    
     sortedYears.forEach(year => {
         const option = document.createElement("option");
         option.value = year;
         option.textContent = year;
         select.appendChild(option);
     });
+}
+
+// --- Campaign Filter & Sort Master ---
+function applyCampaignFilterAndSort() {
+    const searchInput = document.getElementById("search-input");
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+    
+    let filtered = [...allCups];
+
+    if (query) {
+        filtered = filtered.filter(cup => {
+            const inName = (cup.campaign_name || "").toLowerCase().includes(query);
+            const inWinner = (cup.winner || "").toLowerCase().includes(query);
+            const inEdition = String(cup.edition).includes(query);
+            let inMaps = false;
+            if (cup.maps) {
+                inMaps = cup.maps.some(map => 
+                    (map.name || "").toLowerCase().includes(query) || 
+                    (map.author || "").toLowerCase().includes(query)
+                );
+            }
+            return inName || inWinner || inEdition || inMaps;
+        });
+    }
+
+    // Sort
+    filtered.sort((a, b) => {
+        if (currentCupSort === "edition-desc") return b.edition - a.edition;
+        if (currentCupSort === "edition-asc") return a.edition - b.edition;
+        if (currentCupSort === "maps-desc") return (b.maps ? b.maps.length : 0) - (a.maps ? a.maps.length : 0);
+        if (currentCupSort === "time-desc") {
+            const totalA = (a.maps || []).reduce((acc, m) => acc + (m.time_author || 0), 0);
+            const totalB = (b.maps || []).reduce((acc, m) => acc + (m.time_author || 0), 0);
+            return totalB - totalA;
+        }
+        return b.edition - a.edition;
+    });
+
+    renderList(filtered);
 }
 
 // --- Master Update Function for Stats Tab ---
@@ -103,12 +174,10 @@ function updateStatsView(data) {
     renderTrivia(data); 
 }
 
-// --- UPDATED: renderStats now targets the Header Elements ---
 function renderStats(data) {
     const totalCups = data.length;
     const uniqueWinners = new Set(data.map(c => c.winner).filter(w => w && w !== "Unknown"));
     
-    // Update text directly in the sticky header
     const totalEl = document.getElementById("stat-total-cups");
     const winnersEl = document.getElementById("stat-unique-winners");
     
@@ -117,17 +186,27 @@ function renderStats(data) {
 }
 
 function renderTrivia(data) {
-    let longestMap = { time: 0, name: "N/A", author: "-" };
-    let shortestMap = { time: 99999999, name: "N/A", author: "-" };
+    let longestMap = { time: 0, name: "N/A", author: "-", edition: 0 };
+    let shortestMap = { time: 99999999, name: "N/A", author: "-", edition: 0 };
+    const mappersCount = {};
+    const winsCount = {};
     
     data.forEach(cup => {
+        if (cup.winner && cup.winner !== "Unknown") {
+            winsCount[cup.winner] = (winsCount[cup.winner] || 0) + 1;
+        }
+
         if(cup.maps) {
             cup.maps.forEach(m => {
+                if (m.author && !m.author.includes("-")) {
+                    mappersCount[m.author] = (mappersCount[m.author] || 0) + 1;
+                }
+
                 if(m.time_author > longestMap.time) {
-                    longestMap = { time: m.time_author, name: m.name, author: m.author };
+                    longestMap = { time: m.time_author, name: m.name, author: m.author, edition: cup.edition };
                 }
                 if(m.time_author > 1000 && m.time_author < shortestMap.time) {
-                    shortestMap = { time: m.time_author, name: m.name, author: m.author };
+                    shortestMap = { time: m.time_author, name: m.name, author: m.author, edition: cup.edition };
                 }
             });
         }
@@ -153,6 +232,11 @@ function renderTrivia(data) {
     });
     if(currentStreak > bestStreak.count) bestStreak = { count: currentStreak, player: lastWinner };
 
+    // Find top mapper & winner
+    const topMapper = Object.entries(mappersCount).sort((a,b) => b[1] - a[1])[0] || ["N/A", 0];
+    const topWinner = Object.entries(winsCount).sort((a,b) => b[1] - a[1])[0] || ["N/A", 0];
+    const pioneerCup = chron.find(c => c.edition === 1 || c.winner);
+
     const formatTime = (ms) => {
         if (ms === 0 || ms === 99999999) return "-";
         const min = Math.floor(ms / 60000);
@@ -166,7 +250,7 @@ function renderTrivia(data) {
             <div class="trivia-content">
                 <div class="trivia-label">Longest Map</div>
                 <div class="trivia-value">${formatTmName(longestMap.name)}</div>
-                <div class="trivia-sub">${formatTime(longestMap.time)} by ${longestMap.author}</div>
+                <div class="trivia-sub">${formatTime(longestMap.time)} by <span class="player-link" onclick="openPlayerModal('${escapeJsStr(longestMap.author)}')">${longestMap.author}</span> (Cup #${longestMap.edition})</div>
             </div>
         </div>
         <div class="trivia-item">
@@ -174,15 +258,58 @@ function renderTrivia(data) {
             <div class="trivia-content">
                 <div class="trivia-label">Shortest Map</div>
                 <div class="trivia-value">${formatTmName(shortestMap.name)}</div>
-                <div class="trivia-sub">${formatTime(shortestMap.time)} by ${shortestMap.author}</div>
+                <div class="trivia-sub">${formatTime(shortestMap.time)} by <span class="player-link" onclick="openPlayerModal('${escapeJsStr(shortestMap.author)}')">${shortestMap.author}</span> (Cup #${shortestMap.edition})</div>
             </div>
         </div>
         <div class="trivia-item">
             <div class="trivia-icon"><i class="fas fa-fire"></i></div>
             <div class="trivia-content">
                 <div class="trivia-label">Highest Win Streak</div>
-                <div class="trivia-value">${bestStreak.player}</div>
+                <div class="trivia-value"><span class="player-link" onclick="openPlayerModal('${escapeJsStr(bestStreak.player)}')">${bestStreak.player}</span></div>
                 <div class="trivia-sub">${bestStreak.count} Cups in a row</div>
+            </div>
+        </div>
+
+        <div style="margin-top:20px;">
+            <h4 style="margin:0 0 10px; color:#fff; font-size:1.1rem; display:flex; align-items:center; gap:8px;">
+                <i class="fas fa-award" style="color:#ffd700;"></i> Community Achievement Badges
+            </h4>
+            <div class="badges-grid">
+                <div class="badge-card">
+                    <div class="badge-icon"><i class="fas fa-crown"></i></div>
+                    <div class="badge-info">
+                        <div class="badge-title">Dominator</div>
+                        <div class="badge-desc">Most Bonk Cup Victories</div>
+                        <div class="badge-winner"><span class="player-link" onclick="openPlayerModal('${escapeJsStr(topWinner[0])}')">${topWinner[0]}</span> (${topWinner[1]} Wins)</div>
+                    </div>
+                </div>
+
+                <div class="badge-card">
+                    <div class="badge-icon"><i class="fas fa-hammer"></i></div>
+                    <div class="badge-info">
+                        <div class="badge-title">Master Builder</div>
+                        <div class="badge-desc">Most Campaign Maps Created</div>
+                        <div class="badge-winner"><span class="player-link" onclick="openPlayerModal('${escapeJsStr(topMapper[0])}')">${topMapper[0]}</span> (${topMapper[1]} Maps)</div>
+                    </div>
+                </div>
+
+                <div class="badge-card">
+                    <div class="badge-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="badge-info">
+                        <div class="badge-title">Speed Demon</div>
+                        <div class="badge-desc">Fastest Map Author Time</div>
+                        <div class="badge-winner">${formatTime(shortestMap.time)} by <span class="player-link" onclick="openPlayerModal('${escapeJsStr(shortestMap.author)}')">${shortestMap.author}</span></div>
+                    </div>
+                </div>
+
+                <div class="badge-card">
+                    <div class="badge-icon"><i class="fas fa-flag-checkered"></i></div>
+                    <div class="badge-info">
+                        <div class="badge-title">Pioneer</div>
+                        <div class="badge-desc">Winner of Bonk Cup #1</div>
+                        <div class="badge-winner"><span class="player-link" onclick="openPlayerModal('${escapeJsStr(pioneerCup ? pioneerCup.winner : 'N/A')}')">${pioneerCup ? pioneerCup.winner : 'N/A'}</span></div>
+                    </div>
+                </div>
             </div>
         </div>
     `;
@@ -215,6 +342,13 @@ function renderWinsChart(data) {
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            onClick: (e, activeElements) => {
+                if (activeElements.length > 0) {
+                    const index = activeElements[0].index;
+                    const playerName = sorted[index][0];
+                    openPlayerModal(playerName);
+                }
+            },
             scales: {
                 y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#fff' } },
                 x: { grid: { display: false }, ticks: { color: '#ccc' } }
@@ -252,6 +386,13 @@ function renderMappersChart(data) {
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            onClick: (e, activeElements) => {
+                if (activeElements.length > 0) {
+                    const index = activeElements[0].index;
+                    const playerName = sorted[index][0];
+                    openPlayerModal(playerName);
+                }
+            },
             scales: {
                 x: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#fff' } },
                 y: { grid: { display: false }, ticks: { color: '#ccc' } }
@@ -264,7 +405,10 @@ function renderMappersChart(data) {
 function renderList(cups) {
     const container = document.getElementById("cup-list");
     container.innerHTML = "";
-    if (cups.length === 0) { container.innerHTML = "<p style='text-align:center; padding:20px; color:#666;'>No results found.</p>"; return; }
+    if (cups.length === 0) { 
+        container.innerHTML = "<p style='text-align:center; padding:30px; color:#888; font-size:1.1rem;'>No matching campaigns found.</p>"; 
+        return; 
+    }
 
     cups.forEach((cup) => {
         const tab = document.createElement("div");
@@ -279,6 +423,7 @@ function renderList(cups) {
         if(cup.maps) cup.maps.forEach(m => totalMs += m.time_author);
         const minutes = Math.floor(totalMs / 60000);
         const seconds = ((totalMs % 60000) / 1000).toFixed(0);
+        const timeFormatted = minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`;
 
         let html = `
             <div class="accordion-header">
@@ -288,65 +433,437 @@ function renderList(cups) {
                         <div class="cup-title">
                             ${formatTmName(cup.campaign_name)} 
                         </div>
-                        <div class="cup-date">${dateStr}</div>
+                        <div class="cup-date">${dateStr} · ${timeFormatted}</div>
                     </div>
                 </div>
-                <div class="winner-badge"><i class="fas fa-trophy"></i> ${cup.winner || "Unknown"}</div>
+                <div class="winner-badge player-link" onclick="event.stopPropagation(); openPlayerModal('${escapeJsStr(cup.winner || '')}')">
+                    <i class="fas fa-trophy"></i> ${cup.winner || "Unknown"}
+                </div>
             </div>
             <div class="accordion-content">
-                <table><thead><tr><th width="50">#</th><th>Map Name</th><th>Author</th><th>Author Time</th></tr></thead><tbody>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="40">#</th>
+                            <th>Map Name</th>
+                            <th>Author</th>
+                            <th>Author Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
         `;
 
         if (cup.maps && cup.maps.length > 0) {
             cup.maps.forEach((map, index) => {
                 const timeSec = (map.time_author / 1000).toFixed(3);
-                html += `<tr><td>${index + 1}</td><td><div class="map-cell"><a href="https://trackmania.io/#/leaderboard/${map.uid}" target="_blank" style="color:#fff; text-decoration:underline; font-weight:500;">${formatTmName(map.name)}</a><button class="copy-icon-btn" onclick="copyToClipboard('${map.uid}', this)" title="Copy UID"><i class="fas fa-copy"></i> UID</button></div></td><td>${map.author}</td><td>${timeSec}s</td></tr>`;
+                
+                html += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>
+                            <div class="map-cell">
+                                <div class="map-cell-title">
+                                    <div class="map-cell-icon"><i class="fas fa-flag-checkered"></i></div>
+                                    <a href="https://trackmania.io/#/leaderboard/${map.uid}" target="_blank" style="color:#fff; text-decoration:underline; font-weight:500;">
+                                        ${formatTmName(map.name)}
+                                    </a>
+                                </div>
+                                <button class="copy-icon-btn" onclick="copyToClipboard('${map.uid}', this)" title="Copy UID">
+                                    <i class="fas fa-copy"></i> UID
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="player-link" onclick="openPlayerModal('${escapeJsStr(map.author)}')">${map.author}</span>
+                        </td>
+                        <td style="font-family:monospace;">${timeSec}s</td>
+                    </tr>
+                `;
             });
-        } else { html += `<tr><td colspan="4" style="text-align:center; padding:15px;">No maps loaded.</td></tr>`; }
+        } else { 
+            html += `<tr><td colspan="4" style="text-align:center; padding:15px; color:#888;">No maps loaded for this cup.</td></tr>`; 
+        }
 
-        html += `</tbody></table><div class="action-buttons" style="margin-top:15px; display:flex; gap:10px; padding: 15px;"><a href="${cup.tm_io_url}" target="_blank" class="tm-btn" style="flex:1;"><i class="fas fa-external-link-alt"></i> Trackmania.io</a><button class="tm-btn copy-btn" onclick="shareCup('${cup.edition}', this)" style="flex:1; background:rgba(0,150,255,0.2); border:1px solid rgba(0,150,255,0.5); color:#fff;"><i class="fas fa-share-alt"></i> Share Cup</button></div></div>`;
+        html += `
+                    </tbody>
+                </table>
+                <div class="action-buttons" style="margin-top:15px; display:flex; gap:10px; padding: 15px;">
+                    <a href="${cup.tm_io_url}" target="_blank" class="tm-btn" style="flex:1;">
+                        <i class="fas fa-external-link-alt"></i> Trackmania.io
+                    </a>
+                    <button class="tm-btn copy-btn" onclick="shareCup('${cup.edition}', this)" style="flex:1; background:rgba(0,150,255,0.2); border:1px solid rgba(0,150,255,0.5); color:#fff;">
+                        <i class="fas fa-share-alt"></i> Share Cup
+                    </button>
+                </div>
+            </div>
+        `;
         tab.innerHTML = html;
         container.appendChild(tab);
-        tab.querySelector(".accordion-header").addEventListener("click", () => tab.classList.toggle("active"));
+        
+        tab.querySelector(".accordion-header").addEventListener("click", () => {
+            tab.classList.toggle("active");
+        });
     });
 }
 
+// --- DEDICATED MAPS TAB RENDER ---
+function renderMapsTab() {
+    const grid = document.getElementById("map-grid");
+    const counter = document.getElementById("maps-counter");
+    const searchInput = document.getElementById("map-search-input");
+    if (!grid) return;
+
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+    let filtered = [...allFlatMaps];
+
+    if (query) {
+        filtered = filtered.filter(map => 
+            (map.name || "").toLowerCase().includes(query) ||
+            (map.author || "").toLowerCase().includes(query) ||
+            String(map.edition).includes(query)
+        );
+    }
+
+    // Sort
+    filtered.sort((a, b) => {
+        if (currentMapSort === "edition-desc") return b.edition - a.edition;
+        if (currentMapSort === "time-asc") return a.time_author - b.time_author;
+        if (currentMapSort === "time-desc") return b.time_author - a.time_author;
+        if (currentMapSort === "name-asc") return a.name.localeCompare(b.name);
+        if (currentMapSort === "author-asc") return a.author.localeCompare(b.author);
+        return b.edition - a.edition;
+    });
+
+    if (counter) counter.textContent = `Showing ${filtered.length} of ${allFlatMaps.length} maps`;
+
+    if (filtered.length === 0) {
+        grid.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding:40px; color:#888; font-size:1.1rem;">No maps match your search criteria.</div>`;
+        return;
+    }
+
+    // Limit initial display batch for fast rendering performance
+    const displayBatch = filtered.slice(0, 120);
+
+    let html = "";
+    displayBatch.forEach(map => {
+        const timeSec = (map.time_author / 1000).toFixed(2);
+        
+        html += `
+            <div class="map-card">
+                <div class="map-card-banner">
+                    <div class="map-card-banner-bg"></div>
+                    <div class="map-card-edition-tag">Cup #${map.edition}</div>
+                    <div class="map-card-icon-badge"><i class="fas fa-flag-checkered"></i></div>
+                </div>
+                <div class="map-card-body">
+                    <div class="map-card-title">${formatTmName(map.name)}</div>
+                    <div class="map-card-meta">
+                        <span>by <span class="map-card-author" onclick="openPlayerModal('${escapeJsStr(map.author)}')">${map.author}</span></span>
+                        <span class="map-card-time"><i class="fas fa-stopwatch"></i> ${timeSec}s</span>
+                    </div>
+                    <div class="map-card-actions">
+                        <a href="https://trackmania.io/#/leaderboard/${map.uid}" target="_blank" class="tm-btn" style="flex:1; padding:8px; font-size:0.8rem;">
+                            <i class="fas fa-trophy"></i> Leaderboard
+                        </a>
+                        <button class="copy-icon-btn" onclick="copyToClipboard('${map.uid}', this)" title="Copy UID" style="padding:8px 12px;">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    grid.innerHTML = html;
+}
+
+// --- PLAYER PROFILE MODAL LOGIC ---
+window.openPlayerModal = function(playerName) {
+    if (!playerName || playerName === "Unknown" || playerName === "N/A") return;
+    
+    const modal = document.getElementById("player-modal");
+    const content = document.getElementById("modal-content");
+    if (!modal || !content) return;
+
+    // Calculate player stats
+    const cupsWon = allCups.filter(c => c.winner === playerName);
+    const mapsBuilt = allFlatMaps.filter(m => m.author === playerName);
+    const totalCupsCount = allCups.length;
+    const winRate = totalCupsCount > 0 ? ((cupsWon.length / totalCupsCount) * 100).toFixed(1) : 0;
+
+    // Win Streak & Timeline
+    let currentStreak = 0;
+    let maxStreak = 0;
+    const chronCups = [...allCups].sort((a,b) => a.edition - b.edition);
+    chronCups.forEach(c => {
+        if (c.winner === playerName) {
+            currentStreak++;
+            if (currentStreak > maxStreak) maxStreak = currentStreak;
+        } else {
+            currentStreak = 0;
+        }
+    });
+
+    const editionsWon = cupsWon.map(c => c.edition).sort((a,b) => b - a);
+
+    // Rivals (who finished 2nd or competing mappers)
+    const rivals = {};
+    cupsWon.forEach(c => {
+        if (c.maps) {
+            c.maps.forEach(m => {
+                if (m.author && m.author !== playerName) {
+                    rivals[m.author] = (rivals[m.author] || 0) + 1;
+                }
+            });
+        }
+    });
+    const topRivals = Object.entries(rivals).sort((a,b) => b[1] - a[1]).slice(0, 5);
+
+    let html = `
+        <div class="player-modal-header">
+            <div class="player-avatar">${playerName.substring(0, 2).toUpperCase()}</div>
+            <div>
+                <h2 class="player-name-title">${playerName}</h2>
+                <div class="player-subtitle">Trackmania Competitor & Mapper</div>
+            </div>
+        </div>
+
+        <div class="player-stats-grid">
+            <div class="p-stat-box">
+                <div class="p-stat-val">${cupsWon.length}</div>
+                <div class="p-stat-lbl">Cups Won</div>
+            </div>
+            <div class="p-stat-box">
+                <div class="p-stat-val">${mapsBuilt.length}</div>
+                <div class="p-stat-lbl">Maps Authored</div>
+            </div>
+            <div class="p-stat-box">
+                <div class="p-stat-val">${maxStreak}</div>
+                <div class="p-stat-lbl">Max Win Streak</div>
+            </div>
+        </div>
+    `;
+
+    if (editionsWon.length > 0) {
+        html += `
+            <div class="player-section-title"><i class="fas fa-trophy" style="color:#ffd700;"></i> Bonk Cup Victories (${editionsWon.length})</div>
+            <div class="player-history-tags">
+                ${editionsWon.map(ed => `<span class="history-tag player-link" onclick="closePlayerModal(); scrollToCup(${ed});">#${ed}</span>`).join('')}
+            </div>
+        `;
+    }
+
+    if (mapsBuilt.length > 0) {
+        const uniqueCupEditionsMapped = Array.from(new Set(mapsBuilt.map(m => m.edition))).sort((a,b) => b - a);
+        html += `
+            <div class="player-section-title"><i class="fas fa-map" style="color:var(--accent-color);"></i> Editions Mapped (${uniqueCupEditionsMapped.length})</div>
+            <div class="player-history-tags">
+                ${uniqueCupEditionsMapped.slice(0, 15).map(ed => `<span class="history-tag player-link" onclick="closePlayerModal(); scrollToCup(${ed});">#${ed}</span>`).join('')}
+                ${uniqueCupEditionsMapped.length > 15 ? `<span class="history-tag">+${uniqueCupEditionsMapped.length - 15} more</span>` : ''}
+            </div>
+        `;
+    }
+
+    if (topRivals.length > 0) {
+        html += `
+            <div class="player-section-title"><i class="fas fa-handshake-alt" style="color:#00bfff;"></i> Top Featured Mappers in Victory Cups</div>
+            <div class="player-history-tags">
+                ${topRivals.map(([name, count]) => `<span class="history-tag player-link" onclick="openPlayerModal('${escapeJsStr(name)}')">${name} (${count} maps)</span>`).join('')}
+            </div>
+        `;
+    }
+
+    content.innerHTML = html;
+    modal.classList.add("active");
+};
+
+window.closePlayerModal = function() {
+    const modal = document.getElementById("player-modal");
+    if (modal) modal.classList.remove("active");
+};
+
+window.closePlayerModalOnBackdrop = function(e) {
+    if (e.target.id === "player-modal") closePlayerModal();
+};
+
+window.scrollToCup = function(edition) {
+    openTab('campaigns-tab');
+    const el = document.getElementById(`cup-${edition}`);
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (!el.classList.contains('active')) {
+            el.querySelector('.accordion-header').click();
+        }
+        el.classList.add('highlight-flash');
+    }
+};
+
+// --- ENHANCED TRACKMANIA FORMAT PARSER ---
 function formatTmName(raw) {
     if (!raw) return "";
-    const parts = raw.split('$');
-    let html = parts[0]; 
-    for (let i = 1; i < parts.length; i++) {
-        let part = parts[i];
-        if (/^[0-9a-fA-F]{3}/.test(part)) {
-            let colorCode = part.substring(0, 3);
-            html += `<span style="color:#${colorCode}">${part.substring(3)}</span>`;
-        } else if (/^[zZgG]/.test(part)) html += `<span style="color:inherit">${part.substring(1)}</span>`;
-        else if (/^[iIwWnNsSoO]/.test(part)) html += part.substring(1);
-        else html += "$" + part;
+    
+    let result = "";
+    let i = 0;
+    let currentColor = null;
+    let isItalic = false;
+    let isBold = false;
+    let isShadow = false;
+    let isUpper = false;
+    let isWide = false;
+    let isNarrow = false;
+    
+    let currentChunk = "";
+    
+    function flushChunk() {
+        if (!currentChunk) return;
+        let text = currentChunk;
+        if (isUpper) text = text.toUpperCase();
+        
+        let styles = [];
+        if (currentColor) styles.push(`color:#${currentColor}`);
+        if (isItalic) styles.push(`font-style:italic`);
+        if (isBold) styles.push(`font-weight:bold`);
+        if (isShadow) styles.push(`text-shadow:1px 1px 2px rgba(0,0,0,0.8)`);
+        if (isWide) styles.push(`letter-spacing:1px`);
+        if (isNarrow) styles.push(`letter-spacing:-0.5px`);
+        
+        if (styles.length > 0) {
+            result += `<span style="${styles.join(';')}">${escapeHtml(text)}</span>`;
+        } else {
+            result += escapeHtml(text);
+        }
+        currentChunk = "";
     }
-    return html;
+    
+    while (i < raw.length) {
+        if (raw[i] === '$') {
+            if (i + 1 < raw.length && raw[i + 1] === '$') {
+                currentChunk += '$';
+                i += 2;
+                continue;
+            }
+            
+            // Check for 3-digit hex color code ($00f to $FFF)
+            if (i + 3 < raw.length && /^[0-9a-fA-F]{3}$/.test(raw.substring(i + 1, i + 4))) {
+                flushChunk();
+                currentColor = raw.substring(i + 1, i + 4);
+                i += 4;
+                continue;
+            }
+            
+            // Single char formatting codes
+            if (i + 1 < raw.length) {
+                const code = raw[i + 1].toLowerCase();
+                if (code === 'z') {
+                    flushChunk();
+                    currentColor = null; isItalic = false; isBold = false;
+                    isShadow = false; isUpper = false; isWide = false; isNarrow = false;
+                    i += 2; continue;
+                } else if (code === 'i') {
+                    flushChunk(); isItalic = true; i += 2; continue;
+                } else if (code === 'w' || code === 'b') {
+                    flushChunk(); isBold = true; i += 2; continue;
+                } else if (code === 's') {
+                    flushChunk(); isShadow = true; i += 2; continue;
+                } else if (code === 't') {
+                    flushChunk(); isUpper = true; i += 2; continue;
+                } else if (code === 'o') {
+                    flushChunk(); isWide = true; i += 2; continue;
+                } else if (code === 'n') {
+                    flushChunk(); isNarrow = true; i += 2; continue;
+                } else if (code === 'g') {
+                    flushChunk(); currentColor = null; i += 2; continue;
+                } else if ('h l m p a f u'.includes(code)) {
+                    i += 2; continue;
+                }
+            }
+            
+            i++;
+        } else {
+            currentChunk += raw[i];
+            i++;
+        }
+    }
+    flushChunk();
+    return result;
+}
+
+function escapeHtml(str) {
+    return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function escapeJsStr(str) {
+    if (!str) return "";
+    return str.replace(/'/g, "\\'").replace(/"/g, '\\"');
 }
 
 window.openTab = function(tabId) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
-    document.getElementById(tabId).style.display = 'block';
+    const target = document.getElementById(tabId);
+    if (target) target.style.display = 'block';
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
+    if (event && event.currentTarget) event.currentTarget.classList.add('active');
+    
+    if (tabId === 'maps-tab') {
+        renderMapsTab();
+    }
 };
-window.copyToClipboard = function(text, btn) { navigator.clipboard.writeText(text).then(() => { const o = btn.innerHTML; btn.innerHTML = `<i class="fas fa-check"></i>`; btn.style.borderColor = "#00d26a"; setTimeout(() => { btn.innerHTML = o; btn.style.borderColor = "#444"; }, 1500); }); };
-window.shareCup = function(edition, btn) { const url = `${window.location.origin}${window.location.pathname}#cup-${edition}`; navigator.clipboard.writeText(url).then(() => { const o = btn.innerHTML; btn.innerHTML = `<i class="fas fa-check"></i> Link Copied!`; btn.style.borderColor = "#fff"; setTimeout(() => { btn.innerHTML = o; btn.style.borderColor = "rgba(0,150,255,0.5)"; }, 2000); }); };
-window.pickRandomCup = function() { openTab('campaigns-tab'); if(allCups.length===0)return; const c=allCups[Math.floor(Math.random()*allCups.length)]; const el=document.getElementById(`cup-${c.edition}`); if(el){ el.scrollIntoView({behavior:'smooth',block:'center'}); el.querySelector('.accordion-header').click(); el.classList.add('highlight-flash'); }};
-window.checkDeepLink = function() { const h=window.location.hash; if(h&&h.startsWith("#cup-")) { const id=h.replace("#cup-",""); openTab('campaigns-tab'); const el=document.getElementById(`cup-${id}`); if(el){ el.scrollIntoView({behavior:'smooth',block:'center'}); el.querySelector('.accordion-header').click(); el.classList.add('highlight-flash'); }}};
+
+window.copyToClipboard = function(text, btn) { 
+    navigator.clipboard.writeText(text).then(() => { 
+        const o = btn.innerHTML; 
+        btn.innerHTML = `<i class="fas fa-check"></i>`; 
+        btn.style.borderColor = "#00d26a"; 
+        setTimeout(() => { 
+            btn.innerHTML = o; 
+            btn.style.borderColor = "#444"; 
+        }, 1500); 
+    }); 
+};
+
+window.shareCup = function(edition, btn) { 
+    const url = `${window.location.origin}${window.location.pathname}#cup-${edition}`; 
+    navigator.clipboard.writeText(url).then(() => { 
+        const o = btn.innerHTML; 
+        btn.innerHTML = `<i class="fas fa-check"></i> Link Copied!`; 
+        btn.style.borderColor = "#fff"; 
+        setTimeout(() => { 
+            btn.innerHTML = o; 
+            btn.style.borderColor = "rgba(0,150,255,0.5)"; 
+        }, 2000); 
+    }); 
+};
+
+window.pickRandomCup = function() { 
+    openTab('campaigns-tab'); 
+    if(allCups.length===0) return; 
+    const c = allCups[Math.floor(Math.random() * allCups.length)]; 
+    scrollToCup(c.edition);
+};
+
+window.checkDeepLink = function() { 
+    const h = window.location.hash; 
+    if(h && h.startsWith("#cup-")) { 
+        const id = h.replace("#cup-",""); 
+        scrollToCup(id);
+    }
+};
 
 // --- BACK TO TOP LOGIC ---
 const backToTopBtn = document.getElementById("back-to-top");
-window.addEventListener("scroll", () => {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopBtn.classList.add("show");
-    } else {
-        backToTopBtn.classList.remove("show");
-    }
-});
-backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
+if (backToTopBtn) {
+    window.addEventListener("scroll", () => {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopBtn.classList.add("show");
+        } else {
+            backToTopBtn.classList.remove("show");
+        }
+    });
+    backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+}

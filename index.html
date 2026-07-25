@@ -51,21 +51,61 @@
             <button class="tab-btn active" onclick="openTab('campaigns-tab')">
                 <i class="fas fa-list"></i> Campaigns
             </button>
+            <button class="tab-btn" onclick="openTab('maps-tab')">
+                <i class="fas fa-map"></i> Maps
+            </button>
             <button class="tab-btn" onclick="openTab('stats-tab')">
                 <i class="fas fa-chart-bar"></i> Statistics
             </button>
         </div>
 
         <div id="campaigns-tab" class="tab-content active">
-            <div class="search-container">
-                <i class="fas fa-search search-icon"></i>
-                <input type="text" id="search-input" placeholder="Search for Map Name, Author, Winner, or Cup #...">
+            <div class="search-filter-wrapper">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Search for Map Name, Author, Winner, or Cup #...">
+                </div>
+                <div class="sort-container">
+                    <label for="cup-sort-select"><i class="fas fa-sort"></i> Sort:</label>
+                    <select id="cup-sort-select">
+                        <option value="edition-desc">Edition (Newest First)</option>
+                        <option value="edition-asc">Edition (Oldest First)</option>
+                        <option value="maps-desc">Most Maps</option>
+                        <option value="time-desc">Longest Campaign Time</option>
+                    </select>
+                </div>
             </div>
 
             <div id="cup-list" class="accordion-section">
                 <div class="loading">
                     <div class="spinner"></div>
                     <p>Loading Data...</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="maps-tab" class="tab-content" style="display:none;">
+            <div class="search-filter-wrapper">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="map-search-input" placeholder="Search map name, author, or cup edition...">
+                </div>
+                <div class="sort-container">
+                    <label for="map-sort-select"><i class="fas fa-sort"></i> Sort Maps:</label>
+                    <select id="map-sort-select">
+                        <option value="edition-desc">Edition (Newest First)</option>
+                        <option value="time-asc">Author Time (Fastest)</option>
+                        <option value="time-desc">Author Time (Slowest)</option>
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="author-asc">Author (A-Z)</option>
+                    </select>
+                </div>
+            </div>
+            <div id="maps-counter" class="results-counter">Showing 0 maps</div>
+            <div id="map-grid" class="map-grid">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading Maps...</p>
                 </div>
             </div>
         </div>
@@ -96,12 +136,22 @@
 
                 <div class="trivia-card full-width">
                     <h3 style="margin:0; border:none; color:var(--accent-color); font-size:1.5rem;">
-                        <i class="fas fa-bolt"></i> RHQ Hall of Fame
+                        <i class="fas fa-bolt"></i> RHQ Hall of Fame & Badges
                     </h3>
                     <div id="trivia-content"></div>
                 </div>
             </div>
 
+        </div>
+    </div>
+
+    <!-- Player Profile Modal -->
+    <div id="player-modal" class="modal-overlay" onclick="closePlayerModalOnBackdrop(event)">
+        <div class="modal-card">
+            <button class="modal-close-btn" onclick="closePlayerModal()" title="Close"><i class="fas fa-times"></i></button>
+            <div id="modal-content">
+                <!-- Dynamically populated -->
+            </div>
         </div>
     </div>
 
