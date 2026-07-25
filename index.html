@@ -101,13 +101,25 @@
                     </select>
                 </div>
             </div>
-            <div id="maps-counter" class="results-counter">Showing 0 maps</div>
+            <div class="maps-header-bar">
+                <div id="maps-counter" class="results-counter">Showing 0 maps</div>
+                <div class="page-size-container">
+                    <label for="map-page-size-select"><i class="fas fa-layer-group"></i> Per Page:</label>
+                    <select id="map-page-size-select">
+                        <option value="36">36</option>
+                        <option value="72" selected>72</option>
+                        <option value="144">144</option>
+                        <option value="all">All</option>
+                    </select>
+                </div>
+            </div>
             <div id="map-grid" class="map-grid">
                 <div class="loading">
                     <div class="spinner"></div>
                     <p>Loading Maps...</p>
                 </div>
             </div>
+            <div id="maps-pagination" class="pagination-controls"></div>
         </div>
 
         <div id="stats-tab" class="tab-content" style="display:none;">

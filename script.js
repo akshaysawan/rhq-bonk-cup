@@ -4,12 +4,15 @@ let winsChartInstance = null;
 let mappersChartInstance = null;
 let currentCupSort = "edition-desc";
 let currentMapSort = "edition-desc";
+let currentMapPage = 1;
+let mapPageSize = 72;
 
 document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("search-input");
     const cupSortSelect = document.getElementById("cup-sort-select");
     const mapSearchInput = document.getElementById("map-search-input");
     const mapSortSelect = document.getElementById("map-sort-select");
+    const mapPageSizeSelect = document.getElementById("map-page-size-select");
     const yearFilter = document.getElementById("year-filter");
 
     // --- SCROLL LISTENER FOR STICKY HEADER ---
@@ -48,10 +51,20 @@ document.addEventListener("DOMContentLoaded", () => {
         applyCampaignFilterAndSort();
     });
 
-    // Maps Tab Search & Sort Listeners
-    if (mapSearchInput) mapSearchInput.addEventListener("input", renderMapsTab);
+    // Maps Tab Search, Sort & Page Size Listeners
+    if (mapSearchInput) mapSearchInput.addEventListener("input", () => {
+        currentMapPage = 1;
+        renderMapsTab();
+    });
     if (mapSortSelect) mapSortSelect.addEventListener("change", (e) => {
         currentMapSort = e.target.value;
+        currentMapPage = 1;
+        renderMapsTab();
+    });
+    if (mapPageSizeSelect) mapPageSizeSelect.addEventListener("change", (e) => {
+        const val = e.target.value;
+        mapPageSize = val === "all" ? 999999 : parseInt(val);
+        currentMapPage = 1;
         renderMapsTab();
     });
 
@@ -506,11 +519,12 @@ function renderList(cups) {
     });
 }
 
-// --- DEDICATED MAPS TAB RENDER ---
+// --- DEDICATED MAPS TAB RENDER WITH PAGINATION ---
 function renderMapsTab() {
     const grid = document.getElementById("map-grid");
     const counter = document.getElementById("maps-counter");
     const searchInput = document.getElementById("map-search-input");
+    const paginationContainer = document.getElementById("maps-pagination");
     if (!grid) return;
 
     const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
@@ -529,20 +543,37 @@ function renderMapsTab() {
         if (currentMapSort === "edition-desc") return b.edition - a.edition;
         if (currentMapSort === "time-asc") return a.time_author - b.time_author;
         if (currentMapSort === "time-desc") return b.time_author - a.time_author;
-        if (currentMapSort === "name-asc") return a.name.localeCompare(b.name);
-        if (currentMapSort === "author-asc") return a.author.localeCompare(b.author);
+        if (currentMapSort === "name-asc") return (a.name || "").localeCompare(b.name || "");
+        if (currentMapSort === "author-asc") return (a.author || "").localeCompare(b.author || "");
         return b.edition - a.edition;
     });
 
-    if (counter) counter.textContent = `Showing ${filtered.length} of ${allFlatMaps.length} maps`;
+    const totalCount = filtered.length;
+    const totalPages = mapPageSize >= 999999 ? 1 : Math.ceil(totalCount / mapPageSize) || 1;
+    
+    if (currentMapPage > totalPages) currentMapPage = totalPages;
+    if (currentMapPage < 1) currentMapPage = 1;
 
-    if (filtered.length === 0) {
-        grid.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding:40px; color:#888; font-size:1.1rem;">No maps match your search criteria.</div>`;
+    const startIndex = (currentMapPage - 1) * mapPageSize;
+    const endIndex = mapPageSize >= 999999 ? totalCount : Math.min(startIndex + mapPageSize, totalCount);
+
+    if (counter) {
+        if (totalCount === 0) {
+            counter.textContent = "Showing 0 maps";
+        } else if (mapPageSize >= 999999 || totalPages === 1) {
+            counter.textContent = `Showing all ${totalCount} maps`;
+        } else {
+            counter.textContent = `Showing maps ${startIndex + 1}–${endIndex} of ${totalCount} maps`;
+        }
+    }
+
+    if (totalCount === 0) {
+        grid.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding:50px 20px; color:#888; font-size:1.1rem;"><i class="fas fa-search" style="font-size:2rem; margin-bottom:10px; display:block; opacity:0.5;"></i>No maps match your search criteria.</div>`;
+        if (paginationContainer) paginationContainer.innerHTML = "";
         return;
     }
 
-    // Limit initial display batch for fast rendering performance
-    const displayBatch = filtered.slice(0, 120);
+    const displayBatch = mapPageSize >= 999999 ? filtered : filtered.slice(startIndex, endIndex);
 
     let html = "";
     displayBatch.forEach(map => {
@@ -574,7 +605,61 @@ function renderMapsTab() {
         `;
     });
     grid.innerHTML = html;
+
+    renderMapsPagination(totalPages);
 }
+
+function renderMapsPagination(totalPages) {
+    const container = document.getElementById("maps-pagination");
+    if (!container) return;
+
+    if (totalPages <= 1) {
+        container.innerHTML = "";
+        return;
+    }
+
+    let html = "";
+
+    // Prev Button
+    html += `<button class="page-btn" ${currentMapPage === 1 ? 'disabled' : ''} onclick="goToMapPage(${currentMapPage - 1})"><i class="fas fa-chevron-left"></i> Prev</button>`;
+
+    // Numeric Pages with smart windowing
+    const pagesToShow = [];
+    pagesToShow.push(1);
+
+    if (currentMapPage > 3) pagesToShow.push("...");
+
+    for (let p = Math.max(2, currentMapPage - 1); p <= Math.min(totalPages - 1, currentMapPage + 1); p++) {
+        pagesToShow.push(p);
+    }
+
+    if (currentMapPage < totalPages - 2) pagesToShow.push("...");
+
+    if (totalPages > 1 && !pagesToShow.includes(totalPages)) pagesToShow.push(totalPages);
+
+    pagesToShow.forEach(item => {
+        if (item === "...") {
+            html += `<span class="page-ellipsis">...</span>`;
+        } else {
+            const isActive = item === currentMapPage ? "active" : "";
+            html += `<button class="page-num-btn ${isActive}" onclick="goToMapPage(${item})">${item}</button>`;
+        }
+    });
+
+    // Next Button
+    html += `<button class="page-btn" ${currentMapPage === totalPages ? 'disabled' : ''} onclick="goToMapPage(${currentMapPage + 1})">Next <i class="fas fa-chevron-right"></i></button>`;
+
+    container.innerHTML = html;
+}
+
+window.goToMapPage = function(pageNum) {
+    currentMapPage = pageNum;
+    renderMapsTab();
+    const target = document.getElementById("maps-counter");
+    if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+};
 
 // --- PLAYER PROFILE MODAL LOGIC ---
 window.openPlayerModal = function(playerName) {
