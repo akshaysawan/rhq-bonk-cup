@@ -1,5 +1,105 @@
 [
     {
+        "edition": 250,
+        "campaign_name": "RHQ BONK CUP 250",
+        "publish_date": null,
+        "display_date": "30.7.2026",
+        "winner": "Golio",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/150995",
+        "maps": [
+            {
+                "name": "Bop drop",
+                "author": "TIMEOFOWO",
+                "time_author": 22927,
+                "uid": "x6krSLr_EMu4KiRx9HUZ_7m33Kc"
+            },
+            {
+                "name": "$o$t$F03Freddy Bonkcars ft Sandkasse2024",
+                "author": "Wapzo",
+                "time_author": 29278,
+                "uid": "PpflTY88JBVd7FxwiSkVWoZQ6u1"
+            },
+            {
+                "name": "Lumi Auto T\u00f6rm\u00e4ilykupissa",
+                "author": "Kanastus",
+                "time_author": 27335,
+                "uid": "Sjqp9wsoonziTT2jb_V1lcw6Rxg"
+            },
+            {
+                "name": "$F0Fo$C3Fi$96Fn$69Fk$3CF $0FF4",
+                "author": "baconpatroller",
+                "time_author": 32886,
+                "uid": "ZQ5bjaOHIZforVs6pcVbkyBOwPi"
+            },
+            {
+                "name": "Rice and $F00T$E00a$D00b$C00a$B00s$A00c$900o",
+                "author": "TIMEOFOWO",
+                "time_author": 38266,
+                "uid": "4iTFkO3D0K4_mOlasyb9CsJrzgd"
+            },
+            {
+                "name": "$s$f6fS$0ffup$9f0er $f6fM$0ffin$9f0i $f6fG$0ffol$9f0f",
+                "author": "Dada6_coasters",
+                "time_author": 19498,
+                "uid": "a0RNLdx3hJheQCHazAkdFJh_u62"
+            },
+            {
+                "name": "$s$o$93fBonkAw $fff- The Retribution #777",
+                "author": "AuwrahTM",
+                "time_author": 49080,
+                "uid": "W9sRxPE4uD_UYHO1tqKNT4Yhqy1"
+            },
+            {
+                "name": "$BB5$S$IBack on A08s",
+                "author": "artroy666",
+                "time_author": 23208,
+                "uid": "_if5Q3OJQP2kYdy19ux9kFzM9Yc"
+            },
+            {
+                "name": "$6B6P$DFEarc $6B6N$DFEaturel $6B6R$DFEegional",
+                "author": "amarok.czu",
+                "time_author": 33891,
+                "uid": "CN9vKNCRhZ0YDpoXscrKWKGiYCk"
+            },
+            {
+                "name": "$s$099Poolroom",
+                "author": "Dada6_coasters",
+                "time_author": 31688,
+                "uid": "0s_PpszUqVUF93x96KykxQmZnid"
+            },
+            {
+                "name": "$3ffcyanice",
+                "author": "baconpatroller",
+                "time_author": 32241,
+                "uid": "vDEl9fIiDbOxL953NyGprFaQUrc"
+            },
+            {
+                "name": "IC - $6FFS$6FAH$6F5E$6F0N$6F0K$9A0A$C50R$F00I",
+                "author": "arppa.",
+                "time_author": 28208,
+                "uid": "7E4lbCpvbtbGhX1PuRP_y1TKa97"
+            },
+            {
+                "name": "flippah",
+                "author": "shelb_tm",
+                "time_author": 34318,
+                "uid": "kKq7rJQvflXwHwpjeNOueAxp7Qj"
+            },
+            {
+                "name": "Pov u puck",
+                "author": "Sanzhi.",
+                "time_author": 15197,
+                "uid": "77AEde4btMHYULQbEtrccfBlCw5"
+            },
+            {
+                "name": "$I$C1FMarblelous Pitfall",
+                "author": "Masplin_Exo",
+                "time_author": 22077,
+                "uid": "cThoEQPzP9UoPxhDjGMdRBFBjwd"
+            }
+        ]
+    },
+    {
         "edition": 249,
         "campaign_name": "RHQ BONK CUP 249",
         "publish_date": null,
