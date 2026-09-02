@@ -1,5 +1,345 @@
 [
     {
+        "edition": 254,
+        "campaign_name": "RHQ BONK CUP 254",
+        "publish_date": null,
+        "display_date": "27.8.2026",
+        "winner": "AR",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/154510",
+        "maps": [
+            {
+                "name": "$s$nUnderwater Fragiled Rally Car 100,000x Omnibooster",
+                "author": "VertexWitch",
+                "time_author": 25665,
+                "uid": "_Yfjixrh1rORhdE1CJvUGguHERl"
+            },
+            {
+                "name": "Bonk Cup Waterpark",
+                "author": "RoRoRosh",
+                "time_author": 37789,
+                "uid": "7fQyRkrCPWYX2IGkdUeuaS066i5"
+            },
+            {
+                "name": "$s $333High $900Scapes",
+                "author": "Dada6_coasters",
+                "time_author": 23719,
+                "uid": "lPvk3lbfdR0_kd2IgPkx97dX318"
+            },
+            {
+                "name": "$12E$S$oUnderwater impulse",
+                "author": "artroy666",
+                "time_author": 30962,
+                "uid": "yo_7JzpptpTLX7x8hkUmE765aJ9"
+            },
+            {
+                "name": "Leap Frog 2-222",
+                "author": "Quibbles.",
+                "time_author": 41121,
+                "uid": "iSF86U14xT0rCVxzTRhJaCNs7r7"
+            },
+            {
+                "name": "$F9CCustom $969Item $393Abuse $60F#6",
+                "author": "miikapekka",
+                "time_author": 28811,
+                "uid": "UI4qmvmLY3AkOWnExUkppY4m8ba"
+            },
+            {
+                "name": "Golf it gang with your friends",
+                "author": "NSS-FL00",
+                "time_author": 35206,
+                "uid": "c_4pokRHzwjYnGQE1VEHcAIstb"
+            },
+            {
+                "name": "Escape the magnet or smth idk",
+                "author": "JakobusVIII",
+                "time_author": 28719,
+                "uid": "osOg1wPOGmukQDrenegkLthzVJ2"
+            },
+            {
+                "name": "BOnk68",
+                "author": "Titoch_tm",
+                "time_author": 33818,
+                "uid": "DTtUyThynTpxTKZZpk6wyrLf393"
+            },
+            {
+                "name": "$s $f00Late $08fZoop",
+                "author": "Dada6_coasters",
+                "time_author": 43431,
+                "uid": "nesRohO3nvz_BWtQKFmMemIuwdb"
+            },
+            {
+                "name": "$3afAqua$8f5Dash",
+                "author": "isigold",
+                "time_author": 35166,
+                "uid": "Qmly7PfMbHd99EYCFJCpbfbXg2c"
+            },
+            {
+                "name": "$o$036AH-gwah-MEN-tee",
+                "author": "Lumet.",
+                "time_author": 31242,
+                "uid": "puTI71VsBXWgGOP_EYiT6V0Wb84"
+            }
+        ]
+    },
+    {
+        "edition": 253,
+        "campaign_name": "RHQ BONK CUP 253",
+        "publish_date": null,
+        "display_date": "20.8.2026",
+        "winner": "Golio",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/153757",
+        "maps": [
+            {
+                "name": "Random",
+                "author": "Kutedo.",
+                "time_author": 35086,
+                "uid": "kd86ZNGxrHsQ7z_ujwxWth5ckTk"
+            },
+            {
+                "name": "Up to the cave",
+                "author": "ZangLaMangue",
+                "time_author": 26580,
+                "uid": "m7Y9YSCmHN84js1gIWfB7hL1cOi"
+            },
+            {
+                "name": "A2V3",
+                "author": "the.me.man",
+                "time_author": 30361,
+                "uid": "p6AI3FM_xzJMDGy3vHJ2uvwCxSk"
+            },
+            {
+                "name": "$ff0Jaskier",
+                "author": "miikapekka",
+                "time_author": 26222,
+                "uid": "wKgA1QqdWG30lJXIh3DFpJTiJw7"
+            },
+            {
+                "name": "$f00Ramlodipril",
+                "author": "baconpatroller",
+                "time_author": 27625,
+                "uid": "v9HqdLUgWUOlYwRBpq4PzDoZA7k"
+            },
+            {
+                "name": "$s$o$FF0R$FFFally $FC0O$FFFn $F90T$FFFhe $F60B$FFFeach",
+                "author": "BaoGab",
+                "time_author": 25098,
+                "uid": "eYkDtQkNaHZ6i0YIqmoC_0SIQd7"
+            },
+            {
+                "name": "Legends of the Hidden Temple_ES",
+                "author": "NUdark",
+                "time_author": 35119,
+                "uid": "fTrLRn7p4ODAzRHj1zOgrKBc4T"
+            },
+            {
+                "name": "HumonGUS A08 mhm",
+                "author": "Lumet.",
+                "time_author": 31230,
+                "uid": "XrjsaLbIlrcKIBKhAD2X4hc7o5k"
+            },
+            {
+                "name": "4x8 Sprint",
+                "author": "ShaidenHusky",
+                "time_author": 30784,
+                "uid": "Jxrud_4RUDagyHYS7irV3Py7TT0"
+            },
+            {
+                "name": "$0F0Really $3F3High $6F6Quality",
+                "author": "TheRealigi",
+                "time_author": 36058,
+                "uid": "qdwY6r80USi3x5TnEyYv7HhsoXg"
+            },
+            {
+                "name": "$3afSplash$f85Dash",
+                "author": "isigold",
+                "time_author": 41608,
+                "uid": "Sy5FFNdCbFuOKRecT8ibMj8009f"
+            },
+            {
+                "name": "$sRoyal Dash",
+                "author": "Dada6_coasters",
+                "time_author": 22339,
+                "uid": "rSzYCfTtORPwadoGKMIjnkliWkh"
+            }
+        ]
+    },
+    {
+        "edition": 252,
+        "campaign_name": "RHQ BONK CUP 252",
+        "publish_date": null,
+        "display_date": "13.8.2026",
+        "winner": "AR",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/152739",
+        "maps": [
+            {
+                "name": "salmon upstream odissey",
+                "author": "GuiCoin",
+                "time_author": 21813,
+                "uid": "avIkmv80wI393TN9qDgH75k3Tvc"
+            },
+            {
+                "name": "1pec",
+                "author": "NSS-FL00",
+                "time_author": 21932,
+                "uid": "nvxEOW5YrxqXSd03WBjyjlMogF9"
+            },
+            {
+                "name": "$666$S$iDelivery Dropoff $gft' Taei",
+                "author": "artroy666",
+                "time_author": 32519,
+                "uid": "RRjKN23QKbRiNiBHxAawjepJYkg"
+            },
+            {
+                "name": "$w$s$o$0ccB0X$c0cB0X",
+                "author": "Svitman",
+                "time_author": 35249,
+                "uid": "97Q_8bQ5GQefVbrdQzzeu9HakN8"
+            },
+            {
+                "name": "$F9CCustom $969Item $393Abuse $60F#5",
+                "author": "miikapekka",
+                "time_author": 29280,
+                "uid": "n7KPCStziGqtCoxYLqHsfxU2nRi"
+            },
+            {
+                "name": "$sULC's minigame for Granady",
+                "author": "Dada6_coasters",
+                "time_author": 22952,
+                "uid": "oPAy4VWI7nTjne3RxZVbeuABb_j"
+            },
+            {
+                "name": "Mario Machines 3",
+                "author": "GuiCoin",
+                "time_author": 40552,
+                "uid": "5nd8l0vru25ozrOXyrLCRhqvXb4"
+            },
+            {
+                "name": "Pre-patch A08",
+                "author": "baconpatroller",
+                "time_author": 28091,
+                "uid": "gZSRT5BBiCzXT7OAw931B01BTzk"
+            },
+            {
+                "name": "Oil-Slide",
+                "author": "Taei.",
+                "time_author": 22809,
+                "uid": "NWIzq4WGeYfVSWbb3PPQYDolxP1"
+            },
+            {
+                "name": "$999 Gray or Grey",
+                "author": "miikapekka",
+                "time_author": 34839,
+                "uid": "4ry8QKI0jlaoFCYuISvEYE00on"
+            },
+            {
+                "name": "$39F$oTiny RPG ft Sami's Humongous Blocks",
+                "author": "Lumet.",
+                "time_author": 39594,
+                "uid": "11l9w_NP67A5M4VQBY3t8iIkKyc"
+            },
+            {
+                "name": "Bonky LarpMapping #01 ft",
+                "author": "Miczos_",
+                "time_author": 34226,
+                "uid": "Iy_53VO07Met6hJfYgNFgbD1bV5"
+            }
+        ]
+    },
+    {
+        "edition": 251,
+        "campaign_name": "RHQ BONK CUP 251",
+        "publish_date": null,
+        "display_date": "6.8.2026",
+        "winner": "Granady",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/151649",
+        "maps": [
+            {
+                "name": "$fff$sSilhouette Dream",
+                "author": "VertexWitch",
+                "time_author": 41998,
+                "uid": "LVfwuj0_BCd7QCPGv7LlowHwhm"
+            },
+            {
+                "name": "$s The $f90Guicoin's $fffMap at Home",
+                "author": "Dada6_coasters",
+                "time_author": 28565,
+                "uid": "6m5oZsLKCTWY0Nbiokk5Vows7w5"
+            },
+            {
+                "name": "$oWarBonkers$z- Surgical strikes",
+                "author": "GuiCoin",
+                "time_author": 38316,
+                "uid": "luTDVOm4qnx_zHvB9u9MvvFqiad"
+            },
+            {
+                "name": "$F9CCustom $969Item $393Abuse $60F#4",
+                "author": "miikapekka",
+                "time_author": 30295,
+                "uid": "mBDQR63uSjy9c_BEPPV0LisngJf"
+            },
+            {
+                "name": "$s$0C6DuckDive $063Into $o$903HELL",
+                "author": "Lumet.",
+                "time_author": 41695,
+                "uid": "3OizkdiVeOkKAjT3Pmpc3Zk5Lvc"
+            },
+            {
+                "name": "$ff0Some $0f0retro $f30ish",
+                "author": "baconpatroller",
+                "time_author": 32427,
+                "uid": "p28hVyccKfuLeaKDLLgH8Ua2sE7"
+            },
+            {
+                "name": "Burger - double cheese, hold the lettuce",
+                "author": "TIMEOFOWO",
+                "time_author": 33203,
+                "uid": "Uq0XcbLQb3svoO5QtayjILoSp9j"
+            },
+            {
+                "name": "$sLets Go $f11G$f4fA$82fM$11fB$0ffL$0f0I$ff0N$f8G $fff!",
+                "author": "Dada6_coasters",
+                "time_author": 14508,
+                "uid": "WetBFTchnC2Rw3DThi7O0tUY2Jj"
+            },
+            {
+                "name": "Why do you only play fragile WIW to beat unbeaten AT",
+                "author": "Lumet.",
+                "time_author": 25028,
+                "uid": "SU2hkyH85xm1vr7HsEZERwqSojd"
+            },
+            {
+                "name": " \t$6CF$o$wwater will never be wet",
+                "author": "epsi..",
+                "time_author": 27509,
+                "uid": "X556QxNc0bNXX6I77bDdb3CWtem"
+            },
+            {
+                "name": "$fc5Narrowing",
+                "author": "miikapekka",
+                "time_author": 30720,
+                "uid": "2lcxkBv0PfppSeHO13BSG0zAza3"
+            },
+            {
+                "name": "$s$0FFOasis$2BB Tech$D61 Arena",
+                "author": "Svitman",
+                "time_author": 41618,
+                "uid": "cKU642PxU_cv_1yIwqwKCXIpTG5"
+            },
+            {
+                "name": "$666$S$IArtroy map",
+                "author": "artroy666",
+                "time_author": 44185,
+                "uid": "jBBdHtsnL3VgOAlsXQ4e0hU6Mi3"
+            },
+            {
+                "name": "$d60Splinter $0ffSlip-Up",
+                "author": "Boazzzooka",
+                "time_author": 36495,
+                "uid": "rV_4rkbJ7zpweACmTvdnuHGvT63"
+            }
+        ]
+    },
+    {
         "edition": 250,
         "campaign_name": "RHQ BONK CUP 250",
         "publish_date": null,
