@@ -952,3 +952,113 @@ if (backToTopBtn) {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 }
+
+// =============================================================================
+// XPEVO EVENT ANNOUNCEMENT SYSTEM
+// =============================================================================
+(function initEventAnnouncement() {
+    // Event date: September 12th, 2026 (end of day — hide after this)
+    const EVENT_DATE = new Date('2026-09-12T23:59:59');
+    const now = new Date();
+
+    // If the event has passed, hide everything and bail out
+    if (now > EVENT_DATE) {
+        const banner = document.getElementById('event-banner');
+        const modal = document.getElementById('event-modal');
+        if (banner) banner.style.display = 'none';
+        if (modal) modal.style.display = 'none';
+        return;
+    }
+
+    // --- BANNER LOGIC ---
+    const banner = document.getElementById('event-banner');
+    const bannerDismissed = sessionStorage.getItem('xpevo-banner-dismissed');
+
+    if (banner) {
+        if (bannerDismissed) {
+            banner.classList.add('hidden');
+        } else {
+            document.body.classList.add('has-event-banner');
+        }
+    }
+
+    // --- FIRST-VISIT MODAL LOGIC ---
+    const modalSeen = localStorage.getItem('xpevo-modal-seen');
+    if (!modalSeen) {
+        setTimeout(() => {
+            openEventModal();
+        }, 800);
+    }
+
+    // --- COUNTDOWN TIMER ---
+    const countdownTarget = EVENT_DATE.getTime();
+    let countdownInterval = null;
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const diff = countdownTarget - now;
+
+        const cdDays = document.getElementById('cd-days');
+        const cdHours = document.getElementById('cd-hours');
+        const cdMins = document.getElementById('cd-mins');
+        const cdSecs = document.getElementById('cd-secs');
+
+        if (diff <= 0) {
+            // Event is live or passed
+            const countdownGrid = document.getElementById('event-countdown');
+            if (countdownGrid) {
+                countdownGrid.innerHTML = '<div class="countdown-live">🎉 Event is LIVE! 🎉</div>';
+            }
+            if (countdownInterval) clearInterval(countdownInterval);
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        if (cdDays) cdDays.textContent = String(days).padStart(2, '0');
+        if (cdHours) cdHours.textContent = String(hours).padStart(2, '0');
+        if (cdMins) cdMins.textContent = String(mins).padStart(2, '0');
+        if (cdSecs) cdSecs.textContent = String(secs).padStart(2, '0');
+    }
+
+    updateCountdown();
+    countdownInterval = setInterval(updateCountdown, 1000);
+})();
+
+// --- EVENT MODAL CONTROLS ---
+window.openEventModal = function() {
+    const modal = document.getElementById('event-modal');
+    if (modal) modal.classList.add('active');
+};
+
+window.closeEventModal = function() {
+    const modal = document.getElementById('event-modal');
+    if (modal) modal.classList.remove('active');
+    localStorage.setItem('xpevo-modal-seen', 'true');
+};
+
+window.closeEventModalOnBackdrop = function(e) {
+    if (e.target.id === 'event-modal') closeEventModal();
+};
+
+window.dismissEventBanner = function() {
+    const banner = document.getElementById('event-banner');
+    if (banner) {
+        banner.classList.add('hidden');
+        document.body.classList.remove('has-event-banner');
+        sessionStorage.setItem('xpevo-banner-dismissed', 'true');
+    }
+};
+
+// Also close event modal on ESC (extend existing listener)
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        const eventModal = document.getElementById('event-modal');
+        if (eventModal && eventModal.classList.contains('active')) {
+            closeEventModal();
+        }
+    }
+});

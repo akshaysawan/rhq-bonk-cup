@@ -11,6 +11,108 @@
 </head>
 <body>
 
+    <!-- XPEVO Event Banner -->
+    <div id="event-banner" class="event-banner">
+        <div class="event-banner-content">
+            <span class="event-banner-text">
+                <i class="fas fa-trophy"></i>
+                <strong>XPEVO × RHQ Bonk Cup LAN</strong> — September 12th — Real Prizes!
+            </span>
+            <button class="event-banner-btn" onclick="openEventModal()">Learn More</button>
+        </div>
+        <button class="event-banner-close" onclick="dismissEventBanner()" title="Dismiss">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- XPEVO Event Modal -->
+    <div id="event-modal" class="event-modal-overlay" onclick="closeEventModalOnBackdrop(event)">
+        <div class="event-modal-card">
+            <button class="modal-close-btn" onclick="closeEventModal()" title="Close">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="event-modal-image">
+                <img src="xpevo.png" alt="XPEVO x RHQ Bonk Cup LAN — September 12th">
+            </div>
+
+            <div class="event-modal-body">
+                <h2 class="event-modal-title">XPEVO × RHQ BONK CUP</h2>
+                <p class="event-modal-subtitle">Special LAN Edition — September 12th, 2026</p>
+
+                <div id="event-countdown" class="countdown-grid">
+                    <div class="countdown-box">
+                        <div class="countdown-val" id="cd-days">00</div>
+                        <div class="countdown-lbl">Days</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-val" id="cd-hours">00</div>
+                        <div class="countdown-lbl">Hours</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-val" id="cd-mins">00</div>
+                        <div class="countdown-lbl">Minutes</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-val" id="cd-secs">00</div>
+                        <div class="countdown-lbl">Seconds</div>
+                    </div>
+                </div>
+
+                <h3 class="event-rewards-heading"><i class="fas fa-gift"></i> Top 5 Rewards</h3>
+
+                <div class="rewards-list">
+                    <div class="reward-card gold">
+                        <div class="reward-rank"><i class="fas fa-crown"></i> 1st</div>
+                        <div class="reward-info">
+                            <div class="reward-title">Winner Custom T-Shirt</div>
+                            <div class="reward-desc">Custom designed by the organizer</div>
+                        </div>
+                    </div>
+                    <div class="reward-card silver">
+                        <div class="reward-rank"><i class="fas fa-medal"></i> 2nd</div>
+                        <div class="reward-info">
+                            <div class="reward-title">Runner Up Custom T-Shirt</div>
+                            <div class="reward-desc">Custom designed by the organizer</div>
+                        </div>
+                    </div>
+                    <div class="reward-card bronze">
+                        <div class="reward-rank"><i class="fas fa-medal"></i> 3rd</div>
+                        <div class="reward-info">
+                            <div class="reward-title">Third Place Custom T-Shirt</div>
+                            <div class="reward-desc">Custom designed by the organizer</div>
+                        </div>
+                    </div>
+                    <div class="reward-card casual">
+                        <div class="reward-rank"><i class="fas fa-hat-cowboy"></i> 4th</div>
+                        <div class="reward-info">
+                            <div class="reward-title">Custom XD Cap</div>
+                            <div class="reward-desc">Custom designed by the organizer</div>
+                        </div>
+                    </div>
+                    <div class="reward-card casual">
+                        <div class="reward-rank"><i class="fas fa-hat-cowboy"></i> 5th</div>
+                        <div class="reward-info">
+                            <div class="reward-title">Custom XD Cap</div>
+                            <div class="reward-desc">Custom designed by the organizer</div>
+                        </div>
+                    </div>
+                    <div class="reward-card fun">
+                        <div class="reward-rank"><i class="fas fa-paint-brush"></i> 6th+</div>
+                        <div class="reward-info">
+                            <div class="reward-title">Live Painting at the Venue</div>
+                            <div class="reward-desc">"these things are expensive lmao"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="event-dismiss-btn" onclick="closeEventModal()">
+                    <i class="fas fa-check"></i> Got it, I'm hyped!
+                </button>
+            </div>
+        </div>
+    </div>
+
     <header id="main-header" class="site-header">
         <div class="container">
             <div class="header-content">
