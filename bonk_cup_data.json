@@ -1,5 +1,93 @@
 [
     {
+        "edition": 255,
+        "campaign_name": "RHQ BONK CUP 255",
+        "publish_date": null,
+        "display_date": "3/9/2026",
+        "winner": "AR",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/155230",
+        "maps": [
+            {
+                "name": "$s$48EDVD $EE0Screensaver $3B3Simulator",
+                "author": "Von_Roth",
+                "time_author": 24360,
+                "uid": "Hm81cesaMQ7FKhb7r1ucj4VQ813"
+            },
+            {
+                "name": "$sMini $f0fPlastic $909Zone $fff2",
+                "author": "Dada6_coasters",
+                "time_author": 21044,
+                "uid": "SxoSASIcd17puIZ_QwAqXEo4Hh2"
+            },
+            {
+                "name": "$s$o$f00backwards underwater 2 wheel plastic clip driving",
+                "author": "A-WaffleGuy",
+                "time_author": 29314,
+                "uid": "DD3qLPZfPYz05QrJzXxiNdk4pe7"
+            },
+            {
+                "name": "$FB62026, $FF9but it's $FCC2020",
+                "author": "richarde_e",
+                "time_author": 39106,
+                "uid": "Z2mtqgOY3Kiqx_qsqabtbq8bffa"
+            },
+            {
+                "name": "No Grip Over Ice 2",
+                "author": "Lumet.",
+                "time_author": 24513,
+                "uid": "cftZyNhx8A0ZK1hFmn5FN_jrL72"
+            },
+            {
+                "name": "$s$o$93fBonkAw $fff- Black Carpet",
+                "author": "AuwrahTM",
+                "time_author": 25615,
+                "uid": "EyZPzapheKhBW3D0L8bDU0UJw51"
+            },
+            {
+                "name": "$F9CCustom $969Item $393Abuse $60F#7",
+                "author": "miikapekka",
+                "time_author": 29046,
+                "uid": "osv0M8yvVHbPIuOSe03XUVHbH39"
+            },
+            {
+                "name": "$1E7$S$iHighly Luckbased Downhill map",
+                "author": "artroy666",
+                "time_author": 34789,
+                "uid": "6SwbOVGSiaO_8jIzbPXneyAx1o4"
+            },
+            {
+                "name": "$s$o$93fBonkAw $fff- Peng Peng Bridge",
+                "author": "AuwrahTM",
+                "time_author": 29386,
+                "uid": "R6RlxEQlMZvc2xB9t9cF64r4658"
+            },
+            {
+                "name": "$9f3Aries Appreciation Map",
+                "author": "miikapekka",
+                "time_author": 29207,
+                "uid": "irdJeWZJwbuYsBxenwlZILfU4I9"
+            },
+            {
+                "name": "$s$17bStage$333Dash",
+                "author": "isigold",
+                "time_author": 32128,
+                "uid": "Nt0zS1VC3vgg5KP7MVb7x4V6O7e"
+            },
+            {
+                "name": "Hamster Sim Bonkers",
+                "author": "TouchingKermit",
+                "time_author": 42478,
+                "uid": "mtVyruEtxiUY1YAnFayowTbRoDd"
+            },
+            {
+                "name": "$s$3afResin$dddDash",
+                "author": "isigold",
+                "time_author": 34015,
+                "uid": "HrmcCbJQBkFnLR2LwQRYFRx3ZRc"
+            }
+        ]
+    },
+    {
         "edition": 254,
         "campaign_name": "RHQ BONK CUP 254",
         "publish_date": null,
