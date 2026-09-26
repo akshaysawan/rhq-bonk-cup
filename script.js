@@ -30,13 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             allCups = data;
             allFlatMaps = extractAllMaps(data);
-            
+
             // Initial Renders
             renderStats(allCups);
             applyCampaignFilterAndSort();
             renderMapsTab();
             populateYearFilter(allCups);
-            
+
             // Render Stats View (All Time)
             updateStatsView(allCups);
 
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return String(year) === selectedYear;
             });
         }
-        
+
         updateStatsView(filteredData);
     });
 
@@ -113,7 +113,7 @@ function extractAllMaps(cups) {
 function getYearFromCup(cup) {
     if (cup.display_date) {
         const parts = cup.display_date.split('.');
-        if (parts.length === 3) return parts[2]; 
+        if (parts.length === 3) return parts[2];
     }
     if (cup.publish_date) {
         return new Date(cup.publish_date * 1000).getFullYear();
@@ -128,11 +128,11 @@ function populateYearFilter(data) {
         const y = getYearFromCup(cup);
         if (y && y !== "Unknown") years.add(y);
     });
-    
+
     const sortedYears = Array.from(years).sort((a, b) => b - a);
     const select = document.getElementById("year-filter");
     if (!select) return;
-    
+
     sortedYears.forEach(year => {
         const option = document.createElement("option");
         option.value = year;
@@ -145,7 +145,7 @@ function populateYearFilter(data) {
 function applyCampaignFilterAndSort() {
     const searchInput = document.getElementById("search-input");
     const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
-    
+
     let filtered = [...allCups];
 
     if (query) {
@@ -155,8 +155,8 @@ function applyCampaignFilterAndSort() {
             const inEdition = String(cup.edition).includes(query);
             let inMaps = false;
             if (cup.maps) {
-                inMaps = cup.maps.some(map => 
-                    (map.name || "").toLowerCase().includes(query) || 
+                inMaps = cup.maps.some(map =>
+                    (map.name || "").toLowerCase().includes(query) ||
                     (map.author || "").toLowerCase().includes(query)
                 );
             }
@@ -184,16 +184,16 @@ function applyCampaignFilterAndSort() {
 function updateStatsView(data) {
     renderWinsChart(data);
     renderMappersChart(data);
-    renderTrivia(data); 
+    renderTrivia(data);
 }
 
 function renderStats(data) {
     const totalCups = data.length;
     const uniqueWinners = new Set(data.map(c => c.winner).filter(w => w && w !== "Unknown"));
-    
+
     const totalEl = document.getElementById("stat-total-cups");
     const winnersEl = document.getElementById("stat-unique-winners");
-    
+
     if (totalEl) totalEl.textContent = totalCups;
     if (winnersEl) winnersEl.textContent = uniqueWinners.size;
 }
@@ -203,22 +203,22 @@ function renderTrivia(data) {
     let shortestMap = { time: 99999999, name: "N/A", author: "-", edition: 0 };
     const mappersCount = {};
     const winsCount = {};
-    
+
     data.forEach(cup => {
         if (cup.winner && cup.winner !== "Unknown") {
             winsCount[cup.winner] = (winsCount[cup.winner] || 0) + 1;
         }
 
-        if(cup.maps) {
+        if (cup.maps) {
             cup.maps.forEach(m => {
                 if (m.author && !m.author.includes("-")) {
                     mappersCount[m.author] = (mappersCount[m.author] || 0) + 1;
                 }
 
-                if(m.time_author > longestMap.time) {
+                if (m.time_author > longestMap.time) {
                     longestMap = { time: m.time_author, name: m.name, author: m.author, edition: cup.edition };
                 }
-                if(m.time_author > 1000 && m.time_author < shortestMap.time) {
+                if (m.time_author > 1000 && m.time_author < shortestMap.time) {
                     shortestMap = { time: m.time_author, name: m.name, author: m.author, edition: cup.edition };
                 }
             });
@@ -228,26 +228,26 @@ function renderTrivia(data) {
     let currentStreak = 0;
     let bestStreak = { count: 0, player: "N/A" };
     let lastWinner = "";
-    
+
     const chron = [...data].sort((a, b) => a.edition - b.edition);
-    
+
     chron.forEach(cup => {
         const w = cup.winner;
-        if(w && w !== "Unknown" && w.trim() !== "") {
-            if(w === lastWinner) {
+        if (w && w !== "Unknown" && w.trim() !== "") {
+            if (w === lastWinner) {
                 currentStreak++;
             } else {
-                if(currentStreak > bestStreak.count) bestStreak = { count: currentStreak, player: lastWinner };
+                if (currentStreak > bestStreak.count) bestStreak = { count: currentStreak, player: lastWinner };
                 currentStreak = 1;
                 lastWinner = w;
             }
         }
     });
-    if(currentStreak > bestStreak.count) bestStreak = { count: currentStreak, player: lastWinner };
+    if (currentStreak > bestStreak.count) bestStreak = { count: currentStreak, player: lastWinner };
 
     // Find top mapper & winner
-    const topMapper = Object.entries(mappersCount).sort((a,b) => b[1] - a[1])[0] || ["N/A", 0];
-    const topWinner = Object.entries(winsCount).sort((a,b) => b[1] - a[1])[0] || ["N/A", 0];
+    const topMapper = Object.entries(mappersCount).sort((a, b) => b[1] - a[1])[0] || ["N/A", 0];
+    const topWinner = Object.entries(winsCount).sort((a, b) => b[1] - a[1])[0] || ["N/A", 0];
     const pioneerCup = chron.find(c => c.edition === 1 || c.winner);
 
     const formatTime = (ms) => {
@@ -333,10 +333,10 @@ function renderWinsChart(data) {
     const wins = {};
     data.forEach(cup => {
         let w = cup.winner;
-        if(w && w !== "Unknown" && w.trim() !== "") wins[w] = (wins[w] || 0) + 1;
+        if (w && w !== "Unknown" && w.trim() !== "") wins[w] = (wins[w] || 0) + 1;
     });
     const sorted = Object.entries(wins).sort((a, b) => b[1] - a[1]).slice(0, 25);
-    
+
     if (winsChartInstance) winsChartInstance.destroy();
 
     const ctx = document.getElementById('winsChart').getContext('2d');
@@ -374,9 +374,9 @@ function renderWinsChart(data) {
 function renderMappersChart(data) {
     const mappers = {};
     data.forEach(cup => {
-        if(cup.maps) cup.maps.forEach(map => {
+        if (cup.maps) cup.maps.forEach(map => {
             const author = map.author;
-            if(author && !author.includes("-")) mappers[author] = (mappers[author] || 0) + 1;
+            if (author && !author.includes("-")) mappers[author] = (mappers[author] || 0) + 1;
         });
     });
     const sorted = Object.entries(mappers).sort((a, b) => b[1] - a[1]).slice(0, 15);
@@ -418,25 +418,26 @@ function renderMappersChart(data) {
 function renderList(cups) {
     const container = document.getElementById("cup-list");
     container.innerHTML = "";
-    if (cups.length === 0) { 
-        container.innerHTML = "<p style='text-align:center; padding:30px; color:#888; font-size:1.1rem;'>No matching campaigns found.</p>"; 
-        return; 
+    if (cups.length === 0) {
+        container.innerHTML = "<p style='text-align:center; padding:30px; color:#888; font-size:1.1rem;'>No matching campaigns found.</p>";
+        return;
     }
 
     cups.forEach((cup) => {
         const tab = document.createElement("div");
         tab.classList.add("accordion-tab");
-        tab.id = `cup-${cup.edition}`; 
+        tab.id = `cup-${cup.edition}`;
 
         let dateStr = "Unknown Date";
-        if (cup.display_date) dateStr = cup.display_date; 
+        if (cup.display_date) dateStr = cup.display_date;
         else if (cup.publish_date) dateStr = new Date(cup.publish_date * 1000).toLocaleDateString();
 
         let totalMs = 0;
-        if(cup.maps) cup.maps.forEach(m => totalMs += m.time_author);
+        if (cup.maps) cup.maps.forEach(m => totalMs += m.time_author);
         const minutes = Math.floor(totalMs / 60000);
         const seconds = ((totalMs % 60000) / 1000).toFixed(0);
-        const timeFormatted = minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`;
+        // const timeFormatted = minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`;
+        // const totalMapTime = "Total Map Time";
 
         let html = `
             <div class="accordion-header">
@@ -446,7 +447,7 @@ function renderList(cups) {
                         <div class="cup-title">
                             ${formatTmName(cup.campaign_name)} 
                         </div>
-                        <div class="cup-date">${dateStr} · ${timeFormatted}</div>
+                        <div class="cup-date">${dateStr}</div>
                     </div>
                 </div>
                 <div class="winner-badge player-link" onclick="event.stopPropagation(); openPlayerModal('${escapeJsStr(cup.winner || '')}')">
@@ -469,7 +470,7 @@ function renderList(cups) {
         if (cup.maps && cup.maps.length > 0) {
             cup.maps.forEach((map, index) => {
                 const timeSec = (map.time_author / 1000).toFixed(3);
-                
+
                 html += `
                     <tr>
                         <td>${index + 1}</td>
@@ -493,8 +494,8 @@ function renderList(cups) {
                     </tr>
                 `;
             });
-        } else { 
-            html += `<tr><td colspan="4" style="text-align:center; padding:15px; color:#888;">No maps loaded for this cup.</td></tr>`; 
+        } else {
+            html += `<tr><td colspan="4" style="text-align:center; padding:15px; color:#888;">No maps loaded for this cup.</td></tr>`;
         }
 
         html += `
@@ -512,7 +513,7 @@ function renderList(cups) {
         `;
         tab.innerHTML = html;
         container.appendChild(tab);
-        
+
         tab.querySelector(".accordion-header").addEventListener("click", () => {
             tab.classList.toggle("active");
         });
@@ -531,7 +532,7 @@ function renderMapsTab() {
     let filtered = [...allFlatMaps];
 
     if (query) {
-        filtered = filtered.filter(map => 
+        filtered = filtered.filter(map =>
             (map.name || "").toLowerCase().includes(query) ||
             (map.author || "").toLowerCase().includes(query) ||
             String(map.edition).includes(query)
@@ -550,7 +551,7 @@ function renderMapsTab() {
 
     const totalCount = filtered.length;
     const totalPages = mapPageSize >= 999999 ? 1 : Math.ceil(totalCount / mapPageSize) || 1;
-    
+
     if (currentMapPage > totalPages) currentMapPage = totalPages;
     if (currentMapPage < 1) currentMapPage = 1;
 
@@ -578,7 +579,7 @@ function renderMapsTab() {
     let html = "";
     displayBatch.forEach(map => {
         const timeSec = (map.time_author / 1000).toFixed(2);
-        
+
         html += `
             <div class="map-card">
                 <div class="map-card-banner">
@@ -652,7 +653,7 @@ function renderMapsPagination(totalPages) {
     container.innerHTML = html;
 }
 
-window.goToMapPage = function(pageNum) {
+window.goToMapPage = function (pageNum) {
     currentMapPage = pageNum;
     renderMapsTab();
     const target = document.getElementById("maps-counter");
@@ -662,9 +663,9 @@ window.goToMapPage = function(pageNum) {
 };
 
 // --- PLAYER PROFILE MODAL LOGIC ---
-window.openPlayerModal = function(playerName) {
+window.openPlayerModal = function (playerName) {
     if (!playerName || playerName === "Unknown" || playerName === "N/A") return;
-    
+
     const modal = document.getElementById("player-modal");
     const content = document.getElementById("modal-content");
     if (!modal || !content) return;
@@ -678,7 +679,7 @@ window.openPlayerModal = function(playerName) {
     // Win Streak & Timeline
     let currentStreak = 0;
     let maxStreak = 0;
-    const chronCups = [...allCups].sort((a,b) => a.edition - b.edition);
+    const chronCups = [...allCups].sort((a, b) => a.edition - b.edition);
     chronCups.forEach(c => {
         if (c.winner === playerName) {
             currentStreak++;
@@ -688,7 +689,7 @@ window.openPlayerModal = function(playerName) {
         }
     });
 
-    const editionsWon = cupsWon.map(c => c.edition).sort((a,b) => b - a);
+    const editionsWon = cupsWon.map(c => c.edition).sort((a, b) => b - a);
 
     // Rivals (who finished 2nd or competing mappers)
     const rivals = {};
@@ -701,7 +702,7 @@ window.openPlayerModal = function(playerName) {
             });
         }
     });
-    const topRivals = Object.entries(rivals).sort((a,b) => b[1] - a[1]).slice(0, 5);
+    const topRivals = Object.entries(rivals).sort((a, b) => b[1] - a[1]).slice(0, 5);
 
     let html = `
         <div class="player-modal-header">
@@ -738,7 +739,7 @@ window.openPlayerModal = function(playerName) {
     }
 
     if (mapsBuilt.length > 0) {
-        const uniqueCupEditionsMapped = Array.from(new Set(mapsBuilt.map(m => m.edition))).sort((a,b) => b - a);
+        const uniqueCupEditionsMapped = Array.from(new Set(mapsBuilt.map(m => m.edition))).sort((a, b) => b - a);
         html += `
             <div class="player-section-title"><i class="fas fa-map" style="color:var(--accent-color);"></i> Editions Mapped (${uniqueCupEditionsMapped.length})</div>
             <div class="player-history-tags">
@@ -761,16 +762,16 @@ window.openPlayerModal = function(playerName) {
     modal.classList.add("active");
 };
 
-window.closePlayerModal = function() {
+window.closePlayerModal = function () {
     const modal = document.getElementById("player-modal");
     if (modal) modal.classList.remove("active");
 };
 
-window.closePlayerModalOnBackdrop = function(e) {
+window.closePlayerModalOnBackdrop = function (e) {
     if (e.target.id === "player-modal") closePlayerModal();
 };
 
-window.scrollToCup = function(edition) {
+window.scrollToCup = function (edition) {
     openTab('campaigns-tab');
     const el = document.getElementById(`cup-${edition}`);
     if (el) {
@@ -785,7 +786,7 @@ window.scrollToCup = function(edition) {
 // --- ENHANCED TRACKMANIA FORMAT PARSER ---
 function formatTmName(raw) {
     if (!raw) return "";
-    
+
     let result = "";
     let i = 0;
     let currentColor = null;
@@ -795,14 +796,14 @@ function formatTmName(raw) {
     let isUpper = false;
     let isWide = false;
     let isNarrow = false;
-    
+
     let currentChunk = "";
-    
+
     function flushChunk() {
         if (!currentChunk) return;
         let text = currentChunk;
         if (isUpper) text = text.toUpperCase();
-        
+
         let styles = [];
         if (currentColor) styles.push(`color:#${currentColor}`);
         if (isItalic) styles.push(`font-style:italic`);
@@ -810,7 +811,7 @@ function formatTmName(raw) {
         if (isShadow) styles.push(`text-shadow:1px 1px 2px rgba(0,0,0,0.8)`);
         if (isWide) styles.push(`letter-spacing:1px`);
         if (isNarrow) styles.push(`letter-spacing:-0.5px`);
-        
+
         if (styles.length > 0) {
             result += `<span style="${styles.join(';')}">${escapeHtml(text)}</span>`;
         } else {
@@ -818,7 +819,7 @@ function formatTmName(raw) {
         }
         currentChunk = "";
     }
-    
+
     while (i < raw.length) {
         if (raw[i] === '$') {
             if (i + 1 < raw.length && raw[i + 1] === '$') {
@@ -826,7 +827,7 @@ function formatTmName(raw) {
                 i += 2;
                 continue;
             }
-            
+
             // Check for 3-digit hex color code ($00f to $FFF)
             if (i + 3 < raw.length && /^[0-9a-fA-F]{3}$/.test(raw.substring(i + 1, i + 4))) {
                 flushChunk();
@@ -834,7 +835,7 @@ function formatTmName(raw) {
                 i += 4;
                 continue;
             }
-            
+
             // Single char formatting codes
             if (i + 1 < raw.length) {
                 const code = raw[i + 1].toLowerCase();
@@ -861,7 +862,7 @@ function formatTmName(raw) {
                     i += 2; continue;
                 }
             }
-            
+
             i++;
         } else {
             currentChunk += raw[i];
@@ -886,54 +887,54 @@ function escapeJsStr(str) {
     return str.replace(/'/g, "\\'").replace(/"/g, '\\"');
 }
 
-window.openTab = function(tabId) {
+window.openTab = function (tabId) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
     const target = document.getElementById(tabId);
     if (target) target.style.display = 'block';
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
     if (event && event.currentTarget) event.currentTarget.classList.add('active');
-    
+
     if (tabId === 'maps-tab') {
         renderMapsTab();
     }
 };
 
-window.copyToClipboard = function(text, btn) { 
-    navigator.clipboard.writeText(text).then(() => { 
-        const o = btn.innerHTML; 
-        btn.innerHTML = `<i class="fas fa-check"></i>`; 
-        btn.style.borderColor = "#00d26a"; 
-        setTimeout(() => { 
-            btn.innerHTML = o; 
-            btn.style.borderColor = "#444"; 
-        }, 1500); 
-    }); 
+window.copyToClipboard = function (text, btn) {
+    navigator.clipboard.writeText(text).then(() => {
+        const o = btn.innerHTML;
+        btn.innerHTML = `<i class="fas fa-check"></i>`;
+        btn.style.borderColor = "#00d26a";
+        setTimeout(() => {
+            btn.innerHTML = o;
+            btn.style.borderColor = "#444";
+        }, 1500);
+    });
 };
 
-window.shareCup = function(edition, btn) { 
-    const url = `${window.location.origin}${window.location.pathname}#cup-${edition}`; 
-    navigator.clipboard.writeText(url).then(() => { 
-        const o = btn.innerHTML; 
-        btn.innerHTML = `<i class="fas fa-check"></i> Link Copied!`; 
-        btn.style.borderColor = "#fff"; 
-        setTimeout(() => { 
-            btn.innerHTML = o; 
-            btn.style.borderColor = "rgba(0,150,255,0.5)"; 
-        }, 2000); 
-    }); 
+window.shareCup = function (edition, btn) {
+    const url = `${window.location.origin}${window.location.pathname}#cup-${edition}`;
+    navigator.clipboard.writeText(url).then(() => {
+        const o = btn.innerHTML;
+        btn.innerHTML = `<i class="fas fa-check"></i> Link Copied!`;
+        btn.style.borderColor = "#fff";
+        setTimeout(() => {
+            btn.innerHTML = o;
+            btn.style.borderColor = "rgba(0,150,255,0.5)";
+        }, 2000);
+    });
 };
 
-window.pickRandomCup = function() { 
-    openTab('campaigns-tab'); 
-    if(allCups.length===0) return; 
-    const c = allCups[Math.floor(Math.random() * allCups.length)]; 
+window.pickRandomCup = function () {
+    openTab('campaigns-tab');
+    if (allCups.length === 0) return;
+    const c = allCups[Math.floor(Math.random() * allCups.length)];
     scrollToCup(c.edition);
 };
 
-window.checkDeepLink = function() { 
-    const h = window.location.hash; 
-    if(h && h.startsWith("#cup-")) { 
-        const id = h.replace("#cup-",""); 
+window.checkDeepLink = function () {
+    const h = window.location.hash;
+    if (h && h.startsWith("#cup-")) {
+        const id = h.replace("#cup-", "");
         scrollToCup(id);
     }
 };
@@ -1029,22 +1030,22 @@ if (backToTopBtn) {
 })();
 
 // --- EVENT MODAL CONTROLS ---
-window.openEventModal = function() {
+window.openEventModal = function () {
     const modal = document.getElementById('event-modal');
     if (modal) modal.classList.add('active');
 };
 
-window.closeEventModal = function() {
+window.closeEventModal = function () {
     const modal = document.getElementById('event-modal');
     if (modal) modal.classList.remove('active');
     localStorage.setItem('xpevo-modal-seen', 'true');
 };
 
-window.closeEventModalOnBackdrop = function(e) {
+window.closeEventModalOnBackdrop = function (e) {
     if (e.target.id === 'event-modal') closeEventModal();
 };
 
-window.dismissEventBanner = function() {
+window.dismissEventBanner = function () {
     const banner = document.getElementById('event-banner');
     if (banner) {
         banner.classList.add('hidden');
