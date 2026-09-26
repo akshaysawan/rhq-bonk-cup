@@ -1,5 +1,411 @@
 [
     {
+        "edition": 259,
+        "campaign_name": "RHQ BONK CUP 258",
+        "publish_date": null,
+        "display_date": "24.9.2026",
+        "winner": "Golio",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/157509",
+        "maps": [
+            {
+                "name": "$F00Trackhou project - $FCDfaithful lines (v2)",
+                "author": "better0fdead",
+                "time_author": 48059,
+                "uid": "foXBIhhkQQZ4P9eQDZrOe_9lpU6"
+            },
+            {
+                "name": "Bonky beach",
+                "author": "BaoGab",
+                "time_author": 27149,
+                "uid": "1Yz3_NBwg8xOu8WuRwwZJyM1PNl"
+            },
+            {
+                "name": "$s$gI $f00\u2665$g WATER",
+                "author": "VertexWitch",
+                "time_author": 36359,
+                "uid": "W7HNuHKfGPULj1UHNvqiVt4fYu9"
+            },
+            {
+                "name": "Monorail\u2022 Monorail? Monorail!",
+                "author": "Quibbles.",
+                "time_author": 35411,
+                "uid": "uVbrxZAD0PRr9N_8xqDlICsTlSm"
+            },
+            {
+                "name": "$CF3Fine Day",
+                "author": "Midbooze",
+                "time_author": 24548,
+                "uid": "Gem7Ny9vWv1SpYDcm9nTv8n4Nt3"
+            },
+            {
+                "name": "$F00An$D12at$C13id$A25ae$837ph$738ob$54Ai$44Ba $35DBu$16Emp",
+                "author": "mininoam_tm",
+                "time_author": 42069,
+                "uid": "VoGL3jOgZ0CNsjjwcS6UDXW1_ki"
+            },
+            {
+                "name": "$BB5$S$IBy no means",
+                "author": "artroy666",
+                "time_author": 31932,
+                "uid": "NnO2cO828R6UA74Ir8546gv9yHb"
+            },
+            {
+                "name": "Sn(80w08)",
+                "author": "RobynLtW",
+                "time_author": 18000,
+                "uid": "kS3BDU6DPJNqSuQkL8Sd36zLOa1"
+            },
+            {
+                "name": "$666$S$IEnd of The World",
+                "author": "artroy666",
+                "time_author": 29801,
+                "uid": "9CAOKg12Zz113FGdeyuTTHgzuBh"
+            },
+            {
+                "name": "$s $f09FrontFlip",
+                "author": "Dada6_coasters",
+                "time_author": 38049,
+                "uid": "fAM5COVPrF2nTQFTy7QlLg9OMSm"
+            },
+            {
+                "name": "$s$d00NoEngine$000And$dd4Bonks",
+                "author": "isigold",
+                "time_author": 28958,
+                "uid": "t14xp2Q5KUTlyH9vT70B96i2Tu0"
+            },
+            {
+                "name": "$fff-$8beRoga$fff Bonka-26- Somethin' in the lake",
+                "author": "Tomote.",
+                "time_author": 23691,
+                "uid": "pPq4_wwtts8T5hjyt8fQypv6BLi"
+            },
+            {
+                "name": "Snek-eye view",
+                "author": "TIMEOFOWO",
+                "time_author": 34247,
+                "uid": "l0e_Y19En4hDIloCE9QOP2kKrmd"
+            },
+            {
+                "name": "Gunter 5 - Collect Fish",
+                "author": "baconpatroller",
+                "time_author": 43414,
+                "uid": "8jPE8D0vq4A7stn6XzyQ0EHxzW7"
+            },
+            {
+                "name": "$sdisinformation",
+                "author": "key.mp3",
+                "time_author": 33955,
+                "uid": "ZgxrNWjA8fyjY7TY8YBMfL89n6m"
+            }
+        ]
+    },
+    {
+        "edition": 258,
+        "campaign_name": "RHQ BONK CUP 257",
+        "publish_date": null,
+        "display_date": "17.9.2026",
+        "winner": "Kryliczech",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/156903",
+        "maps": [
+            {
+                "name": "Carnival - Funhouse",
+                "author": "Teuty",
+                "time_author": 44000,
+                "uid": "UUk7CzevWHaw3A3lNVdDIeOklQ6"
+            },
+            {
+                "name": "$o$t$0FFDon't mess with the bla",
+                "author": "Wapzo",
+                "time_author": 23014,
+                "uid": "xc6aWSARedyOR34woW1IqDQO5Jg"
+            },
+            {
+                "name": "Web factory",
+                "author": "GuiCoin",
+                "time_author": 32749,
+                "uid": "SxMGecYITo11yGuO3czVH9VkjG8"
+            },
+            {
+                "name": "$445$S$iThrough the stars",
+                "author": "artroy666",
+                "time_author": 26693,
+                "uid": "gWU4AFd4h1oo_1bU2HWFXMLCSCb"
+            },
+            {
+                "name": "$s$33eSlalom$000And$e33Bonks",
+                "author": "isigold",
+                "time_author": 29729,
+                "uid": "G1NYlLK3F_O9bIWjxxVkYAyb5C9"
+            },
+            {
+                "name": "$3ffConcussion $f00Protocol",
+                "author": "baconpatroller",
+                "time_author": 34041,
+                "uid": "Y62WWNQ2TpSrl6uwI7ME1Z4IE7f"
+            },
+            {
+                "name": "Mer Held End Forstand",
+                "author": "Lumet.",
+                "time_author": 26603,
+                "uid": "yAi8hXgHsAerEEnBhTjaqflsM70"
+            },
+            {
+                "name": "$9F8$S$IA08 express",
+                "author": "artroy666",
+                "time_author": 28505,
+                "uid": "x9POp5wlMb9qa0eBwXY9MtRpWd"
+            },
+            {
+                "name": "$F00The Man's La$D00ughter Echoes $A00Through The B$800onk",
+                "author": "KosmicKario",
+                "time_author": 29394,
+                "uid": "muUZJSmBLGJlnyMc2tA9ZDJuEfd"
+            },
+            {
+                "name": "$s $ff0Plastic $09fRide",
+                "author": "Dada6_coasters",
+                "time_author": 35971,
+                "uid": "ZOFGtOl9JSVxAiC6eAF8DSm1FJh"
+            },
+            {
+                "name": "$fff-$8beRoga$fff Bonka-26- Memory Remain",
+                "author": "Tomote.",
+                "time_author": 22434,
+                "uid": "ptg_Up4NpUKBMIhA6r4LSV6w0w"
+            },
+            {
+                "name": "$f7fKuuma Pinkki",
+                "author": "miikapekka",
+                "time_author": 30271,
+                "uid": "MMIPyg7qIPld7Z5qppa4QlrbUw6"
+            },
+            {
+                "name": "$FF0Plastic\u0160pageta",
+                "author": "CptToothpick",
+                "time_author": 26885,
+                "uid": "SXKvC_UkS3u4o0VNbBdH4ytCck9"
+            },
+            {
+                "name": "Black Bean Soup",
+                "author": "NUdark",
+                "time_author": 23928,
+                "uid": "WrfxgDcxv1bnYKenYorBHWXNLgk"
+            }
+        ]
+    },
+    {
+        "edition": 257,
+        "campaign_name": "RHQ BONK CUP XPEVO",
+        "publish_date": null,
+        "display_date": "11.9.2026",
+        "winner": "Bandon",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/155876",
+        "maps": [
+            {
+                "name": "$sXPBonk - ALT CAR AVENGERS",
+                "author": "epsiTM",
+                "time_author": 45848,
+                "uid": "TYc0SxkEfOzVTG4gVnAdw08GeOe"
+            },
+            {
+                "name": "XPBonk - Hamburg-ers",
+                "author": "TIMEOFOWO",
+                "time_author": 33884,
+                "uid": "l9vkeWhaZe4tT8oDp5aX4_jGYl4"
+            },
+            {
+                "name": "XPBonk - Hamburg'Fwipz 2626",
+                "author": "GuiCoin",
+                "time_author": 40258,
+                "uid": "uls7flBkqkISUDT8rsLLKA5lgFb"
+            },
+            {
+                "name": "$i$s$fffXPBonk - $f40Pick $fffn $f40Choose$fff'",
+                "author": "Spammiej",
+                "time_author": 33919,
+                "uid": "tm0WilDwQYmpPm8t5FUrjy91q21"
+            },
+            {
+                "name": "XPBonk - Jon Gralargar",
+                "author": "GranaDy.",
+                "time_author": 83328,
+                "uid": "SMNBMx66_ySrLhZOCWMFvyFzaG9"
+            },
+            {
+                "name": "$n$i$o$000XP$F09Bonk $n$i$fff - BumpsAndBonks",
+                "author": "isigold",
+                "time_author": 32379,
+                "uid": "5rNDMSfq6EAP2LKjDshnaa1qKTc"
+            },
+            {
+                "name": "$f39XPBonk $fff- $c9fMilka",
+                "author": "miikapekka",
+                "time_author": 13621,
+                "uid": "K7xDP_HuHbx5QpHGLEC2lGZpt1g"
+            },
+            {
+                "name": "XPbonk - Treppenvierachtel",
+                "author": "baconpatroller",
+                "time_author": 43370,
+                "uid": "mBS2CFERzZp0VgtEFUkQDTTDfw9"
+            },
+            {
+                "name": "XPBonk - Um die wurst gehen ft' Junesalad",
+                "author": "boonie95_",
+                "time_author": 30941,
+                "uid": "excZSE7QQdy5DofbhVJAGuhdJha"
+            },
+            {
+                "name": "XPBonk - $9FFSlippy $DFFSummit",
+                "author": "amarok.czu",
+                "time_author": 34631,
+                "uid": "zaCEZEBwbV2gE369Dcv3ZTd4ytm"
+            },
+            {
+                "name": "$n$i$o$000XP$F09Bonk$n$i$fff - YEK$zscar",
+                "author": "Svitman",
+                "time_author": 35057,
+                "uid": "BeZu58FJytmSsA6KmQbuQNCdYm4"
+            },
+            {
+                "name": "$S$IXPBonk - $828Force",
+                "author": "artroy666",
+                "time_author": 35009,
+                "uid": "a6iFBMOkzXeJojrkc6Vj_SFamS"
+            },
+            {
+                "name": "XPBonk - Candy Mountain",
+                "author": "RoRoRosh",
+                "time_author": 29077,
+                "uid": "qnBfkfl5fM9d_MTWBoqdyUhsDci"
+            },
+            {
+                "name": "$n$i$o$000XP$3CFBonk $t$n$i$fff- Fake Watah Rox",
+                "author": "Lumet.",
+                "time_author": 26516,
+                "uid": "rC4FLYEHPYSQw7O_LcwWRtu2HNe"
+            },
+            {
+                "name": "$z$s$iXPBonk - $e3eBonk$47fstage $777Tickets",
+                "author": "key.mp3",
+                "time_author": 32323,
+                "uid": "91jGibJ4bXY9DanCbUbSt7co_A1"
+            },
+            {
+                "name": "$S$IXPBonk - $828CastleFlip",
+                "author": "artroy666",
+                "time_author": 45009,
+                "uid": "YdOcQToCjy0gIm79M84xs_HKQZm"
+            },
+            {
+                "name": "XPBonk - Got to be there",
+                "author": "TIMEOFOWO",
+                "time_author": 30101,
+                "uid": "E9aurta_dsKSs6dy7LwFrYck3I4"
+            },
+            {
+                "name": "$S$IXPBonk - $828MarbleXP",
+                "author": "AuwrahTM",
+                "time_author": 19766,
+                "uid": "WYRQK7nnwIkXvd3IOQbduDw7Ct1"
+            }
+        ]
+    },
+    {
+        "edition": 256,
+        "campaign_name": "RHQ BONK CUP 256",
+        "publish_date": null,
+        "display_date": "10.9.2026",
+        "winner": "Yannex",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/155758",
+        "maps": [
+            {
+                "name": "$S$IGood Luck \uf118",
+                "author": "artroy666",
+                "time_author": 26075,
+                "uid": "necKEZeEKhxpyOWeKPVu2Q3aK5"
+            },
+            {
+                "name": "$z$s$F96quicksand!",
+                "author": "key.mp3",
+                "time_author": 27000,
+                "uid": "hxGNMCjDh_ZVXhSR9L0JKKtVk8f"
+            },
+            {
+                "name": "$118T$228a$339b$449l$559e$66A $77AH$88Bo$99Bc$AABk$BBCe$CCCy",
+                "author": "Von_Roth",
+                "time_author": 19055,
+                "uid": "G2Mt95XpwbgCbOv4VPyIcfMneC7"
+            },
+            {
+                "name": "$s $9ffWet $9f5Reactor",
+                "author": "Dada6_coasters",
+                "time_author": 31397,
+                "uid": "Zv0Nb9MX7xve8yM5SVbue9mkLM"
+            },
+            {
+                "name": "$S$iThat type of flip",
+                "author": "artroy666",
+                "time_author": 37963,
+                "uid": "CnlmXN84SNTnZV3m92F4LJCLP8e"
+            },
+            {
+                "name": "Speedmapping #6",
+                "author": "FriendlySnowbal",
+                "time_author": 36355,
+                "uid": "boKidqCIEDA1cBPnoySj3DhLDR8"
+            },
+            {
+                "name": "Twist and Shout",
+                "author": "LeanIntoMe",
+                "time_author": 21764,
+                "uid": "o_nlJqyvKiZd_Rc5ukn4kb17aK"
+            },
+            {
+                "name": "8 - Karvin\u00e1",
+                "author": "RHQShengar",
+                "time_author": 27267,
+                "uid": "R_AtNXB1n6_OCdKX2ypENP94_P0"
+            },
+            {
+                "name": "$ff6 Nando Warehouse",
+                "author": "miikapekka",
+                "time_author": 30456,
+                "uid": "kgJmhXoPZCTvQYuHMHiSoPzCSx9"
+            },
+            {
+                "name": "a walk in the park",
+                "author": "huggibuggi",
+                "time_author": 34605,
+                "uid": "lGx_7PUW0CJYGQSKeQ0ZiMzsau6"
+            },
+            {
+                "name": "$F35R$B35uby $F35N$B35ights",
+                "author": "amarok.czu",
+                "time_author": 49317,
+                "uid": "Ms45btfCqCHyQCwbnYNk0ZRzSB7"
+            },
+            {
+                "name": "$z$i$s$93fRICE $5cfCOOKER",
+                "author": "miraclewhips",
+                "time_author": 17928,
+                "uid": "_Ob1biT25DO50ckvupVuW2sOkv0"
+            },
+            {
+                "name": "Weaving Bumps",
+                "author": "Dark_Rozen",
+                "time_author": 34372,
+                "uid": "BKb6d5sqzLYjbxMIF57J4I7Pfb2"
+            },
+            {
+                "name": "$FC0$ntiny $oBumperDuckies, $z$FC0$nsiger rap rap",
+                "author": "Lumet.",
+                "time_author": 29981,
+                "uid": "OHUJmHEZ5kU19i57jeEQ7AAyN88"
+            }
+        ]
+    },
+    {
         "edition": 255,
         "campaign_name": "RHQ BONK CUP 255",
         "publish_date": null,
