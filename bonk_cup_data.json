@@ -1,5 +1,375 @@
 [
     {
+        "edition": 263,
+        "campaign_name": "RHQ BONK CUP 263",
+        "publish_date": null,
+        "display_date": "29/10/2026",
+        "winner": "Golio",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/164199",
+        "maps": [
+            {
+                "name": "$s$F93Br$E74oo$D55ms$C35ti$B16ck$C15 Ra$D03ci$E01ng",
+                "author": "Von_Roth",
+                "time_author": 35043,
+                "uid": "j6KrGZGo9s6GKe3ENYmzoOMz0Wk"
+            },
+            {
+                "name": "$s Spooky Jumpscare",
+                "author": "Dada6_coasters",
+                "time_author": 28621,
+                "uid": "Qx6dzsUGWaA2xmQBBs34QMbQvq3"
+            },
+            {
+                "name": "$s$i$5eeHauntsune Miku's Madhouse",
+                "author": "VertexWitch",
+                "time_author": 39018,
+                "uid": "3g3jueqSGOrEQrNaT0C6SHLp4na"
+            },
+            {
+                "name": "$F63$oBuuuu Tummy Ache",
+                "author": "Lumet.",
+                "time_author": 26724,
+                "uid": "NI0_Rn9gq9sEnbTMngQn7ZFD1R3"
+            },
+            {
+                "name": "$FA3$S$iInexplicable Fear",
+                "author": "artroy666",
+                "time_author": 40837,
+                "uid": "tJTHV53piCRF_o9Yljoa1mLtXom"
+            },
+            {
+                "name": "CTHULHU's CAM",
+                "author": "GuiCoin",
+                "time_author": 45697,
+                "uid": "XOt4SZPrxbxbdBmVsi7WZjFrBk8"
+            },
+            {
+                "name": "$c35The $oMONSTER $z$i$c35at the end of this Map",
+                "author": "baconpatroller",
+                "time_author": 41693,
+                "uid": "8w5OJdiro0e7s5SWIbpew2ozl5k"
+            },
+            {
+                "name": "$S$iNyctophobia\uf128",
+                "author": "artroy666",
+                "time_author": 37870,
+                "uid": "cehtSUEs5UnoBB5pis88o87BJPi"
+            },
+            {
+                "name": "$F63$oScawy Scawy Wallrides",
+                "author": "Lumet.",
+                "time_author": 22161,
+                "uid": "wTSxBJWGi2NDDiytKupPeA83114"
+            },
+            {
+                "name": "POV you're a gravedigger",
+                "author": "amarok.czu",
+                "time_author": 36336,
+                "uid": "Wq4NPeqR5y7bLh0ANaktbGXAdy3"
+            },
+            {
+                "name": "$b$o$333SPOOKY$F70SLIDE",
+                "author": "Svitman",
+                "time_author": 35000,
+                "uid": "CrmuTim62U5vbSWybIBl3KbQ4m"
+            },
+            {
+                "name": "$z$i$n$o$s$e83ah! so spookey!",
+                "author": "key.mp3",
+                "time_author": 30925,
+                "uid": "_pLck8VJDs8Jc4puxct4BLN0hIc"
+            },
+            {
+                "name": "$o$fLeft $fffand $fRight",
+                "author": "BaoGab",
+                "time_author": 28358,
+                "uid": "SmaisaFIMmcbuvTxE2LQAKO3a09"
+            },
+            {
+                "name": "$F70We$F80b o$F90f $FA0Int$FB0rig$FC0ue",
+                "author": "baconpatroller",
+                "time_author": 39247,
+                "uid": "saIOXlQAnu1QrGYPD5HLt8XTEA6"
+            },
+            {
+                "name": "Neo Bonk - Pumpkin Road",
+                "author": "Neofelis.fi",
+                "time_author": 30644,
+                "uid": "A3uNWSj4X4HgAQ7_HrrXx2g4ykm"
+            }
+        ]
+    },
+    {
+        "edition": 262,
+        "campaign_name": "RHQ BONK CUP 262",
+        "publish_date": null,
+        "display_date": "22.10.2026",
+        "winner": "Golio",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/163505",
+        "maps": [
+            {
+                "name": "$BB5$S$IMap of the year \uf0a1",
+                "author": "artroy666",
+                "time_author": 41054,
+                "uid": "tHygeOcq0hTTM9tWiriHEP80mR3"
+            },
+            {
+                "name": "$zcliffside",
+                "author": "LoonTM",
+                "time_author": 31197,
+                "uid": "o2Il7x_UqqblBlWE5XJqK6AQxP5"
+            },
+            {
+                "name": "MK64 Frappe Snowland",
+                "author": "vjeux",
+                "time_author": 47122,
+                "uid": "OFInBYgYGKkbAO0xlcXeKjSFPel"
+            },
+            {
+                "name": "$o$3f3MansAlivekeeping $f00<3   \uf118 \uf164",
+                "author": "A-WaffleGuy",
+                "time_author": 37103,
+                "uid": "OwmPBm018INMYevaRO5U4FvVe61"
+            },
+            {
+                "name": "$3f3Retro Encabulator 03",
+                "author": "baconpatroller",
+                "time_author": 31628,
+                "uid": "COcOLnUUTyOCiqPqSoTgOGNOQvj"
+            },
+            {
+                "name": "$s$BBBGears of $FF0Bonk",
+                "author": "Midbooze",
+                "time_author": 24404,
+                "uid": "yYWltwZCjcVLuSfEkaek4ya0Kq0"
+            },
+            {
+                "name": "$2CE$S$iUnsmooth Wallrides",
+                "author": "artroy666",
+                "time_author": 31068,
+                "uid": "Cc4YjD8St8rngZ_T5uWmqmgr4Di"
+            },
+            {
+                "name": "old greenhouse",
+                "author": "screamingroostr",
+                "time_author": 36151,
+                "uid": "JaXu0DuwOvjtthNOiQ4cHGVJ6K2"
+            },
+            {
+                "name": "Waypoint Pro(paganda)",
+                "author": "Whizzy..",
+                "time_author": 48309,
+                "uid": "9ptH3SX6H03isuyKlHYbHUvyer2"
+            },
+            {
+                "name": "$o$3FFDankTastik",
+                "author": "Lumet.",
+                "time_author": 28943,
+                "uid": "EyBbNR0rLE15Ln4ENU5zBIC4YI2"
+            },
+            {
+                "name": "More Ways to Fall",
+                "author": "Quibbles.",
+                "time_author": 35395,
+                "uid": "kJ_absHbomTffKWfVB4mtXXD9K9"
+            },
+            {
+                "name": "$F00Risky $39FDecisions",
+                "author": "KosmicKario",
+                "time_author": 26968,
+                "uid": "K5V5a3I1RLRykyWWKAPtB2zOoS"
+            }
+        ]
+    },
+    {
+        "edition": 261,
+        "campaign_name": "RHQ BONK CUP 261",
+        "publish_date": null,
+        "display_date": "15/10/2026",
+        "winner": "Yannex",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/162882",
+        "maps": [
+            {
+                "name": "$oBOTD $zsilent syfy",
+                "author": "GuiCoin",
+                "time_author": 37098,
+                "uid": "M3Ea4RfPoX5OWO38UJxpbHcpBi8"
+            },
+            {
+                "name": "$fffI never leave the $F06d$F74i$FF1s$9B8c$38Fo $fffalone",
+                "author": "baconpatroller",
+                "time_author": 29893,
+                "uid": "_0BftUmazrIls9FOd5F2mhSygk"
+            },
+            {
+                "name": "Blackhole of Absolute and Final Destruction - The Map",
+                "author": "RHQShengar",
+                "time_author": 42019,
+                "uid": "qufLpQlC5CqznhlBQlrr9213sCb"
+            },
+            {
+                "name": "To $12aFlip $fffor to $d31Flop",
+                "author": "FriendlySnowbal",
+                "time_author": 34352,
+                "uid": "484cUc_3OpgtunJXmhI5AET7Lti"
+            },
+            {
+                "name": "Mount Tortoise",
+                "author": "Enedin",
+                "time_author": 25660,
+                "uid": "3conOkWehRqRkuT6EiO8RJWR0Lc"
+            },
+            {
+                "name": "$9C0Choose your bla",
+                "author": "Wapzo.owo",
+                "time_author": 28285,
+                "uid": "tLvcrdrkeCs95d3CgmRwvILMo33"
+            },
+            {
+                "name": "$fff-$8beRoga$fff Bonka-26- In the Air",
+                "author": "Tomote.",
+                "time_author": 26388,
+                "uid": "S1moTBgKZejzoR0pqyrEubbSYA0"
+            },
+            {
+                "name": "$9F8$S$iA08 with some pipes",
+                "author": "artroy666",
+                "time_author": 29148,
+                "uid": "sP6JnOTD0a_9jliKH_uwKma8zPk"
+            },
+            {
+                "name": "Billy Ocean's $3ffEntire Catalogue",
+                "author": "baconpatroller",
+                "time_author": 43948,
+                "uid": "SqAEy0qjWfhNy10YyJ_p8eIVY74"
+            },
+            {
+                "name": "$S$iPuddle Control",
+                "author": "artroy666",
+                "time_author": 25461,
+                "uid": "flRlo91lbJJMESkpKulRAa8rW_a"
+            },
+            {
+                "name": "give her plenty",
+                "author": "jordosom",
+                "time_author": 31102,
+                "uid": "JBh01KPNbc4HPnle9ZngY7GhsVm"
+            },
+            {
+                "name": "Spaghetti al assassinata",
+                "author": "Z3nlayne",
+                "time_author": 40206,
+                "uid": "98PjNRccd8bSD6e5Fa9Akd8dsQ3"
+            },
+            {
+                "name": "$FFFPipe $f39Dr$39fea$3fcms $FFF4",
+                "author": "baconpatroller",
+                "time_author": 27352,
+                "uid": "fp0U0yNSqfOxEb6VYU55ym38tEd"
+            }
+        ]
+    },
+    {
+        "edition": 260,
+        "campaign_name": "RHQ BONK CUP 260",
+        "publish_date": null,
+        "display_date": "8.10.2026",
+        "winner": "Lars",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/162196",
+        "maps": [
+            {
+                "name": "Ripple Bonks",
+                "author": "Calabi9",
+                "time_author": 42710,
+                "uid": "ptXQnI5538u0talg0wHT9hF1xqk"
+            },
+            {
+                "name": "The Dinosaurs",
+                "author": "RHQShengar",
+                "time_author": 45450,
+                "uid": "HYL_3QecLOJQDcSZnUHAFsUaGVb"
+            },
+            {
+                "name": "$s Bonk Mountain",
+                "author": "Dada6_coasters",
+                "time_author": 14936,
+                "uid": "CtF6aWAZnhgTzEMPy1vbt03gHzb"
+            },
+            {
+                "name": "Peak 2021 map",
+                "author": "artroy666",
+                "time_author": 37097,
+                "uid": "HfBPP_cqxuyzh10FlBUx90NloLj"
+            },
+            {
+                "name": "$3f3Retro Encabulator 01",
+                "author": "baconpatroller",
+                "time_author": 37694,
+                "uid": "7okixhU89eooQpWWfKuQYOrMzQ6"
+            },
+            {
+                "name": "Wet Sausage Rodeo",
+                "author": "Aries__90",
+                "time_author": 43443,
+                "uid": "VmumF_lkEAAE0vCCkT161EUDIUj"
+            },
+            {
+                "name": "BounceHighA08",
+                "author": "Atheuthi",
+                "time_author": 22758,
+                "uid": "PzkEkF4O_3X5QSoNDIVEUxvAG5k"
+            },
+            {
+                "name": "$S$iBober Tunnels",
+                "author": "artroy666",
+                "time_author": 39870,
+                "uid": "E0V4SzztFZUcF3gP9JSJIwFrQ9i"
+            },
+            {
+                "name": "Steep Slopes",
+                "author": "Aries__90",
+                "time_author": 45822,
+                "uid": "8I4V7l7UeXu0ECtEfbNgkqccfTg"
+            },
+            {
+                "name": "Gran Turismo Marciano",
+                "author": "GuiCoin",
+                "time_author": 34139,
+                "uid": "xa0XbCUdYh21xLGBUkM9pEmkQF6"
+            },
+            {
+                "name": "ICE machine",
+                "author": "Extraligant",
+                "time_author": 27675,
+                "uid": "I9Id_0gV4Sr52LHug2MXaRdaZm5"
+            },
+            {
+                "name": "$3f3Retro Encabulator 02",
+                "author": "baconpatroller",
+                "time_author": 34568,
+                "uid": "z_93IsU38Ln4Gg9GV14LnYw_FYj"
+            },
+            {
+                "name": "$i$z$w$g$o$s$9f0\u00bb $bf0The $7d0Green $060Greenhouse $9f0\u00ab",
+                "author": "PSI_error",
+                "time_author": 39978,
+                "uid": "VWmF_I1cqctujo17jS8yLMvovSg"
+            },
+            {
+                "name": "Coco caPlastika",
+                "author": "Aikani",
+                "time_author": 28721,
+                "uid": "sSvMM8Hb2YG90bgBhx63xw5PAA7"
+            },
+            {
+                "name": "MK64 Rainbow Road",
+                "author": "zai-tm",
+                "time_author": 129707,
+                "uid": "Ek0fmwVETTe7foodh0DspdRJ8Ri"
+            }
+        ]
+    },
+    {
         "edition": 259,
         "campaign_name": "RHQ BONK CUP 258",
         "publish_date": null,
