@@ -1,5 +1,93 @@
 [
     {
+        "edition": 264,
+        "campaign_name": "RHQ BONK CUP 264",
+        "publish_date": null,
+        "display_date": "5.11.2026",
+        "winner": "Granady",
+        "tm_io_url": "https://trackmania.io/#/campaigns/26830/164767",
+        "maps": [
+            {
+                "name": "$i~~ALLEGEDLY~~",
+                "author": "A-WaffleGuy",
+                "time_author": 37067,
+                "uid": "vETLQ5HFn5uKzhdzTEC1ZAl45c2"
+            },
+            {
+                "name": "Fjord fwipzles",
+                "author": "GuiCoin",
+                "time_author": 41577,
+                "uid": "KjtGuFss_ELCZlKDh6GFAF4Iu59"
+            },
+            {
+                "name": "$3beB$4bel$5cf\u00e5$6cfh$7cfa$8dfj $bdfT$cefo$defw$effe$fffr",
+                "author": "MysterieTM",
+                "time_author": 36065,
+                "uid": "gk9xEDZt5O7SWYqrPj3qyG0u1p4"
+            },
+            {
+                "name": "CP 4 is wonderful \u2665",
+                "author": "Ghostiorix",
+                "time_author": 31475,
+                "uid": "o8P6rUah01ONFS8tBZGvwxdm0d3"
+            },
+            {
+                "name": "\"he's one shot\"",
+                "author": "skyl1ne_TM",
+                "time_author": 28361,
+                "uid": "C5o9cgsXSI6x21_8A2tUQn1XBfj"
+            },
+            {
+                "name": "$BB5$S$ISandBrake",
+                "author": "artroy666",
+                "time_author": 30838,
+                "uid": "GtFNkQ9j6CEKAYfqbXOKcvWus65"
+            },
+            {
+                "name": "$F7CNo $D07Scams $F0BHere",
+                "author": "TheRealigi",
+                "time_author": 33629,
+                "uid": "mNY6UZmQIXuT1SpnDbq8CrGXhLd"
+            },
+            {
+                "name": "$S$I$7FBDown we go again",
+                "author": "artroy666",
+                "time_author": 37854,
+                "uid": "i_Ii6DFR6_7DUVm_WieQFjWYHv7"
+            },
+            {
+                "name": "$s $f0fBonk $fff& $90fRoll",
+                "author": "Dada6_coasters",
+                "time_author": 27798,
+                "uid": "8URZozpMXFwYGArnqCxk8xfxNNc"
+            },
+            {
+                "name": "Aint nothin to me man",
+                "author": "Looter-",
+                "time_author": 46211,
+                "uid": "U__AzKwcf1o3kJo3c8QLuIfcX69"
+            },
+            {
+                "name": "$o$w$C39Consistent $z$6F9$nMoving Block Identities frfr",
+                "author": "Lumet.",
+                "time_author": 27692,
+                "uid": "UweSc1ROMimjaYWuAZN5ZAUqeC7"
+            },
+            {
+                "name": "Falling off is slower",
+                "author": "ArEyeses",
+                "time_author": 39017,
+                "uid": "ehnjdtxdHeJobLqK6PfdmzsFh55"
+            },
+            {
+                "name": "$o$n$169I Miss The $5CESummer $EC2\uf185",
+                "author": "Pixwah",
+                "time_author": 33159,
+                "uid": "jDSAQy71s4ca1upxNHDTaYZthMm"
+            }
+        ]
+    },
+    {
         "edition": 263,
         "campaign_name": "RHQ BONK CUP 263",
         "publish_date": null,
